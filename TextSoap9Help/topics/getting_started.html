@@ -1,0 +1,3372 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta name="AppleTitle" content="TextSoap 9 Help">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>TextSoap 9 Help</title>
+	<link href="../style/style.css" rel="stylesheet" type="text/css" />
+	<link href="../style/xcode.css" rel="stylesheet" type="text/css" />
+
+	<script src="../scripts/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+
+<!--
+<div class="header">
+    <a href="../index.html">Home</a><span class="headertxt">&nbsp;&#187; TextSoap 9 Help</span>
+    <span style="float: right;"><a href="http://www.unmarked.com/textsoap/">TextSoap</a></span>
+</div>
+-->
+
+<div class="main" valign="top">
+	<div class="ts_sidebar">
+	<!-- Static TOC included directly -->
+	<ul>
+	<h2>Overview</h2>
+	<li><a href="welcome.html">Welcome</a></li>
+	<li><a href="clipboard_workspace.html">Clipboard Workspace</a></li>
+	<li><a href="tour.html">A Quick Tour</a></li>
+	<li><a href="groups.html">Cleaner Groups Summary</a></li>
+	<li><a href="whats_new.html">What's New in TextSoap 9</a></li>
+	</ul>
+	<ul>
+	<h2>MyLibrary</h2>
+	<li><a href="my_cleaners.html">Cleaner Editor</a></li>
+	<li><a href="my_cleaner_actions.html">My Cleaner Actions</a></li>
+	<li><a href="my_groups.html">Custom Group Editor</a></li>
+	</ul>
+	<ul>
+	<h2>Tutorials</h2>
+	<li><a href="custom_cleaner_tutorial_1.html">Your First Cleaner</a></li>
+	<li><a href="custom_cleaner_tutorial_2.html">Removing parameters from a URL</a></li>
+	<li><a href="custom_cleaner_tutorial_3.html">Using Lists in Your Cleaners</a></li>
+	<li><a href="custom_cleaner_tutorial_4.html">Matching Typefaces, Attributes</a></li>
+	</ul>
+	<ul>
+	<h2>Cleaner Descriptions</h2>
+	<li><a href="date_actions.html">Date-related Cleaners</a></li>
+	<li><a href="html_actions.html">HTML Cleaners</a></li>
+	<li><a href="plist_actions.html">Plist Cleaners</a></li>
+	<li><a href="cleaner_descriptions.html">Other Cleaner Descriptions</a></li>
+	</ul>
+	<ul>
+	<h2>Extras</h2>
+	<li><a href="preferences.html">Preferences</a></li>
+	<li><a href="batch_cleaning.html">Batch File Cleaning</a></li>
+	</ul>
+	<ul>
+	<h2>Reference</h2>
+	<li><a href="glossary.html">Glossary</a></li>
+	<li><a href="regex_syntax.html">Regular Expression Syntax</a></li>
+	<li><a href="files_and_folders.html">Files and Folders</a></li>
+	</ul>
+	</div>
+	<div class="ts_main">
+
+
+<h2 id="appicon"><img src="images/app9_128.png" alt="AppIcon" /></h2>
+
+<h1 id="welcome">Welcome</h1>
+
+<h3 id="systemrequirements">System Requirements</h3>
+
+<p>TextSoap 9 built for macOS 13 (Ventura). Supports macOS 11 or later.</p>
+
+<hr />
+
+<h3 id="welcome">Welcome</h3>
+
+<p>TextSoap is a automated text processing tool that removes the tediousness of tasks associated with &#8216;cleaning up&#8217; various text including removing extraneous characters, wrapping broken paragraphs, fixing quotation marks, finding and replacing patterned text, and more. It comes with more than 100 pre-built solutions and lets you create your own.</p>
+
+<h3 id="terminology">Terminology</h3>
+
+<p>Custom Cleaner: - user-defined series of actions that can apply a pre-built cleaner or use one of the many building blocks like regular expression find and replace, changing style, etc.</p>
+
+<p>Custom Group - user-defined collection of &#8220;cleaners&#8221;. The collection can contain pre-built or custom cleaners.</p>
+
+<p>See glossary for additional terms.</p>
+
+<hr />
+
+<h3 id="usingtextsoap">Using TextSoap</h3>
+
+<p>TextSoap is split into two components:</p>
+
+<h4 id="textsoap">TextSoap</h4>
+
+<p>The main app that allows you to interactively process clipboard contents, text documents, create and edit custom cleaners and groups. This app comes in various editions: Direct and Setapp.</p>
+
+<h4 id="textsoapagent">textsoapAgent</h4>
+
+<p>A free companion app that works with TextSoap to integrate features throughout your Mac. There is one version of and it interacts with whichever edition you are using.</p>
+
+<ul>
+<li>TextSoap Menu : universal popup provides access to all of TextSoap cleaners to most apps</li>
+<li>AppleScripting : script interface to provide cleaning via AppleScript</li>
+<li>macOS Services : Optional service item brings up a dialog to use any cleaner within apps that support services</li>
+<li>Custom Services : Using a group, select a small collection of cleaners to access via the services contextual menu</li>
+<li>Hot Key Action: Using a global hot key, will copy/clean/paste the text into most apps</li>
+</ul>
+
+<p>The agent is a separate download, which you find at https://textsoap.com/agent/</p>
+
+
+<h1 id="clipboardworkspace">Clipboard Workspace</h1>
+
+<h3 id="whatisit">What is it?</h3>
+
+<p>The clipboard workspace is a special editing window that makes it easy to edit and clean up the contents of the clipboard in virtually automatic fashion. Skip the manual pasting in text after a launch and copying it to the clipboard before you quit the app. Clipboard workspace does this automatically.</p>
+
+<p>You can disable the clipboard workspace via Preferences &gt; General. When disabled, TextSoap will open an untitled document on launch, like most document-based apps.</p>
+
+<h3 id="howdoesitwork">How does it work?</h3>
+
+<p>When TextSoap launches, the app creates a window and pastes in the current contents of the clipboard into that window for you.</p>
+
+<p>You can then edit the text, clean it with any of the existing cleaners, manually find and replace text, and so forth until the text is satisfactory for your needs. While working with your text, you may use the clipboard as normal.</p>
+
+<p>When you quit TextSoap, the app (automatically) copies the contents of the workspace window on the clipboard for you.</p>
+
+<hr />
+
+<h3 id="clipboardworkspaceworkflowexample">Clipboard Workspace Workflow Example</h3>
+
+<p>Here is one workflow available to clean text with TextSoap:</p>
+
+<figure>
+<img src="images/clip_workspace1.jpg" alt="Starting text, copy to clipboard" />
+<figcaption>Starting text, copy to clipboard</figcaption>
+</figure>
+
+<ol>
+<li><p>Open TextSoap app (contents of clipboard is pasted into Clipboard Workspace).</p>
+
+<p>If you have no selection, cleaners apply to the entire text. If you optionally select text, only the selected text is cleaned.</p></li>
+</ol>
+
+<figure>
+<img src="images/clip_workspace2.jpg" alt="After TextSoap Launch" />
+<figcaption>After TextSoap Launch</figcaption>
+</figure>
+
+<ol>
+<li>Find and click the &#8220;Uppercase&#8221; cleaner in cleaner list to apply it.</li>
+</ol>
+
+<figure>
+<img src="images/clip_workspace3.jpg" alt="Cleaned Text" />
+<figcaption>Cleaned Text</figcaption>
+</figure>
+
+<ol>
+<li>Quit TextSoap (text from Clipboard Workspace is copied back to clipboard).</li>
+<li>Paste clipboard contents back into app.</li>
+</ol>
+
+<figure>
+<img src="images/clip_workspace4.jpg" alt="Pasted Back into App" />
+<figcaption>Pasted Back into App</figcaption>
+</figure>
+
+<hr />
+
+<h3 id="otherintegrationoptions">Other integration options</h3>
+
+<p>The clipboard workspace is great option when you may need to do more than just apply a cleaner and need to possibly change the text manually.</p>
+
+<p>If you just need to apply a cleaner to text, there are some additional integration options available to simplify the workflow further using the companion textsoapAgent app:</p>
+
+<ul>
+<li>TextSoap Menu</li>
+<li>AppleScript commands</li>
+<li>Global Hot Key</li>
+</ul>
+
+
+<h1 id="aquicktour">A Quick Tour</h1>
+
+<h2 id="overview">Overview</h2>
+
+<p>TextSoap 9 focuses on content. The editor window used by the Clipboard Workspace and any documents you open provides minimal chrome. You can edit both plain and rich text. </p>
+
+<h3 id="toolbarinspectorbar">Toolbar &amp; Inspector Bar</h3>
+
+<figure>
+<img src="images/editor_1.jpg" alt="" />
+</figure>
+
+<p>The toolbar actions:</p>
+
+<ul>
+<li>MyScrub : Apply cleaner specified by Preferences &gt; General. Default is Scrub</li>
+<li>Copy : Copy text to the clipboard</li>
+<li>Paste : Paste text from the clipboard</li>
+<li>Copy All : Select all the text and copy it to clipboard</li>
+<li>Paste Over : Replace the existing text with the contents of the clipboard</li>
+<li>MyLibrary : Bring up MyLibrary editor to create or edit custom cleaners, or groups</li>
+</ul>
+
+<p>Inspector Bar</p>
+
+<ul>
+<li>Changing font attributes of text. This applies for both plain text (where the changes apply to all the text) or rich text (where changes apply to selection).</li>
+</ul>
+
+<h3 id="editoroptions">Editor Options</h3>
+
+<figure>
+<img src="images/editor_4.jpg" alt="" />
+</figure>
+
+<p>The actual editor can show you paragraph rulers for rich text. It also includes a number of options useful when editing various text. The options can be toggled on and off with either the View Menu or using the icon bar below the text.</p>
+
+<ul>
+<li>Zoom : Use Zoom to increase the size of your working text without actually changing the underlying size of the text.</li>
+<li>Line Numbers : Shows lines numbers representing each line (or paragraph) in the text.</li>
+<li>Text Wrap : Control whether the text wraps to the window or only to lines.</li>
+<li>Invisibles : Enable to show invisible characters such as tabs, spaces and returns in your text.</li>
+<li>Statistics : Quick access to the number of Paragraphs, Words, Characters and Characters minus spaces of your text.</li>
+</ul>
+
+<h3 id="sidebar">Sidebar</h3>
+
+<p>The sidebar is separated into sections providing interactive text processing. The sidebar maybe resized if you need more space to work with. If you just want to treat TextSoap as an editor, you may toggle the sidebar by clicking on the selected icon.</p>
+
+<h3 id="cleanerlist">Cleaner List</h3>
+
+<figure>
+<img src="images/editor_2.jpg" alt="Cleaner List" />
+<figcaption>Cleaner List</figcaption>
+</figure>
+
+<p>The cleaner list provides access to all the cleaners within TextSoap. Select your text, then select the cleaner to apply to the text. Preferences allow you to specify whether the entire document is automatically cleaned when there is no selection.</p>
+
+<p><strong>Groups</strong>: There are several pre-defined collections of cleaners (groups). You can also create your own custom groups of cleaners to suit your needs by using MyLibrary.</p>
+
+<p><strong>Search</strong>: The search can be be used to find cleaners. In addition to showing you matches within the current group, search will also search the contents of entire library for additional matches.</p>
+
+<h3 id="findpanel">Find Panel</h3>
+
+<figure>
+<img src="images/editor_3.jpg" alt="" />
+</figure>
+
+<p>The find panel provides for interactive find and replace:</p>
+
+<p><strong>Expression</strong>: Enable to use regular expressions.</p>
+
+<p><strong>Match Case</strong>: Enable to require exact case match.</p>
+
+<p><strong>Live</strong>: Enable to the interactive match as you type.</p>
+
+<p><strong>Options</strong>: Find options.</p>
+
+<p><strong>Insert</strong>: Insert special characters or expression segments.</p>
+
+<p><strong>Search</strong>: History of searches.</p>
+
+<p><strong>Find</strong>: Find text field. Syntax highlighting is used when using regular expressions.</p>
+
+<p><strong>Replace</strong>: Replacement template field.</p>
+
+<p><strong>Matches</strong>: Each found match is listed here. Select the match to highlight it in your text.</p>
+
+<p><strong>Capture Groups</strong>: Shows a list of each capture group of the selected match.</p>
+
+<p><strong>Replacement result</strong>: Will show the replacement result of each match using the template.</p>
+
+<p><strong>Find</strong>: Find all the matches using the find field &amp; options.</p>
+
+<p><strong>Clear</strong>: Clear find matches.</p>
+
+<p><strong>Previous</strong>: Select the previous match in the list.</p>
+
+<p><strong>Next</strong>: Select the next match in the list.</p>
+
+<p><strong>Replace</strong>: Perform a single replace on the selected match. Then select next match.</p>
+
+<p><strong>All</strong>: Perform a &#8220;Replace All&#8221; using the find &amp; replace fields with current options.</p>
+
+
+<h1 id="cleanergroupssummary">Cleaner Groups Summary</h1>
+
+<h3 id="groups">Groups</h3>
+
+<p>A group is simply a collection of cleaners. Groups provide a great way to organize cleaners for a specific task or project. There are two types of groups: built-in and custom. Built-in groups cannot be edited. Custom groups can be created and edited by you.</p>
+
+<p>Within a custom group, you can specify which cleaners are included, their order, at (optionally, their color). The cleaners listed in a group can be either built-in cleaners or any custom cleaner.</p>
+
+<h3 id="built-ingroups">Built-in groups</h3>
+
+<ul>
+<li>Library - A list of all the cleaners available to TextSoap.</li>
+<li>Standard - A list of the more commonly used cleaners plus custom cleaners.</li>
+<li>Basics - A list of the more commonly used cleaners.</li>
+<li>Email - A list of cleaners useful in dealing with emails.</li>
+<li>Typographical - A list of cleaners for handling typographically related text processing, such as Ellipsis, Em Dash or En Dash conversions.</li>
+<li>Case Conversions - A list of cleaners related to change text case.</li>
+<li>Text Quoting - A list of cleaners to help when quoting various text.</li>
+<li>Dates - Date formatting options that include using the System Preferences or one of the more common date formats (like MM-DD-YYYY, DD-MM-YYYY, or YYYY-MM-DD).</li>
+<li>Remove Extraneous - A list of common cleaners used when removing extra characters.</li>
+<li>Paragraph Rulers - A list of cleaners related to change paragragh ruler settings.</li>
+<li>Markdown - A list of cleaners related to Markdown formatting.</li>
+<li>HTML - A list of cleaners to work with raw HTML text. It includes cleaners that tag text with a variety of pre-defined HTML tags.</li>
+<li>BBCode - A list of cleaners to work with BBCode text. It includes cleaners that tag text with a variety of pre-defined BBCode tags.</li>
+<li>Plist - A list of cleaners to work with a PLIST, an XML format used by Mac developers.</li>
+<li>Custom - A list of cleaners created by end-users.</li>
+</ul>
+
+<h3 id="editingcustomgroups">Editing Custom Groups</h3>
+
+<p>You can access your custom groups (for editing) using the Navigator. Simply double-click on the custom group you wish to open.</p>
+
+<p>To create a new group, select the plus (+) sign to add, and select &#8220;New Custom Group&#8221;.
+To duplicate an existing group, select the group and select the duplicate button.</p>
+
+<p>See <a href="group_editor.html">Customize &gt; Editing Custom Groups</a> for additional information.</p>
+
+
+<h1 id="whatsnewintextsoap9">What&#8217;s New in TextSoap 9</h1>
+
+<p><em>TextSoap 9 built for macOS 13 (Ventura). Supports macOS 11 or later.</em></p>
+
+<h2 id="ifyouarecomingfromapreviousversionoftextsoaphereisaquickrundownofsomeofthechangesfromthepreviousmajorrelease.werealwaysworkingtoimprovetheexperience.">If you are coming from a previous version of TextSoap, here is a quick rundown of some of the changes from the previous major release. We&#8217;re always working to improve the experience.</h2>
+
+<ul>
+<li>General
+
+<ul>
+<li>Apple Silicon support</li>
+<li>Dark Mode support</li>
+<li>New interface</li>
+</ul></li>
+<li>New Custom Cleaner Actions
+
+<ul>
+<li>Define List action
+
+<ul>
+<li>Self contained lists items can be copied/pasted between cleaners</li>
+<li>Lists can be defined anywhere within a cleaner.</li>
+<li>Resizable List/Table editor</li>
+<li>Define each list with 1 to 4 columns</li>
+<li>Optional text-based editor allows editing list as tab-delimited text lines.
+
+<ul>
+<li>To edit as text, hold down option key when clicking edit button.</li>
+</ul></li>
+</ul></li>
+<li>For Each Line action
+
+<ul>
+<li>Simplifies processing all non-blank lines</li>
+</ul></li>
+<li>Perform Service action
+
+<ul>
+<li>Perform a macOS Service by name.</li>
+<li>Several common services are provided in a popup menu.</li>
+</ul></li>
+<li>Repeat Action
+
+<ul>
+<li>Repeat contained actions a specified number of times.</li>
+</ul></li>
+<li>Process List action
+
+<ul>
+<li>Define variables for each row in selected list with your actions</li>
+<li>Use special variables with Find/Replace, If Text Matches to quickly process mulitple find/replace</li>
+</ul></li>
+</ul></li>
+<li>Updated Custom Cleaner Actions
+
+<ul>
+<li>Find &amp; Replace actions
+
+<ul>
+<li>List support added (replaces Batch Find &amp; Replace)</li>
+<li>More prominately displays option values (m,s,w,x) for Regex</li>
+<li>Defaults to most common regex option: m - match lines, enabled.</li>
+<li>More prominately displays granularity for plain text finds</li>
+</ul></li>
+<li>If Text Matches action
+
+<ul>
+<li>Search history option added</li>
+<li>Insert special characters option added</li>
+<li>Now only displays valid capture groups, based on given regular expression.</li>
+</ul></li>
+<li>Sort Lines action
+
+<ul>
+<li>New options added:
+
+<ul>
+<li>Match case</li>
+<li>Ignore diacritic marks</li>
+<li>Skip leading whitespace for comparison</li>
+<li>Sort numbers as values</li>
+<li>Use a regular expression for comparison</li>
+</ul></li>
+</ul></li>
+<li>If-Match (aka Conditional) actions
+
+<ul>
+<li>Integrated option to modify results (invert, skip, limit results of match)</li>
+</ul></li>
+<li>Set Underline/Strikethrough action
+
+<ul>
+<li>New &#8220;By Word&#8221; option</li>
+</ul></li>
+<li>Extract Characters action
+
+<ul>
+<li>Replaces Extract Beginning Characters, Extract End Characters, and Extract Middle Characters</li>
+</ul></li>
+</ul></li>
+<li>New Cleaners
+
+<ul>
+<li>Ruler: Clear All Tab Stops - clear all tab stops from selected paragraph rulers.</li>
+<li>New BBCode-related tag cleaners</li>
+<li>Enable Ligatures, Disable Ligatures</li>
+<li>Remove Line Numbers - removes line numbers at the beginning of each line.</li>
+</ul></li>
+<li>Text Editor
+
+<ul>
+<li>Support for text editing with dark background in Dark Mode. (#1360)</li>
+<li>Explicit option to use Inspector Bar or old-style Ruler.</li>
+<li>Cleaner groups now more prominent</li>
+<li>Sidebar is now resizable</li>
+<li>Improved handling of line numbers</li>
+<li>When using regex, each match selection also displays its
+
+<ul>
+<li>capture group list</li>
+<li>replacement text result</li>
+</ul></li>
+</ul></li>
+<li>My Groups Editor
+
+<ul>
+<li>New editor in a single window interface.</li>
+<li>Dark mode support</li>
+<li>You can use an existing group as a template for creating a new group.</li>
+<li>Item tags replace colors, dynamically adjusting for Light / Dark Mode.</li>
+</ul></li>
+<li>My Cleaners Editor
+
+<ul>
+<li>New editor in a single window interface.</li>
+<li>Dark mode support</li>
+<li>Actions display options inline for a more compact display, where appropriate</li>
+<li>Container actions are more visually distinctive</li>
+<li>Container actions show number of contained actions</li>
+<li>New color scheme for action categories</li>
+<li>Disabled actions strikeout title</li>
+<li>Disabled actions no longer allow editing</li>
+<li>Action comments can contain returns &amp; tabs</li>
+<li>More robust auto-resize handling for actions with text fields</li>
+<li>Preview window shows invisibiles in cleaned text preview</li>
+<li>Improved performance when cleaner contains a lot of actions</li>
+<li>New find actions are now based on text search preferences</li>
+</ul></li>
+<li>New Preferences
+
+<ul>
+<li>Presentation
+
+<ul>
+<li>Appearance : use Light or Dark Mode or System theme</li>
+</ul></li>
+<li>Text Editing Interactive Search Defaults:
+
+<ul>
+<li>Search type</li>
+<li>Match Case option</li>
+<li>Match Lines option (for Regex)</li>
+</ul></li>
+</ul></li>
+<li>General Improvements
+
+<ul>
+<li>Pick cleaner window (used by Services, AppleScript) moves to active space as well</li>
+<li>Showing horizontal ruler (when toggling between plain/rich text) no longer hides first few lines of text.</li>
+<li>Action colorization provides dynamic color support between Dark/Light mode.</li>
+<li>Regex syntax coloring supports Dark/Light mode.</li>
+</ul></li>
+<li>TextSoap Agent Companion App
+
+<ul>
+<li>single app integrates with all editions of main TextSoap app</li>
+<li>provides more efficient interaction between agent/main app for better cleaning performance</li>
+<li>Global Cleaner Access (use within many of your favorite apps)</li>
+<li>Global Hot Keys (hot key to activate a cleaner within an app)</li>
+<li>AppleScripting</li>
+<li>Mac OS Services support</li>
+<li>Customized Services (bring specific cleaners into Service menu)</li>
+</ul></li>
+</ul>
+
+
+<h1 id="cleanereditor">Cleaner Editor</h1>
+
+<p>A custom cleaner is one or more user-defined actions that can be applied to text. For example, you can use a &#8220;Find and Replace&#8221; text action to set up an automated find and replace on given text. This action can include regular expressions, a powerful text matching syntax. Another example might be to apply another cleaner (either built-in or custom), and then add additional actions, allowing you to build on existing cleaners.</p>
+
+<h3 id="textvs.style">Text vs. Style</h3>
+
+<p>TextSoap supports working with both plain text and rich text. When working with rich text, the text formatting (style) of the text plays an additional role.</p>
+
+<p>You can make text change actions on rich text and TextSoap will attempt to maintain the existing character styles from the original text. This means that bold words stay bold, italic words remain italic, and underlining, fonts and text color stays intact, even as the text is updated.</p>
+
+<p>TextSoap also enables changing the underlying (character-level) format of your text. This is useful if you need to strip out existing styling like bold or italic, adjust the font, or size. TextSoap can perform the style changes selectively based on the underlying text.</p>
+
+<p>Important Note: Microsoft Word text may also use Stylesheets for formatting. Unfortunately, macOS support for RTF does not extend to using document-based stylesheets. TextSoap is unable to support maintaining these styles.</p>
+
+<h3 id="overview">Overview</h3>
+
+<p>The MyLibrary editor provides you with a single window interface for all your cleaners. A list of cleaners is displayed on the left along with some additional options: Import, Export, Remove.</p>
+
+<ul>
+<li>Import : Enables you to add cleaners from libraries or cleaner files. You select the files to import using the system dialog or drag the files into the window.
+
+<ul>
+<li>You can add multiple files</li>
+<li>You can selectively import the individual cleaners from within a file.</li>
+</ul></li>
+<li>Export : Enables you to save one or more cleaners. Cleaners can be saved as individual files or combined into a single library file. Used these files as backups or to share your cleaners with others.</li>
+<li>Remove : Allows you to delete multiple items (both cleaners and groups) in one action. TextSoap will prompt you one more time before deletion.</li>
+</ul>
+
+<p>Buttons:</p>
+
+<ul>
+<li>Add : Add a new cleaner or group.</li>
+<li>Duplicate : Duplicate the selected item.</li>
+<li>Export : Export the selected item.</li>
+<li>Delete : Delete the selected item.</li>
+</ul>
+
+<figure>
+<img src="images/custom_cleaner_editor1.jpg" alt="Custom Cleaner Editor" />
+<figcaption>Custom Cleaner Editor</figcaption>
+</figure>
+
+<h3 id="actionworkspace">Action Workspace</h3>
+
+<p>The action workspace defines the currently selected cleaner.</p>
+
+<ul>
+<li>Cleaner Name : Change name or other properties (author or description) of a cleaner. Click on the name at the top to display and edit its properties.</li>
+<li>Preview : Quickly test the current cleaner using the text in the clipboard workspace (or other specified open document).</li>
+<li>Action Toolbox : Categorized actions that you can add to a cleaner.
+
+<ul>
+<li>All : combination of Actions &amp; Cleaner actions.</li>
+<li>Actions : core actions within a cleaner you can add.</li>
+<li>Cleaners : Existing cleaners can be called as actions.</li>
+</ul></li>
+</ul>
+
+<p>Actions have common attributes:</p>
+
+<ul>
+<li>Show Details : toggle details of an action</li>
+<li>Name : type of action</li>
+<li>Additional properties : Disable (or enable) and edit comment for specific action</li>
+</ul>
+
+<figure>
+<img src="images/custom_cleaner_editor2.jpg" alt="Action Header" />
+<figcaption>Action Header</figcaption>
+</figure>
+
+<p>If action is disabled, the title is struck, details are hidden (and are no longer editable).</p>
+
+<figure>
+<img src="images/custom_cleaner_editor2a.jpg" alt="Action Header" />
+<figcaption>Action Header</figcaption>
+</figure>
+
+<p>Any comments are displayed as a tooltip when you hover your cursor over the title of the action.</p>
+
+<p>Container Actions</p>
+
+<p>This class of action can contain other actions, much like a folder holds files. They can be used as an organization tool (a simple Group action) or used to limit the text you wish to further work on (a Conditional). Containers have a visible notch to redirect your eye in the workflow, making the hierarchy easier to see.</p>
+
+<p>When a container action is disabled, the contained actions will NOT be executed.</p>
+
+<p>Additionally, containers have:</p>
+
+<ul>
+<li>Disclosure Button : Toggles whether items are displayed. Works similar to Finder&#8217;s folders.</li>
+<li>Contained Count : Indicates how many direct items are contained.</li>
+</ul>
+
+<figure>
+<img src="images/custom_cleaner_editor3.jpg" alt="Action List" />
+<figcaption>Action List</figcaption>
+</figure>
+
+<p>See <a href="my_cleaner_actions.html">My Cleaner Actions</a> for descriptions of the various core actions.</p>
+
+
+<h1 id="mycleaneractions">My Cleaner Actions</h1>
+
+<h3 id="findandreplaceactions">Find and Replace Actions</h3>
+
+<p>Common options. These options are common to the collection of Find and Replace actions. Specific changes for each action will be noted below.</p>
+
+<p><strong>Regex</strong> - Indicates whether this is a regular expression</p>
+
+<p><strong>Match Case</strong> - Require case matching, otherwise ignores text case (Uppercase A = Lowercase a)</p>
+
+<p><strong>Options</strong></p>
+
+<p><em>Textual matches</em></p>
+
+<ul>
+<li>Contains : match text anywhere</li>
+<li>Starts with : Start of match must be start of word</li>
+<li>Whole Words : Do not match partial words</li>
+<li>Ends with : End of match must be at end of word</li>
+</ul>
+
+<p><em>Regex matches</em></p>
+
+<ul>
+<li><p>Matches Lines (m) : Control the behavior of &#8220;^&#8221; and &#8220;$&#8221; in a pattern. By default these will only match at the start and end, respectively, of the input text. If this flag is set, &#8220;^&#8221; and &#8220;$&#8221; will also match at the start and end of each line within the input text.</p>
+
+<p>Sometimes called &#8220;Multiline&#8221;.</p></li>
+<li><p>Dot Matches Returns (s) : If set, a &#8220;.&#8221; in a pattern will match a line terminator in the input text. By default, it will not. </p>
+
+<p>Note that a carriage-return / line-feed pair in text behave as a single line terminator, and will match a single &#8220;.&#8221; in a RE pattern. Line terminators are \u000a, \u000b, \u000c, \u000d, \u0085, \u2028, \u2029 and the sequence \u000d \u000a.</p></li>
+<li><p>Use Unicode Words (w) : Controls the behavior of \b in a pattern. If set, word boundaries are found according to the definitions of word found in Unicode UAX 29, Text Boundaries. </p>
+
+<p>By default, word boundaries are identified by means of a simple classification of characters as either “word” or “non-word”, which approximates traditional regular expression behavior. The results obtained with the two options can be quite different in runs of spaces and other non-word characters.</p></li>
+<li><p>Allow comments (x) : If set, allow use of white space and (#comments) within patterns</p></li>
+</ul>
+
+<p><strong>Find</strong> - Text to find
+<br/>
+<strong>Replace</strong> - Text to replace</p>
+
+<h4 id="changingtextcasewhenreplacingusingregularexpressions">Changing text case when replacing using regular expressions</h4>
+
+<p>TextSoap supports additional commands to change the case of the replacement text.</p>
+
+<pre><code>    Cmd - Action
+    $U  - All future text is uppercased
+    $u  - Next character is uppercased
+    $L  - All future text is lowercased
+    $l  - Next character is lowercased
+    $E  - All future text case is preserved
+</code></pre>
+
+<p>You can use $u and $l with the capture groups. For example, on the following text:</p>
+
+<p>The big brown fox jumped over the blue cow</p>
+
+<p><strong>Find:</strong> (b\w+)
+<br/>
+<strong>Replace:</strong> $u$1</p>
+
+<p>Will capitalize the first letter of first capture group, the result is:</p>
+
+<p>The Big Brown fox jumped over the Blue cow</p>
+
+<p>Where all the matchees (words that start with b) are capitalized.</p>
+
+<h4 id="findandreplacewithlist">Find and Replace with List</h4>
+
+<p><strong>List</strong> - When you specify a list, the action will repeat for each row in the list, replacing references to $v{A}, $v{B}, $v{C}, $v{D} with the value in the specified column for the row.</p>
+
+<p>If you need to specify $v{..} w/o the preprocessing, use . For example: $v{A} would find &#8220;$v{A}&#8221; and not be replaced in the list processing.</p>
+
+<p><em>Note: For more advanced functionality, you can use the <strong>Process List</strong> action. However, do not use <strong>Find and Replace with List</strong> within a Process List group.</em></p>
+
+<hr />
+
+<h3 id="findandreplacetext">Find and Replace Text</h3>
+
+<p>Regular text fields may use the following special characters</p>
+
+<pre><code>\\ = backslash (\)
+\t = tab
+\n = end of line (return)
+\s = space
+\x{hhhh} = hex character value, ie. tab = \x{09}, space = \x{20}
+</code></pre>
+
+<h3 id="regexfindandreplacetext">Regex Find and Replace Text</h3>
+
+<p>When Regex option is selected, find text is a regular expression and is highlighted as such. See Reference on Regular Expressions for more details.</p>
+
+<p>Replace text supports both the characters supported in regular text fields (\t, \n, etc) as well as replacement template ($0 for entire match, $1 for first captured group, etc).</p>
+
+<h3 id="createhyperlinkurls">Create Hyperlink URLs</h3>
+
+<p>This is a special variant of Batch Find and Replace Text action.</p>
+
+<p>Use the find field to match the text (most common is simple text match, but you can use an expression as needed). Use $v{col:A} to specify the column A value. See above on &#8220;Using Lists&#8221; for more details on specifying the columns within the list.</p>
+
+<p>The &#8220;replace&#8221; value is somewhat unique. The replace field specifies the text used in the hyperlink. If column B specifies a complete URL, you can simply use $v{col:B}.</p>
+
+<h2 id="generalactions">General Actions</h2>
+
+<h3 id="titlecaseextended">Title Case (Extended)</h3>
+
+<p>TextSoap has a built-in cleaner called &#8220;Capitalize with Title Case&#8221;. However, if you need a more customized behavior, you can use this action, which provides for extending or replacing both the small words list, and the special words list used.</p>
+
+<p>Small words specify words that are to not be capitalized.
+Special Words specify words that are keep the case as specified in the list.</p>
+
+<p>You can often use this in combination with the &#8220;Capitalize Common Tech Names&#8221; cleaner, which will fix up special-cased words like MacBook, iPhone, TextSoap, etc.</p>
+
+<h3 id="customtextwrap">Custom Text Wrap</h3>
+
+<p>TextSoap has built-in cleaners to hard wrap text at 50, 60, and 70 character boundaries. You can use this action to specify a custom value. The custom wrap will word wrap the text, attempting to keep lines &lt;= the specified character length.</p>
+
+<h3 id="quotetext">Quote Text</h3>
+
+<p>Quoting references an old style quoting where a common mark such as &#8216;&gt;&#8217; is used before text to quote some previous text.</p>
+
+<p>The options include:</p>
+
+<p>Quote level (0&#8211;10) : specifies how many of the &#8220;Mark&#8221; characters to use.</p>
+
+<p>Wrap text : allows for re-wrapping the text at a fix character length</p>
+
+<p>Quote Chars:</p>
+
+<p>Prefix: typically a space to provide padding</p>
+
+<p>Mark: The character used to quote. Commonly &#8216;&gt;&#8217;, but can be any character.</p>
+
+<p>Suffix: padding after the mark.</p>
+
+<h3 id="inserttext">Insert Text</h3>
+
+<p>Allows for inserting a piece of text either before, after or replacing the text.</p>
+
+<h3 id="tagtext">Tag Text</h3>
+
+<p>Allows for simple tagging of text. Often used as part of a conditional (see below).
+While HTML tags are most common, you can specify any tag and it will surround the given text with the open tag and close tag.</p>
+
+<h3 id="extracttext">Extract Text</h3>
+
+<p>Expression : Regular expression to match the text to extract.</p>
+
+<p>Capture Group : Result group to use. $0 indicates entire match, but you can specify a sub group.</p>
+
+<p>Match Case : Indicates whether to require case matching. If not selected, text case is ignored.</p>
+
+<p>Append Result: If selected, will return original text along with extracted text appended. Otherwise, will replace the text with the extracted text.</p>
+
+<h3 id="extractcharacters">Extract Characters</h3>
+
+<p>This action will extract the specified character count from the given text.</p>
+
+<ul>
+<li>From Beginning : Specify number of characters from the beginning of text.</li>
+<li>From End : Specify number of characters from the end of text.
+result, where n is number of characters.</li>
+<li>Starting At : Specify the starting position and length of the text.</li>
+</ul>
+
+<h3 id="performnamedservice">Perform Named Service</h3>
+
+<p>This action will tap into the macOS Services. Enter in the name of the Service and it will perform that Service on the given text.</p>
+
+<p>This can be useful if you have an app that provides a Service menu item that gives you a specific transformation that you cannot duplicate within TextSoap itself.</p>
+
+<p>Services handling in macOS is tricky on the best of days. In general, it is not recommended, but is available if it is the only way to tap into specific functionality.</p>
+
+<p><em>A big caveat: The name needs to match exactly, and with some apps, may exist in a subfolder even though it never appears as such. BBEdit is an example of this. All its Service items need to be prefixed with a &#8220;BBEdit/&#8221; in order to be correctly accessed.</em></p>
+
+<h3 id="hyperlinkstotext">Hyperlinks to Text</h3>
+
+<p>This action will find rich text with a link attribute and extract the link out as specified.</p>
+
+<p>Result Pattern: text template used to extract the link. Default demonstrates how to convert to the HTML &#8220;&lt;a&gt;&#8221; tag.</p>
+
+<pre><code>&lt;a href=&quot;{link}&quot;&gt;{text}&lt;/a&gt;
+</code></pre>
+
+<p>Note: Special tokens will substitute the original text &#8220;{text}&#8221; and the link, &#8220;{link}&#8221;.</p>
+
+<p>Keep hyperlinks active : optionally keep the link specified as clickable.</p>
+
+<h3 id="dateformatter">Date Formatter</h3>
+
+<p>This action will format dates in the preferred order. It can replicate all of the built-in Normalize Dates cleaners. In addition, it supports DateNow expansion as well.</p>
+
+<p><strong>Date</strong> - Determines whether you are working with existing dates found in text or expanding ${DATENOW}</p>
+
+<p><strong>Date Format</strong> </p>
+
+<figure>
+<img src="images/my_cleaner_actions1.jpg" alt="Date Format Options" />
+<figcaption>Date Format Options</figcaption>
+</figure>
+
+<p>If choosing None, Short, Medium, Long, Full, can also specify the <strong>time format</strong>.</p>
+
+<figure>
+<img src="images/my_cleaner_actions2.jpg" alt="Time Format Options" />
+<figcaption>Time Format Options</figcaption>
+</figure>
+
+<p><strong>Template</strong></p>
+
+<p>When specifying Template format, full customization is available. The following chart gives all the various template keys when formatting dates and times:</p>
+
+<figure>
+<img src="images/my_cleaner_actions3.jpg" alt="Template Format Options" />
+<figcaption>Template Format Options</figcaption>
+</figure>
+
+<h2 id="lineactions">Line Actions</h2>
+
+<h3 id="sortlines">Sort Lines</h3>
+
+<p>This action lets you sort the lines of the given text.</p>
+
+<ul>
+<li>Reverse sort : Sorts in descending order</li>
+<li>Match case : When comparing, match based on the case of text.</li>
+<li>Numbers match by value : Mimic Finder&#8217;s numeric sorting of numbers.</li>
+<li>Ignore whitespace : Any whitespace at the beginning of the line is ignored.</li>
+<li>Ignore diacritic marks : Any diacritics are ignored. Example: ä = a</li>
+<li>Use expression : Use the regular expression &amp; result template to transform the line before comparing.</li>
+</ul>
+
+<h3 id="addtexttolines">Add Text to Lines</h3>
+
+<p>Add text to the beginning or end of each line of text.</p>
+
+<h3 id="removetextfromlines">Remove Text from Lines</h3>
+
+<p>Remove given text from the beginning or end of each line of text. Ignored if the given text is not found.</p>
+
+<h3 id="foreachline">For Each Line</h3>
+
+<p>Convenient approach to operating on each line individually. Text is divided up into lines (using return markers), and then actions contained in the For Each Line group are applied.</p>
+
+<h3 id="numberlines">Number Lines</h3>
+
+<p><strong>Lines</strong> : All, Non-Empty. If Non-Empty is selected, will skip over lines that are just returns.</p>
+
+<p><strong>Start</strong> : Starting number</p>
+
+<p><strong>Increment</strong> : Increment for each number.</p>
+
+<p><strong>Format</strong> : A simple formatting string that provides for padding, tabs and spaces</p>
+
+<pre><code>0  - minimum padding. 0 = No padding (1), 000 = 3 digits min (001)
+\t - tab character, Useful for using tab to separate line number and text.
+\s - space character. optional. More obvious than a just a &quot; &quot; character (which also works)
+</code></pre>
+
+<h2 id="styleactions">Style Actions</h2>
+
+<p>When working with rich text (vs. plain text), you can change various attributes of the text. These actions can be used globally (for example, to change a font) or selectively on text using conditionals.</p>
+
+<h3 id="setfont">Set Font</h3>
+
+<p>An option is applied only if selected. To change only one aspect of a font, leave the remaining options unselected. For example, to set the font, but keep existing sizes, along with bold and italics, only select the &#8220;Font family&#8221; option and specify the new font family to use.</p>
+
+<p>Font family: The font name to use. For example &#8220;Helvetica Neue&#8221;.</p>
+
+<p>Typeface: When selected, specify plain (to remove any bold &amp; italic), bold and/or italic. Plain option overrides bold and italic.</p>
+
+<p>Size: The size of the font to use.</p>
+
+<h3 id="setexactfont">Set Exact Font</h3>
+
+<p>*Note: Use more sparingly to specify the exact font name. This allows for additional choices outside of more standard &#8220;bold&#8221; and &#8220;italic&#8221;.</p>
+
+<p>Exact font: The exact font to use. For example &#8220;HelveticalNeue-MediumItalic&#8221;</p>
+
+<p>Size: The size of the font to use.</p>
+
+<h3 id="setstyle">Set Style</h3>
+
+<p>A subset feature from Set Font, which changes the typeface style. Useful if wanting to simply bold or italicize text.</p>
+
+<p><em>If using <strong>Set Font</strong>, specify the style there. <strong>Set Style</strong> is not necessary and will just cause additional processing of the text.</em></p>
+
+<figure>
+<img src="images/my_cleaner_actions4.jpg" alt="Style Options" />
+<figcaption>Style Options</figcaption>
+</figure>
+
+<h3 id="adjustfontsize">Adjust Font Size</h3>
+
+<p>Relative changes to the font sizes. To make everything 5 points larger, set to +5. 12pt becomes 17pt, 20pt becomes 25pt. To reduce everything by 10 pts, set to &#8211;10 pts. 24pt becomes 14pt, 48pt becomes 38pt.</p>
+
+<h3 id="setunderlineattributes">Set Underline Attributes</h3>
+
+<p>Style: Single, Thick, Double to specify line style. None = remove this attribute (if it exists).</p>
+
+<p>Pattern: Line patters defined in Apple&#8217;s Rich Text. </p>
+
+<p>Color: Color of the line.</p>
+
+<h3 id="setstrikethroughattributes">Set Strikethrough Attributes</h3>
+
+<p>Style: Single, Thick, Double to specify line style. None = remove this attribute (if it exists).</p>
+
+<p>Pattern: Line patters defined in Apple&#8217;s Rich Text. </p>
+
+<p>Color: Color of the line.</p>
+
+<h3 id="setsupersubscriptattribute">Set Super/Subscript Attribute</h3>
+
+<p>Script attribute:</p>
+
+<ul>
+<li>Superscript : make text superscript</li>
+<li>None : remove any superscript/subscript attribute</li>
+<li>Subscript: make text subscript</li>
+</ul>
+
+<h3 id="settextcolor">Set Text Color</h3>
+
+<p>Set color of text.</p>
+
+<h3 id="setbackgroundcolor">Set Background Color</h3>
+
+<p>Set color of background.</p>
+
+<h3 id="removecharacterattribute">Remove Character Attribute</h3>
+
+<p>Remove the specified attribute of text.</p>
+
+<h2 id="conditionals">Conditionals</h2>
+
+<p>Conditional blocks are a way to apply specific actions only to text that matches given criteria. The actions inside the block can be virtually anything. Conditionals can even be nested to allow you to match more and more specific criteria. Using nest conditionals, it is possible to find words that are both bold and all uppercase. This example finds all capitalize bold words and changes the text color to red.</p>
+
+<figure>
+<img src="images/custom_cleaner_actions1.jpg" alt="Example 1" />
+<figcaption>Example 1</figcaption>
+</figure>
+
+<h4 id="modifyresults">Modify Results</h4>
+
+<p>This option enables you to adjust the results of a match.</p>
+
+<ul>
+<li>Invert Matches : This will flip the match results. For example, if you used a conditional to find bold words and then used invert matches, the match would be on all non-bolded words.
+In some cases, it is easier to specify the text you don&#8217;t want and then invert the results.</li>
+<li>Limit Matches : If multiple matches are found, this will limit the matches used.</li>
+<li>Skip Matches : If multiple matches are found, this will skip the first N matches.</li>
+</ul>
+
+<h3 id="iftextmatches">If Text Matches</h3>
+
+<p>Find the provided text and applies related actions to it. </p>
+
+<p>When using a regular expression, you can also specify which capture group to use. $0 is the default for entire matched string. However, you could specify a find as <tag>(.*?)</tag> and use $1 to only specify the text within the given tag.</p>
+
+<h3 id="foreachline">For Each Line</h3>
+
+<p>Process each non-blank line of the text. This action does not support modifier options.</p>
+
+<h3 id="iffontmatches">If Font Matches</h3>
+
+<p>Finds text that matches the font family, size(s), or face attributes (italic or bold). All the attributes can be found independently of each other. For example, you can specify Typeface: Italic to only find italic text, no matter its font family or size.</p>
+
+<h3 id="iftexthasattribute">If Text Has Attribute</h3>
+
+<p>Finds text that matches the specified attribute.</p>
+
+<hr />
+
+<h2 id="misc">Misc</h2>
+
+<h3 id="group">Group</h3>
+
+<p>Group containers encapsulate a hierarchy of actions. They represent the foundation for conditional actions and macros.</p>
+
+<p>Additionally, they allow for encapsulated organization of actions. A group container controls whether the actions within are applied. If the container is disabled, all the contained actions are ignored. This is much easier than individually disabling actions.</p>
+
+<p>If you move the group, all its contained actions move with it. And if you delete a group, all the actions within are deleted.</p>
+
+<h3 id="definelist">Define List</h3>
+
+<p>You can define a table of data which can be used with other actions.</p>
+
+<p>The table consists of rows with up to 4 columns of text. You can copy or paste tab-delimited text and use drag-n-drop to re-arrange rows.</p>
+
+<p>Click Edit to display the table editor.</p>
+
+<ul>
+<li>Bonus: Hold down the option key when you click Edit to edit it as tab-delimited text. Each line of text represents a row. Any columns defined past 4 are ignored.</li>
+</ul>
+
+<h3 id="runautomatorworkflow">Run Automator Workflow</h3>
+
+<p>This action runs an Automator Workflow. Workflows are located at:</p>
+
+<pre><code>~/Library/Application Support/TextSoap/Workflows/
+</code></pre>
+
+<p><em>Note: The result of this action will be plain text</em></p>
+
+<h3 id="note">Note</h3>
+
+<p>This is a basic action that allows you to store notes within your cleaner. This is useful if you need to add a note to remind yourself of some detail in your cleaner. It does nothing to the text (it is ignored) when the cleaner is applied.</p>
+
+<p>Additionally, if you want to make notes for a particular action, you can use the comment button on the individual action to store a short note with it.</p>
+
+<h3 id="deletetext">Delete Text</h3>
+
+<p>Simply deletes the provided text. This is most commonly used as part of a conditional.</p>
+
+<!--
+
+### Copy Text to Clipboard
+
+Will copy the current text to the clipboard. You might use this at the end of a cleaner to always place the results on the clipboard.
+
+-->
+
+<h2 id="macros">Macros</h2>
+
+<p>Macros are way to specify a group of actions that you can use multiple times within a custom cleaner. Rather than duplicating the actions, you can create a macro with the actions and apply it instead.</p>
+
+<h3 id="definemacro">Define Macro</h3>
+
+<p>This action defines a Macro. It is also a group container. You specify the name of the Macro (which will be used later with the &#8220;Apply Macro&#8221; action). Add your actions to this group container.</p>
+
+<p>Note: The contained actions within will only be applied using Apply Macro action. </p>
+
+<h3 id="applymacro">Apply Macro</h3>
+
+<p>To apply the actions defined within a Macro, use this action. It provides a popup list of names defined macros within the cleaner. The contained actions of the Define Macro group will be applied to the given text.</p>
+
+<hr />
+
+<p>Here is a slightly altered version of our cleaner example:</p>
+
+<figure>
+<img src="images/custom_cleaner_actions2.jpg" alt="Example 2" />
+<figcaption>Example 2</figcaption>
+</figure>
+
+<p>Explanation: In this example, you create a macro the changes the text to red.</p>
+
+<p>Instead of nesting the two conditional actions, they are separated, which means any text that is bold, or any words that are all uppercase will have the macro applied, changing the text to red.</p>
+
+<p>If you wanted to change the text color to green, it now requires only one change. You can add additional actions to the macro definition and they will use used everywhere the macro is applied.</p>
+
+
+<h1 id="customgroupeditor">Custom Group Editor</h1>
+
+<h3 id="overview">Overview</h3>
+
+<p>A custom group is a collection of cleaners, either pre-built or custom, along with optional labels and dividers providing quicker access to cleaners used for a specific task.</p>
+
+<p>When you create a new custom group, it can optionally be based on an existing group.</p>
+
+<figure>
+<img src="images/group_editor1.jpg" alt="" />
+</figure>
+
+<h3 id="editing">Editing</h3>
+
+<p>The group workspace defines the currently selected group. You can rename the group by clicking on its name at the top and editing the name.</p>
+
+<p>The workspace contains the list of cleaners, labels and dividers, referred to as group items.</p>
+
+<p>To add a desired cleaner group item, find it in the list on right and either double-click on the name to add it, or drag the cleaner item into the group. Double-clicking will be appended to the current list. There are options to insert a label or a divider using the buttons at the bottom of the list.</p>
+
+<p>You can directly manipulate group items within the list:</p>
+
+<ul>
+<li>Drag items to rearrange them.</li>
+<li>Change the color using the popup button. Black/White (Automatic) will display text as black when in light mode and as white when in dark mode. Each of the other colors will adapted based on the whether the app is in light mode or dark mode.</li>
+<li>Select the item and press Delete key (or select Edit &gt; Delete) to remove the item from the list.</li>
+<li>Double-click on the label to change its text.</li>
+</ul>
+
+
+<h1 id="yourfirstcleaner">Your First Cleaner</h1>
+
+<h3 id="tutorial">Tutorial</h3>
+
+<p>The best way to learn about custom cleaners is to jump in and create one. Let&#8217;s create a simple custom cleaner to fix any places where TextSoap is not properly capitalized. We have some sample text above to test against.</p>
+
+<p>First we create a new cleaner and give it a useful name. Let&#8217;s call it &#8220;Fix TextSoap Spellings&#8221;</p>
+
+<figure>
+<img src="images/cleaner_tutorial_1a.jpg" alt="" />
+</figure>
+
+<p>Next, we&#8217;ll add an action. For this tutorial, you will want to select the <strong>Find and Replace</strong> action. </p>
+
+<figure>
+<img src="images/cleaner_tutorial_1b.jpg" alt="" />
+</figure>
+
+<p>In the Find field, enter &#8220;textsoap&#8221;
+In the Replace field, enter &#8220;TextSoap&#8221;</p>
+
+<figure>
+<img src="images/cleaner_tutorial_1c.jpg" alt="" />
+</figure>
+
+<p>We can test the cleaner with some provided sample text. Select, copy and then paste the following paragraph into the clipboard workspace (or a new text document).</p>
+
+<h3 id="textsample">Text Sample</h3>
+
+<hr />
+
+<p>Sample text: Textsoap offers a collection of tools to automate tedious manual text changes. textSOAP can save you time and increase your productivity. Once people use textsoap, they quickly find it indispensable. </p>
+
+<hr />
+
+<figure>
+<img src="images/cleaner_tutorial_1d.jpg" alt="" />
+</figure>
+
+<p>Select the Preview button on the top of the window to test your cleaner.</p>
+
+<figure>
+<img src="images/cleaner_tutorial_1e.jpg" alt="" />
+</figure>
+
+<p><strong>How This Cleaner Works</strong></p>
+
+<p>By default, the Find and Replace Text action ignores case with text matching. If you need to match text specifically with case, remember to select the &#8220;Match Case&#8221; option.</p>
+
+<p>In our case, &#8220;Textsoap&#8221;, &#8220;textSOAP&#8221; and &#8220;textsoap&#8221; will all match with the &#8220;textsoap&#8221; search. The action then replaces the found text with the correctly cased version &#8220;TextSoap&#8221;.</p>
+
+<h4 id="congratulations">Congratulations!</h4>
+
+<p>You have created your first custom cleaner. You can now use this custom cleaner just like any of the pre-built cleaners.</p>
+
+
+<h1 id="removingparametersfromaurl">Removing parameters from a URL</h1>
+
+<h2 id="tutorial">Tutorial</h2>
+
+<p>We&#8217;re going to create a cleaner that takes a given URL and removes the extraneous parameters attached to it, leaving the main URL intact.</p>
+
+<p>Original:
+http://test.com/directory/123?utm_source=google&amp;utm_medium=email&amp;utm_campaign=newsletter</p>
+
+<p>Desired Result:
+http://test.com/directory/123</p>
+
+<p>We accomplish this with a custom cleaner, using a <strong>Regex Find and Replace</strong> action.</p>
+
+<p>Create a new cleaner and give it a useful name.</p>
+
+<figure>
+<img src="images/cleaner_tutorial_2a.jpg" alt="" />
+</figure>
+
+<p>Add a Regex Find and Replace action.</p>
+
+<figure>
+<img src="images/cleaner_tutorial_2b.jpg" alt="" />
+</figure>
+
+<p>Now for your regular expression. We&#8217;ll break this down in a minute. Regular expressions provide a powerful way to match text based on characteristics of text.</p>
+
+<figure>
+<img src="images/cleaner_tutorial_2c.jpg" alt="" />
+</figure>
+
+<p>Here is the expression we&#8217;re trying to use to match the text.</p>
+
+<pre><code>(http://.*?)\?.*?\s
+</code></pre>
+
+<p>Let&#8217;s break it down:</p>
+
+<pre><code>(http://.*?)
+</code></pre>
+
+<p>find and capture URL starting with http:// and any characters (non-greedy)</p>
+
+<pre><code>\?
+</code></pre>
+
+<p>literal ? in expression </p>
+
+<pre><code>.*?
+</code></pre>
+
+<p>all the text that follows the literal ? . This is also non-greedy so we can match the first whitespace we hit with the next part.</p>
+
+<pre><code>\s
+</code></pre>
+
+<p>whitespace character. Any tab, space, return that indicates the end of the URL.</p>
+
+<p>&#8211;</p>
+
+<p>The (non-greedy) match any character sequence &#8216;.*?&#8217; allows you to find http:// up through the &#8216;?&#8217; It acts as a simple wildcard character. Non-greedy means it will find the shortest match possible.</p>
+
+<p>The parentheses allow you to capture part of the matched text. In this case we want to capture everything from the http:// until we get to the &#8216;?&#8217; (which is the delimiter for parameters in a URL). We can later use that captured string.</p>
+
+<p>When replacing a regular expression match, you can use the some special values to indicate parts of the matched text.</p>
+
+<p>$0 is used to indicate the entire match (for example, if you wanted to augment your text)
+$1 specifies the first captured group. In our case, it is the base URL.</p>
+
+<p>So we enter in $1 as the replacement for the match.</p>
+
+<p>We can now test the cleaner. We&#8217;ll place the previous text into the clipboard workspace (or an text document in TextSoap). </p>
+
+<figure>
+<img src="images/cleaner_tutorial_2d.jpg" alt="" />
+</figure>
+
+<p>Select the preview button at the top of the custom cleaner editor to test the cleaner.</p>
+
+<figure>
+<img src="images/cleaner_tutorial_2e.jpg" alt="" />
+</figure>
+
+<p>In our test, we see that we also lost a blank line. That&#8217;s because we matched a whitespace character, but didn&#8217;t keep it. This would also cause URLs to smash up against any words that followed it.</p>
+
+<p>Let&#8217;s fix this. We&#8217;ll capture the whitespace (which could be a space, a tab, a return) and make sure it&#8217;s included.</p>
+
+<figure>
+<img src="images/cleaner_tutorial_2f.jpg" alt="" />
+</figure>
+
+<p>We placed parens <strong>( )</strong> around the \s to capture the whitespace that follows the parameters.
+And then we add that captured group to our replacement string.</p>
+
+<p>And now our test looks correct:</p>
+
+<figure>
+<img src="images/cleaner_tutorial_2g.jpg" alt="" />
+</figure>
+
+
+<h1 id="usinglistsinyourcleaners">Using Lists in Your Cleaners</h1>
+
+<h2 id="tutorial">Tutorial</h2>
+
+<p>Lists are a powerful feature in TextSoap. Rather than creating individual find and replace actions for each piece of data, you can create a template find and replace action and connect it to a list of data. The action is then applied with each row of the data.</p>
+
+<p>The following actions currently be used within lists:</p>
+
+<ul>
+<li>Find and Replace Text</li>
+<li>Create Hyperlink URLs</li>
+<li>If Matches Text</li>
+</ul>
+
+<p>Let&#8217;s create an example using Create Hyperlink URLs. This action will take matches found in column A and convert them to hyperlinks in Rich Text using the link address in column B.</p>
+
+<p>For URLs like https://www.unmarked.com or https://www.apple.com, we could just use the cleaner &#8216;Convert URLs to Hyperlinks&#8217;. In this example, we will take it one step further. We will take references to &#8216;Unmarked Software&#8217; and &#8217;Apple and link them to the appropriate URL.</p>
+
+<p>First, we will create a new cleaner and call it &#8220;Lists Example&#8221;. Then we will add a <strong>Define List</strong> action.</p>
+
+<figure>
+<img src="images/cleaner_tutorial_3a.jpg" alt="" />
+</figure>
+
+<p>Click on Edit to add some table data. We set the column count to 2. Column A will be company names, and column B will be the associated URLs.</p>
+
+<p>We will fill it with following data:</p>
+
+<pre><code>Unmarked Software   https://www.unmarked.com
+Apple   https://www.apple.com
+TextSoap    https://textsoap.com/
+</code></pre>
+
+<figure>
+<img src="images/cleaner_tutorial_3b.jpg" alt="" />
+</figure>
+
+<p>For this example, we have any entry for Unmarked Software, Apple, and TextSoap.</p>
+
+<p>To use a list, you add a <strong>Process List</strong> container action. Then add the action(s) you want to be processed using the list data. The cleaner will process each row in the list, passing the data to each of the actions contained.</p>
+
+<p>Now add a &#8220;Create Hyperlink URLs&#8221; action and specify we want match column A ( <strong>$v{A}</strong> ) and add the hyperlink indicated by column B ( <strong>$v{B}</strong> ).</p>
+
+<figure>
+<img src="images/cleaner_tutorial_3c.jpg" alt="" />
+</figure>
+
+<h4 id="sampletext">Sample text</h4>
+
+<hr />
+
+<p>Unmarked Software prepares for the release of macOS Mojave from Apple. TextSoap 9 has been tested against macOS Sierra and looks to be compatible.</p>
+
+<hr />
+
+<p>Because we want to create hyperlinks, we need to to make sure the clipboard workspace we test against is defined as rich text.</p>
+
+<figure>
+<img src="images/cleaner_tutorial_3d.jpg" alt="" />
+</figure>
+
+<p>And here&#8217;s what the preview looks like:</p>
+
+<figure>
+<img src="images/cleaner_tutorial_3e.jpg" alt="" />
+</figure>
+
+<p>With this cleaner, we can now add a name and URL to the list data to handle more hyperlinks.</p>
+
+<p>You can also copy and paste the Define List action to another cleaner if you want to use the data somewhere else.</p>
+
+
+<h1 id="matchingtypefacesattributes">Matching Typefaces, Attributes</h1>
+
+<h2 id="tutorial">Tutorial</h2>
+
+<p>TextSoap is great for finding and replacing text, but you can also change text based on its style attributes.</p>
+
+<p>In this tutorial, we will use conditionals to match text with specific character style and then change the underlying text.</p>
+
+<p>We will focus on a common request, converting bold and italic text to text with specified HTML tags.</p>
+
+<h3 id="sampletext:">Sample text:</h3>
+
+<hr />
+
+<p>Here is some text that is <strong>bold</strong> or <em>italic</em> or <strong><em>both</em></strong>. It can even be <u>underlined</u>.</p>
+
+<hr />
+
+<figure>
+<img src="images/cleaner_tutorial_4a.jpg" alt="" />
+</figure>
+
+<p>Start by creating a new cleaner called &#8220;HTML Tags for Text Styles&#8221;</p>
+
+<figure>
+<img src="images/cleaner_tutorial_4b.jpg" alt="" />
+</figure>
+
+<h4 id="taggingboldtext">Tagging Bold Text</h4>
+
+<p>To match bold text, start by adding <strong>If Matches Font</strong> action. The action matches specific font family, typeface (like bold, italic) and size as specified.</p>
+
+<p>This is a category of actions known as <strong>Conditionals</strong>. With it, you can match a subset of the text, then perform a series of actions on that subset. Since we are looking for bold text, we select the &#8220;Typeface&#8221; option and select &#8220;Bold&#8221;.</p>
+
+<figure>
+<img src="images/cleaner_tutorial_4c.jpg" alt="" />
+</figure>
+
+<p>We&#8217;ll apply the cleaner <strong>HTML Tag: Bold</strong> to any found bold text.</p>
+
+<p><em>Tip: To easily add cleaners to a conditional, select the conditional, then double-click on the action or apply cleaner you wish to embed. This will add the action at the end of the list inside the conditional.</em></p>
+
+<figure>
+<img src="images/cleaner_tutorial_4d.jpg" alt="" />
+</figure>
+
+<p><em>Alternate: You could use &#8220;HTML Tag: Strong&#8221; instead, as needed.</em></p>
+
+<p>Now you can test it with the sample text:</p>
+
+<figure>
+<img src="images/cleaner_tutorial_4e.jpg" alt="" />
+</figure>
+
+<h4 id="taggingitalictext">Tagging Italic Text</h4>
+
+<p>Next, we do a similar thing for italicized text. Add a new <strong>If Matches Font</strong> action, check <strong>Typeface</strong>, then select <strong>Italics</strong> and embed the apply cleaner action <strong>HTML Tag: Italic</strong> or alternatively, <strong>HTML Tag: Emphasized</strong>.</p>
+
+<figure>
+<img src="images/cleaner_tutorial_4f.jpg" alt="" />
+</figure>
+
+<p>And test it again to see both italic text and bold text are tagged.</p>
+
+<figure>
+<img src="images/cleaner_tutorial_4g.jpg" alt="" />
+</figure>
+
+<p>Finish by making the text plain, removing any bold or italic font. Add <strong>Set Font</strong> action to the end of the action list. Then select <strong>Typeface</strong>, then <strong>Plain</strong> option.</p>
+
+<p><strong>Plain</strong> is a special option which removes any other typefaces. Finally, test the results with the sample text.</p>
+
+<figure>
+<img src="images/cleaner_tutorial_4h.jpg" alt="" />
+</figure>
+
+<p>You can similarly search for underline style using the <strong>If Has Attribute</strong>. Each conditionally only works on that specific text.</p>
+
+<figure>
+<img src="images/cleaner_tutorial_4i.jpg" alt="" />
+</figure>
+
+<figure>
+<img src="images/cleaner_tutorial_4j.jpg" alt="" />
+</figure>
+
+
+<h1 id="date-relatedcleaners">Date-related Cleaners</h1>
+
+<p><strong>Normalize Dates to Short Format</strong></p>
+
+<p>Normalizes Dates to Short format (format is based on System Text Preferences).</p>
+
+<p><strong>Normalize Dates to Medium Format</strong></p>
+
+<p>Normalizes Dates to Medium format (format is based on System Text Preferences).</p>
+
+<p><strong>Normalize Dates to Long Format</strong></p>
+
+<p>Normalizes Dates to Long format (format is based on System Text Preferences).</p>
+
+<p><strong>Normalize Dates to Full Format</strong></p>
+
+<p>Normalizes Dates to Full format (format is based on System Text Preferences).</p>
+
+<p><strong>Normalize Dates to MM-DD-YYYY</strong></p>
+
+<p>Normalizes Dates to MM-DD-YYYY format.</p>
+
+<p><strong>Normalize Dates to DD-MM-YYYY</strong></p>
+
+<p>Normalizes Dates to DD-MM-YYYY format.</p>
+
+<p><strong>Normalize Dates to YYYY-MM-DD</strong></p>
+
+<p>Normalizes Dates to YYYY-MM-DD format.</p>
+
+<hr />
+
+<p><strong>DateNow Expansion</strong></p>
+
+<p>DateNow Expansion is a more advanced cleaner and requires a deeper dive into how it all works, particularly beyond the basic use case.</p>
+
+<p>The basic use of the DateNow Expansion cleaner is to replace ${DATENOW} with today&#8217;s date (using the localized medium date format).</p>
+
+<p>${DATENOW} = &#8216;Apr 21, 2017&#8217;.</p>
+
+<h3 id="simpleformatting">Simple Formatting</h3>
+
+<p>DateNow expansion has some additional formatting available. You can specify one of the system formats (Short, Medium, Long, Full) by using the these forms of the DATENOW token:</p>
+
+<p>${DATENOW-SHORT} = 04/21/2017</p>
+
+<p>${DATENOW-MEDIUM} = Apr 21, 2017 </p>
+
+<p>${DATENOW-LONG} = April 21, 2017</p>
+
+<p>${DATENOW-FULL} = Friday, April 21, 2017</p>
+
+<p>This formatting will use the localized formatting, so it will reflect your current Preference settings and locale.</p>
+
+<h3 id="basiccustomformatting">Basic Custom Formatting</h3>
+
+<p>TextSoap includes three additional built-in cleaners to normalize dates, and you can specify one of these formats as well:</p>
+
+<p>${DATENOW-MM-DD-YYYY} = 04&#8211;21&#8211;2017</p>
+
+<p>${DATENOW-DD-MM-YYYY} = 21&#8211;04&#8211;2017</p>
+
+<p>${DATENOW-YYYY-MM-DD} = 2017&#8211;04&#8211;21</p>
+
+<p>These are all the same formats used by the various Normalize Dates cleaners.</p>
+
+<h3 id="usingthiscleaner">Using this cleaner</h3>
+
+<p>There are a couple ideas for using this cleaner. </p>
+
+<ul>
+<li><p>You can have text defined as ${DATENOW} or one of the formatting variations and the cleaner will replace those with today&#8217;s date.</p></li>
+<li><p>You may have some custom designator (like $DATE or {TODAY} ). With a custom cleaner, you can find $DATE, or {TODAY}, replace it with ${DATENOW} and then apply the DateNow Expansion cleaner.</p></li>
+</ul>
+
+<blockquote>
+<blockquote>
+<figure>
+<img src="images/datenow1.jpg" alt="" />
+</figure>
+
+<p>Tip: If you are using a regular expression, remember to escape the $ char with a backslash (), since it has special meaning in both the Find AND Replace text.</p>
+
+<figure>
+<img src="images/datenow2.jpg" alt="" />
+</figure>
+</blockquote>
+</blockquote>
+
+<ul>
+<li>You can also use find and replace to change ${DATENOW} to a specific formatted version. Find ${DATENOW} replace with ${DATENOW-LONG} or other formatted version and then apply the DateNow Expansion cleaner.</li>
+</ul>
+
+<blockquote>
+<blockquote>
+<figure>
+<img src="images/datenow3.jpg" alt="" />
+</figure>
+</blockquote>
+</blockquote>
+
+<ul>
+<li>You can insert a ${DATENOW} token via a custom cleaner and then apply the DateNow Expansion cleaner to convert it to the current date.</li>
+</ul>
+
+
+<h1 id="htmlcleaners">HTML Cleaners</h1>
+
+<p><strong>Extract Text from HTML Source</strong></p>
+
+<p>Cleans up HTML raw text. It strips out anything between &#8216;&lt;&#8217; and &#8216;&gt;&#8217;. Extract the text contents from HTML source with this cleaner. It also handles Ampersand escape codes (  or Œ) and removes tab characters and multiple carriage returns.</p>
+
+<hr />
+
+<p><strong>HTML Entity to Text</strong></p>
+
+<p>Convert known HTML entities to their text equivalent. Supports all the standard HTML entities and most of the Unicode-based entities.</p>
+
+<p><strong>Text to Named HTML Entity</strong></p>
+
+<p>Convert non-ASCII text to HTML Entities. It converts character to a named entity. If a named entity cannot be found for the character, it reverts to a numeric HTML entity.</p>
+
+<p><strong>Text to Numeric HTML Entity</strong></p>
+
+<p>Convert non-ASCII text to HTML Entities, without attempting to find a matching named entity. The results are always numeric entities.</p>
+
+<p><strong>All Text to Numeric HTML Entities</strong></p>
+
+<p>Converts all standard ASCII, as well as non-ASCII, characters to numeric HTML Entities.</p>
+
+<hr />
+
+<p><strong>HTML: Create Ordered List</strong></p>
+
+<p>Converts a series of lines into an HTML-based ordered list.</p>
+
+<p><strong>HTML: Create Unordered List</strong></p>
+
+<p>Converts a series of lines into an HTML-based unordered list.</p>
+
+<p><strong>HTML Tag: Bold</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;b&gt;Sample Text&lt;/b&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Italic</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;i&gt;Sample Text&lt;/i&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Preformatted</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;pre&gt;Sample Text&lt;/pre&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Break</strong></p>
+
+<p>Inserts the break tag.</p>
+
+<pre><code>&lt;br/&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Div</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;div&gt;Sample Text&lt;/div&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Paragraph</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;p&gt;Sample Text&lt;/p&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Span</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;span&gt;Sample Text&lt;/span&gt;
+</code></pre>
+
+<p><strong>HTML Tag: BlockQuote</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;blockquote&gt;Sample Text&lt;/blockquote&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Cite</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;cite&gt;Sample Text&lt;/cite&gt;
+</code></pre>
+
+<p><strong>HTML Tag: h1 - h6</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;h1&gt;Sample Text&lt;/h1&gt;
+..
+&lt;h6&gt;Sample Text&lt;/h6&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Unordered List</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;ul&gt;Sample Text&lt;/ul&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Ordered List</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;ol&gt;Sample Text&lt;/ol&gt;
+</code></pre>
+
+<p><strong>HTML Tag: List Item</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;li&gt;Sample Text&lt;/li&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Table</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;table&gt;Sample Text&lt;/table&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Table Row</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;tr&gt;Sample Text&lt;/tr&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Table Cell</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;td&gt;Sample Text&lt;/td&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Link</strong></p>
+
+<p>Creates an href tag with the selected text as the URL.</p>
+
+<p>http://www.unmarked.com:</p>
+
+<pre><code>&lt;a href=&quot;http://www.unmarked.com&quot;&gt; Sample Text&lt;/a&gt;
+</code></pre>
+
+
+<h1 id="plistcleaners">Plist Cleaners</h1>
+
+<p><strong>PLIST Tag: Key</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>SampleKey:</p>
+
+<pre><code>&lt;key&gt;SampleKey&lt;/key&gt;
+</code></pre>
+
+<p><strong>PLIST Tag: String</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;string&gt;Sample Text&lt;/string&gt;
+</code></pre>
+
+<p><strong>PLIST Tag: Integer</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>1234:</p>
+
+<pre><code>&lt;integer&gt;1234&lt;/integer&gt;
+</code></pre>
+
+<p><strong>PLIST Tag: Float</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>12.34:</p>
+
+<pre><code>&lt;float&gt;12.34&lt;/float&gt;
+</code></pre>
+
+<p><strong>PLIST Tag: True</strong></p>
+
+<p>Inserts the true XML tag.</p>
+
+<pre><code>&lt;true/&gt;
+</code></pre>
+
+<p><strong>PLIST Tag: False</strong></p>
+
+<p>Inserts the false XML tag.</p>
+
+<pre><code>&lt;false/&gt;
+</code></pre>
+
+<p><strong>PLIST Tag: Array</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p><strong>PLIST Tag: Dictionary</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+
+<h1 id="othercleanerdescriptions">Other Cleaner Descriptions</h1>
+
+<p><strong>SCRUB</strong></p>
+
+<p>Multi-step cleaner addresses most common cases of extra spaces, forwarding characters, MIME encoding issues and broken paragraphs. SCRUB calls the cleaners in order to insure the best results.</p>
+
+<p><strong>MyScrub</strong></p>
+
+<p>A customizable version of the SCRUB version. Defined using the customize window, it allows augmenting or replacing cleaners used in SCRUB. Any available cleaner may be added to this list.</p>
+
+<p>If no cleaners are specified, MyScrub defaults to SCRUB.</p>
+
+<p><strong>Remove Extra Spaces</strong></p>
+
+<p>Converts non-breaking spaces to standard spaces, then removes two or more spaces with a single space. Leading spaces at the beginning of a line are also removed, as are trailing spaces.</p>
+
+<p><strong>Remove Forwarding (&gt;) Characters</strong></p>
+
+<p>Removes one or more sets of forwarding characters (&gt;) on a line, commonly found in forwarded email.</p>
+
+<p>Note:Does not yet support HTML archives, like those used in Apple Mail.</p>
+
+<p><strong>Convert MIME-encoded Characters</strong></p>
+
+<p>Converts %Hex or =Hex characters to their appropriate ASCII character. For example, a %20 or a =20 is converted to a space (hex 0x20 is the ASCII value of a space character).</p>
+
+<p><strong>Make Paragraphs</strong></p>
+
+<p>Converts multi-line paragraphs (with hard carriage returns CR) into a single paragraph. Also adds a space to the text when removing CRs to avoid smashing words together. Two or more CRs in a row indicate a new paragraph.</p>
+
+<p><strong>Remove All Tabs</strong></p>
+
+<p>Deletes all tabs from the selected text.</p>
+
+<p><strong>Remove Control Characters</strong></p>
+
+<p>Deletes any control characters (characters with an ASCII value less than 32) from the selected text (except for line feeds or carriage returns).</p>
+
+<p><strong>Remove Extra Returns</strong></p>
+
+<p>Converts multiple carriage returns into a single carriage return. Behaves the same as Multiple Return to 1 Return</p>
+
+<p><strong>Uppercase</strong></p>
+
+<p>Converts text to &#8220;UPPERCASE&#8221;.</p>
+
+<p><strong>Lowercase</strong></p>
+
+<p>Converts text to &#8220;lowercase&#8221;.</p>
+
+<p><strong>Capitalize Sentences</strong></p>
+
+<p>Converts text to lowercase, capitalizing the first character of each sentence.</p>
+
+<p><strong>Capitalize Words</strong></p>
+
+<p>Converts text to lowercase, then capitalizes each individual word.</p>
+
+<p><strong>Title Case</strong></p>
+
+<p>Converts text to &#8220;Title Case&#8221;. Words with non-standard case (iTunes, iPhone, TextSoap) remain unchanged, small words (a, an, and, as, at, but, by, en, for, if, in, of, on, or, the, to, via,) are converted to lowercase unless the word appears at the beginning or end of the line. All other words are capitalized. Create a custom cleaner with the &#8220;Title Case with Options&#8221; action to customize these options.</p>
+
+<p><strong>Convert Bullets to ASCII</strong></p>
+
+<p>Converts bullets to standard ASCII dashes.</p>
+
+<p><strong>Straighten Quotes</strong></p>
+
+<p>Converts single and double smart (or curly) quotes to straight quotes.</p>
+
+<p><strong>Smarten Quotes</strong></p>
+
+<p>Convert single and double straight quotes to smart (or curly) quotes.</p>
+
+<p><strong>Expand Tabs</strong></p>
+
+<p>Converts tabs (hex 0x09) to four (4) spaces.</p>
+
+<p><strong>Rewrap Text</strong></p>
+
+<p>Fixes any paragraphs (using Make Paragraphs), then rewraps the text at 70 characters per line. Behaves the same as the Wrap At 70 cleaner.</p>
+
+<p><strong>Quote Text</strong></p>
+
+<p>Rewraps the text and re-inserts forwarding marks (i.e.. &#8216;&gt;&#8217;) at the beginning of each line. It also places hard returns at the end of each line to ensure proper wrapping in email applications.</p>
+
+<p><strong>Wrap At 50</strong></p>
+
+<p>Fixes any paragraphs (using Make Paragraphs), then rewraps the text at 50 characters per line.</p>
+
+<p><strong>Wrap At 60</strong></p>
+
+<p>Fixes any paragraphs (using Make Paragraphs), then rewraps the text at 60 characters per line.</p>
+
+<p><strong>Wrap At 70</strong></p>
+
+<p>Fixes any paragraphs (using Make Paragraphs), then rewraps the text at 70 characters per line.</p>
+
+<p><strong>Quote Text L1</strong></p>
+
+<p>Rewraps the text and places a single forwarding mark in front of the text.</p>
+
+<p>&#8220;Sample Text&#8221; becomes &#8220;&gt; Sample Text&#8221;.</p>
+
+<p><strong>Quote Text L2</strong></p>
+
+<p>Rewraps the text and places two (2) forwarding marks in front of the text.</p>
+
+<p>&#8220;Sample Text&#8221; becomes &#8220;&gt;&gt; Sample Text&#8221;.</p>
+
+<p><strong>Quote Text L3</strong></p>
+
+<p>Rewraps the text and places three (3) forwarding marks in front of the text.</p>
+
+<p>&#8220;Sample Text&#8221; becomes &#8220;&gt;&gt;&gt; Sample Text&#8221;.</p>
+
+<p><strong>Quote Text L4</strong></p>
+
+<p>Rewraps the text and places four (4) forwarding marks in front of the text.</p>
+
+<p>&#8220;Sample Text&#8221; becomes &#8220;&gt;&gt;&gt;&gt; Sample Text&#8221;.</p>
+
+<p><strong>Convert to Internet Friendly Text</strong></p>
+
+<p>Converts text to Internet Friendly Text. Diacritical values are stripped, quotes straightened, and additional characters (copyright, trademark, registered, ellipse, em-dash, en-dash) are converted to ASCII equivalents.</p>
+
+<p><strong>Remove All High Ascii Characters</strong></p>
+
+<p>Removes All High Ascii Characters. Strips off any ASCII values 128&#8211;256 from the text.</p>
+
+<p><strong>1 Return to 2 Returns</strong></p>
+
+<p>Converts each carriage return to 2 carriage returns.</p>
+
+<p><strong>1 Return to Space</strong></p>
+
+<p>Converts each carriage return to a space.</p>
+
+<p><strong>Strip 2 or more Returns</strong></p>
+
+<p>Strips any 2 or more consecutive returns to a single return.</p>
+
+<p><strong>Strip 2 or more Spaces</strong></p>
+
+<p>Strips any 2 or more consecutive spaces to a single space.</p>
+
+<p><strong>Strip 2 or more Tabs</strong></p>
+
+<p>Strips any 2 or more consecutive tabs to a single tab.</p>
+
+<p><strong>Strip 3 or more Returns</strong></p>
+
+<p>Strips any 3 or more consecutive returns to a single return.</p>
+
+<p><strong>Strip 3 or more Spaces</strong></p>
+
+<p>Strips any 3 or more consecutive spaces to a single space.</p>
+
+<p><strong>Strip 3 or more Tabs</strong></p>
+
+<p>Strips any 3 or more consecutive tabs to a single tab.</p>
+
+<p><strong>Strip 4 or more Returns</strong></p>
+
+<p>Strips any 4 or more consecutive returns to a single return.</p>
+
+<p><strong>Strip 4 or more Spaces</strong></p>
+
+<p>Strips any 4 or more consecutive spaces to a single space.</p>
+
+<p><strong>Strip 4 or more Tabs</strong></p>
+
+<p>Strips any 4 or more consecutive tabs to a single tab.</p>
+
+<p><strong>Strip Quoting (&gt;) Characters</strong></p>
+
+<p>Removes the forwarding characters on a line. Same as Remove Forwarding (&gt;) Characters.</p>
+
+<p><strong>Multiple Return to 1 Return</strong></p>
+
+<p>Converts multiple carriage returns to a single return.</p>
+
+<p><strong>Multiple Return to 2 Returns</strong></p>
+
+<p>Converts multiple carriage returns to 2 returns.</p>
+
+<p><strong>Strip NULL</strong></p>
+
+<p>Strips any NULL characters in the selected text.</p>
+
+<p>Note: This is a remnant cleaner from 1998. Most null values are stripped out before the text is ever processed</p>
+
+<p><strong>Ellipsis to Three periods</strong></p>
+
+<p>Converts ellipsis characters to three periods.</p>
+
+<p><strong>Em Dash to 2 Hyphens</strong></p>
+
+<p>Converts Em Dash characters to two hyphens.</p>
+
+<p><strong>En Dash to Space-Space</strong></p>
+
+<p>Converts En Dash character to a space dash space sequence &#8220; - &#8221;.</p>
+
+<p><strong>Three periods to Ellipsis</strong></p>
+
+<p>Converts three periods to an ellipsis character.</p>
+
+<p><strong>2 Hyphens to Em Dash</strong></p>
+
+<p>Converts two hyphens to an Em Dash character.</p>
+
+<p><strong>Space-Space to En Dash</strong></p>
+
+<p>Converts a space-dash-space sequence to an En Dash character.</p>
+
+<p><strong>Remove Forwarded Text</strong></p>
+
+<p>Delete any quoted text. Any lines of text preceded by a forwarding mark (&gt;) are removed.</p>
+
+<p><strong>ROT 13 Encryption</strong></p>
+
+<p>Applies a very rudimentary encryption. Apply the encryption again to restore the text.</p>
+
+<p><strong>String to Hexadecimal</strong></p>
+
+<p>Converts a string of characters to a hexadecimal sequence. Use Hexadecimal to String to restore.</p>
+
+<p><strong>Hexadecimal to String</strong></p>
+
+<p>Converts a hexadecimal sequence to a string of characters. Use with String to Hexadecimal.</p>
+
+<p><strong>Replace @ with (AT)</strong></p>
+
+<p>Replaces &#8220;@&#8221; with &#8220;(AT)&#8221;.</p>
+
+<p><strong>Increase Quote Level</strong></p>
+
+<p>Increases the quote level of a selection by one, adding a forwarding mark (&gt;) to the beginning of each line. Rewraps the paragraph as necessary.</p>
+
+<p><strong>Get Version String</strong></p>
+
+<p>Returns the current version of TextSoap.</p>
+
+<p><strong>Unix (LF) Line Endings</strong></p>
+
+<p>Converts the selected text to use Unix (LF) Line Endings.</p>
+
+<p>Obsolete: use the new line-ending popup for best results.</p>
+
+<p><strong>Mac (CR) Line Endings</strong></p>
+
+<p>Converts the selected text to use old-style Mac (CR) Line Endings.</p>
+
+<p>Obsolete: use the new line-ending popup for best results.</p>
+
+<p><strong>DOS (CR+LF) Line Endings</strong></p>
+
+<p>Converts the selected text to use DOS (CR+LF) Line Endings.</p>
+
+<p>Obsolete: use the new line-ending popup for best results.</p>
+
+<p><strong>Trim Beginning of Lines</strong></p>
+
+<p>Removes any extra spaces from the beginning of the selected text lines.</p>
+
+<p><strong>Trim End of Lines</strong></p>
+
+<p>Removes any extra spaces from the end of the selected text lines.</p>
+
+<p><strong>Trim Lines</strong></p>
+
+<p>Removes any extra spaces from both the beginning and the end of the selected text lines.</p>
+
+<p><strong>Convert Non-Breaking Spaces</strong></p>
+
+<p>Converts Non-Breaking Spaces to standard spaces.</p>
+
+<p><strong>Remove Style from Text</strong></p>
+
+<p>Removes formatting style from the selected text, leaving text in a single font and style.</p>
+
+<p><strong>Quote Based on First Line</strong></p>
+
+<p>Quotes the selected text based on first line. The text is rewrapped. If forward marks are found at the very beginning of the text, the number found determines the level of quoting applied to that paragraph.</p>
+
+<p><strong>Remove Hyperlinks from Text</strong></p>
+
+<p>Removes clickable hyperlinks from the text, leaving only the text.</p>
+
+<p><strong>Make URLs Clickable</strong></p>
+
+<p>Finds any recognizable URLs and turns them into clickable hyperlinks.</p>
+
+<p><strong>Extract URLs by Replacing</strong></p>
+
+<p>Finds any recognizable URLs and extracts them, replacing the original text.</p>
+
+<p><strong>Extract URLs by Appending</strong></p>
+
+<p>Finds any recognizable URLs and extracts them, appending the result to the original text.</p>
+
+<p><strong>Sort Lines in Ascending Order</strong></p>
+
+<p>Sorts lines in increasing order. Lines are marked by paragraph markers.</p>
+
+<p><strong>Sort Lines in Descending Order</strong></p>
+
+<p>Sorts lines in decreasing order. Lines are marked by paragraph markers.</p>
+
+
+<h1 id="preferences">Preferences</h1>
+
+<p><em>Note: Preference options may differ based on edition.</em></p>
+
+<h2 id="general">General</h2>
+
+<figure>
+<img src="images/prefs_general.jpg" alt="" />
+</figure>
+
+<h3 id="appearance">Appearance</h3>
+
+<p>Specifies whether app&#8217;s appearance follows System, is always light mode or always dark mode.</p>
+
+<ul>
+<li>System</li>
+<li>Light</li>
+<li>Dark</li>
+</ul>
+
+<h3 id="application">Application</h3>
+
+<h4 id="quitapplicationwhenlastwindowisclosed">Quit application when last window is closed</h4>
+
+<p>Enable to automatically quit the application when the last text document is closed. This can be useful when the Clipboard Workspace (see below) is disabled.</p>
+
+<h4 id="applycleanertoentirecontentswhennoselection">Apply cleaner to entire contents when no selection</h4>
+
+<p>Enable to automatically apply selected cleaner to the entire document (or text contents) when no selection is found. If option is disabled, cleaners will only be applied if there is a selection.</p>
+
+<h4 id="myscrubaction">MyScrub action</h4>
+
+<p>Specify cleaner to use when MyScrub is called. This may be Scrub (default) or any custom cleaner you create in MyLibrary.</p>
+
+<h4 id="defaultgroup">Default group</h4>
+
+<p>Specify the default group to display when a new text window is created, whether it is the clipboard workspace, a new document or a document from file. Once the window is created, you can change the group displayed.</p>
+
+<p><strong>Groups:</strong> Specify which groups to display</p>
+
+<ul>
+<li>Built-in : Custom &#8211; List built-in groups, then custom groups.</li>
+<li>Custom : Built-in &#8211; List custom groups, then built-in groups.</li>
+<li>Custom &#8211; Show only custom groups.</li>
+</ul>
+
+<p><strong>Compact display:</strong> Enable to display cleaner group using a more compact layout.</p>
+
+<h4 id="clipboardworkspace">Clipboard Workspace</h4>
+
+<p>Specifies whether to use Clipboard Workspace and what format the text should be:</p>
+
+<ul>
+<li>Plain Text Format</li>
+<li>Rich Text Format</li>
+<li>Disabled</li>
+</ul>
+
+<h4 id="newdocuments">New Documents</h4>
+
+<p>Specify the type of document to create by default (cmd-N).</p>
+
+<ul>
+<li>Plain Text Document</li>
+<li>Rich Text Document</li>
+</ul>
+
+<p><em>Note: You can also directly create either a rich text document (ctrl-cmd-N) or a plain text document (opt-cmd-N), bypassing this preference.</em></p>
+
+<hr />
+
+<h2 id="textediting">Text Editing</h2>
+
+<figure>
+<img src="images/prefs_editor1.jpg" alt="" />
+</figure>
+
+<p>Many of these options are default values for text editor. You can later change many of these options via the Edit or View menu.</p>
+
+<h3 id="display">Display</h3>
+
+<h4 id="editor">Editor</h4>
+
+<ul>
+<li><p>Show ruler (rich text) : Display the paragraph ruler when editing rich text. Allows changing of tab stops, as well as left, right and indent margins on a per-paragraph basis.</p></li>
+<li><p>Show invisibles : Display spaces, tabs, end of line (returns) found in the text.</p></li>
+<li><p>Show line numbers : Show the line numbers. Paragraphs are considered lines.</p></li>
+<li><p>Show word count : Display count of paragraphs (lines), words and characters. Character count without spaces is displayed in parentheses.</p></li>
+<li><p>Highlight current line : Toggles whether to highlight where cursor is.</p></li>
+<li><p>Use Inspector Bar : Use newer inspector bar and ruler interface (vs. classic)</p></li>
+<li><p>Use Dark Background : Determines if text background is dark in dark mode. Otherwise, text is displayed as black text on a white background.</p></li>
+</ul>
+
+<h4 id="search">Search</h4>
+
+<ul>
+<li><p>Regex : Enable initial use of Regex in interactive find.</p></li>
+<li><p>Match Case : Enable match case by default (if unselected: ignore case by default).</p></li>
+<li><p>Match Lines : When using Regex interactive find, indicates whether Match Lines option is initially set, causing ^ and $ to act as anchors for lines instead of entire text.</p></li>
+</ul>
+
+<h4 id="zoom">Zoom</h4>
+
+<p>Default zoom to use when displaying new or opened documents.</p>
+
+<h4 id="invisibles">Invisibles</h4>
+
+<p>Color used to display invisible characters, such as spaces, tabs, returns, etc. Select &#8220;Default&#8221; to reset.</p>
+
+<h4 id="currentlinecolor">Current Line Color</h4>
+
+<p>Line color to use to highlight the current line. The color selected is blended together (to insure text remains readable), the result is shown next to the color selection. Select &#8220;Default&#8221; to reset.</p>
+
+<h3 id="editing">Editing</h3>
+
+<figure>
+<img src="images/prefs_editor2.jpg" alt="" />
+</figure>
+
+<h4 id="options">Options</h4>
+
+<ul>
+<li><p>Check spelling as you type : Enable the automatic spell checker to mark potentially misspelled words as they are entered into the document.</p></li>
+<li><p>Check grammar with spelling : Use the system&#8217;s grammar checker when spell checking.</p></li>
+<li><p>Correct spelling automatically : Allow for automatic correction of words with the spell checker.</p></li>
+<li><p>Text replacement : Automatic substitution of a variety of static text items based on user preferences. You can specify replacements in System Preferences &gt; Keyboard &gt; Text.</p></li>
+<li><p>Smart copy/paste : Controls whether the receiver inserts or deletes space around selected words so as to preserve proper spacing and punctuation.</p></li>
+<li><p>Smart quotes : Automatic quote substitution causes ASCII quotation marks and apostrophes to be automatically replaced, on a context-dependent basis, with more typographically accurate symbols.</p></li>
+<li><p>Smart dashes : Enables automatic conversion of a two ASCII hyphen (-) characters into an em-dash.</p></li>
+<li><p>Smart links : Causes text representing URLs typed in to be automatically made into hyperlinks.</p></li>
+<li><p>Data detectors : Automatic data detection enables detection of dates, addresses, and phone numbers.</p></li>
+</ul>
+
+<h4 id="richtextfont">Rich Text Font</h4>
+
+<p>Specify the default font when creating new Rich text editor. If the editor (for either Clipboard Workspace or Text documents) is a plain text editor, it will use Plain Text Font.</p>
+
+<h4 id="plaintextfont">Plain Text Font</h4>
+
+<p>Specify the default font when creating or opening plain text documents.</p>
+
+<hr />
+
+<h2 id="textsoapagent">TextSoap Agent</h2>
+
+<figure>
+<img src="images/prefs_agent.jpg" alt="" />
+</figure>
+
+<p>Provides access to learn about and download the textsoapAgent helper app.</p>
+
+<p>The helper app works with all editions of the main TextSoap app, providing integration universal set of integration options, including:</p>
+
+<ul>
+<li><p>Global TextSoap Menu : Providing access to cleaners within other applications or to clean the clipboard</p></li>
+<li><p>Global Shortcuts : Providing hot key access to cleaners within other applications.</p></li>
+<li><p>AppleScripting : Providing a centralized scripting endpoint. By targeting application &#8220;textsoapAgent&#8221; &#8211; your scripts can work with all editions of TextSoap.</p></li>
+<li><p>Services : All Services are handled by textsoapAgent, including the standard Service item, which will present a dialog to choose which cleaner to apply.</p></li>
+<li><p>Custom macOS Services : Additionally, textsoapAgent supports providing a customized set of actions to apply specific cleaners to the selected text via Services. This new mechanism is more robust than previous efforts.</p></li>
+<li><p>PopClip : The latest extension for PopClip now supports the new textsoapAgent.</p></li>
+<li><p>Alfred : Another popular option is to use Alfred&#8217;s scripting to direct cleaning actions with the textsoapAgent.</p></li>
+</ul>
+
+<p>Select the &#8220;Learn More&#8230;&#8221; button to direct you to the website with information and access to download the new agent. Whether you are working with the Direct edition, Setapp edition or some other edition, the TextSoap Agent provides a single access point to integrate TextSoap&#8217;s features with other apps.</p>
+
+<p><strong><a href="http://textsoap.com/agent/" target="_blank">Learn More…</a></strong></p>
+
+<hr />
+
+<h2 id="updates">Updates</h2>
+
+<figure>
+<img src="images/prefs_updates.jpg" alt="" />
+</figure>
+
+<p><strong>Note: Only applies to Direct edition. Updates in other editions use their specific mechanism. Beta releases are not available in other editions.</strong></p>
+
+<h4 id="automaticallycheckforupdates">Automatically check for updates</h4>
+
+<p>Recommended to remain on. When selected, this option will regularly check for any software updates.</p>
+
+<h4 id="checknow">Check Now</h4>
+
+<p>Immediately check for any updates available.</p>
+
+<h4 id="showbetareleases">Show Beta Releases</h4>
+
+<p>When selected, this option will include beta updates as well as official updates. Recommended only for advanced users.</p>
+
+<hr />
+
+<h2 id="advanced">Advanced</h2>
+
+<figure>
+<img src="images/prefs_advanced.jpg" alt="" />
+</figure>
+
+<p>Some more advanced functionality provided. Made available in the case they are needed. Some of the options may require a relaunching of the application to take full effect.</p>
+
+<h3 id="general">General</h3>
+
+<h4 id="disablecustomappicons">Disable Custom App Icons</h4>
+
+<p>Turns off special day icons and seasonal icons.</p>
+
+<h4 id="flipseasoniconsforsouthernhemisphere">Flip Season Icons for Southern Hemisphere</h4>
+
+<p>Some of our customers live south of the equator where the seasons are reversed. So when we enjoy Spring, they are enjoying Fall. This flips the icons to match those seasonal dates better.</p>
+
+<h3 id="texteditor">Text Editor</h3>
+
+<h4 id="dontwarnwhenswitchingfromrichtoplaintext">Don&#8217;t warn when switching from rich to plain text</h4>
+
+<p>Switching converting a document from rich text to plain text will throw away any style information with the text. Normally a warning is put up every time the conversion is selected. Enable this option to perform the conversion without a warning.</p>
+
+<h4 id="append.txtextensiontoplaintextfiles">Append &#8220;.txt&#8221; extension to plain text files</h4>
+
+<p>Mimics TextEdit&#8217;s save option for plain text. Enable to automatically append the &#8220;.txt&#8221; extension when no extension is given. A plain text document saved as &#8220;MyDocument&#8221; becomes &#8220;MyDocument.txt&#8221;. If you specify an extension, TextSoap will use it instead. A plain text document named &#8220;MyDocument.html&#8221; stays unchanged.</p>
+
+<h3 id="customcleanereditor">Custom Cleaner Editor</h3>
+
+<h4 id="newfindactionbasedontextsearchpreferences">New find action based on text search preferences</h4>
+
+<p>When adding a new Find action within a custom cleaner, this option determines whether to use the search preferences set in Text Editing panel. Useful to override the &#8220;Match Lines&#8221; and &#8220;Match Case&#8221; options for Regex (if you are so inclined).</p>
+
+
+<h1 id="batchfilecleaning">Batch File Cleaning</h1>
+
+<figure>
+<img src="images/batch_file_1.jpg" alt="Batch File Cleaning" />
+<figcaption>Batch File Cleaning</figcaption>
+</figure>
+
+<p>Batch file cleaning provides an interactive ability to clean files using the TextSoap application.</p>
+
+<p><strong>Filter</strong></p>
+
+<p>Use the filter to limit the cleaner popup to find your specific cleaner.</p>
+
+<p><strong>Cleaner</strong></p>
+
+<p>The cleaner you wish to apply to the files.</p>
+
+<p><strong>Additional / Only</strong> &amp; <strong>Files with ext:</strong></p>
+
+<p>TextSoap typically processes .RTF and .TEXT documents. If you have a text file with a non-standard extension that isn&#8217;t being recognized, you can add the extension to the list (space separated).</p>
+
+<p>The popup allows you to specify additional extensions, or to only allow the specified extensions.</p>
+
+<p><strong>Dest Folder</strong></p>
+
+<p>Specify the destination folder. By default, the name is &#8220;results&#8221; which will create a sub-folder in the given source location for processed files. If you wish to results to overwrite the files in the same folder, delete the default value and leave it empty.</p>
+
+<p><strong>Additional Options</strong></p>
+
+<p>These options all for less common options when using batch file cleaning. See below.</p>
+
+<p><strong>Files</strong></p>
+
+<p>The files area allows you to view the files to be processed. You can either drag the files directly into the table or select the + to add files. You can also remove selected files or clear out the entire list.</p>
+
+<p><strong>Results</strong></p>
+
+<p>The results area displays a log of the files processed.</p>
+
+<p><strong>Default Settings</strong></p>
+
+<p>This option will reset the batch file cleaning to its initial state, removing any changes made to the settings.</p>
+
+<p><strong>Process Files</strong></p>
+
+<p>This action will begin processing the files, applying the specified cleaner to the list of files dropped into the list.</p>
+
+<h2 id="additionaloptions:">Additional Options:</h2>
+
+<figure>
+<img src="images/batch_file_2.jpg" alt="Additional Options" />
+<figcaption>Additional Options</figcaption>
+</figure>
+
+<p><strong>Name Template</strong></p>
+
+<p>You can specify any additional <em>prefix</em>, <em>suffix</em>, or <em>new extension</em> for the cleaned file.</p>
+
+<p><strong>Plain Text File Encoding</strong></p>
+
+<p>You can optionally use the specified encoding for opening and saving files. When set to Automatic, it will try to use the best guess the system and determine from the file&#8217;s type, falling back to UTF&#8211;8 if it cannot match anything else.</p>
+
+
+<h1 id="glossary">Glossary</h1>
+
+<h3 id="action">Action</h3>
+
+<p>Action is the core unit in TextSoap text processing. An action represents an individual step taken to transform the provided text. Some action examples:
+- Find and Replace Text
+- Rewrap Text
+- Apply (an existing) Cleaner </p>
+
+<p>Other apps sometimes refer to these as a &#8220;filter&#8221;.</p>
+
+<p>Actions are stored in with a cleaner (see Cleaner definition).</p>
+
+<h3 id="cleaner">Cleaner</h3>
+
+<p>A cleaner is one or more actions applied to text. It is the item you interact with when &#8216;cleaning&#8217; text. There are two types of cleaners:</p>
+
+<ol>
+<li>Built-in : pre-defined cleaners provided with the application. There are current over 100 built-in cleaners.</li>
+<li>Custom : user-defined cleaners you either create or import.</li>
+</ol>
+
+<h3 id="clipboardworkspace">Clipboard Workspace</h3>
+
+<p>The Clipboard Workspace represents an editable representations of the clipboard contents when the app launched. When you launch TextSoap, the contents of the clipboard will be pasted into the Workspace. </p>
+
+<p>You can then apply any cleaners to that text, search and replace text, or manually edit it as you would any text document. </p>
+
+<p>When you quit the TextSoap, the app will automatically copy the contents of the Clipboard Workspace back to the clipboard.</p>
+
+<p>This behavior can be controlled in Preferences &gt; General.</p>
+
+<h3 id="group">Group</h3>
+
+<p>A group is a collection of cleaners. A group can be used to organize specific cleaners based on a task or general need. When using the companion app, textsoapAgent, you can also use a custom group to define which cleaners will be used for custom services. Like cleaners, there are two types of groups:</p>
+
+<ol>
+<li>Built-in : collections organized based on common functionality such as typography, HTML-related or Email-related.</li>
+<li>Custom : user-defined groups you create for your own workflow, task needs.</li>
+</ol>
+
+<h3 id="textediting">Text Editing</h3>
+
+<p>TextSoap uses the standard macOS text editing environment to provide you with a full featured text editor that can handle both plain text and rich text. If you use TextEdit, Apple&#8217;s default text editor app, you know the fundamentals of TextSoap&#8217;s text editor.</p>
+
+<p>There are a few additions added to help you in the process of cleaning up text:</p>
+
+<ul>
+<li>Show Invisibles : show lurking spaces, tabs, end-of-line markers and more</li>
+<li>Show Line Numbers : navigate the various lines of text</li>
+<li>Wrap Text : control whether to soft-wrap paragraphs or not. Unwrapped text will flow horizontally.</li>
+<li>Statistics : understand the basic structure of the text you are working with.</li>
+</ul>
+
+
+<style>
+table {
+    width: 100%;
+    margin-bottom: 18px;
+    padding: 0;
+    border-collapse: separate;
+    border-collapse: collapse;
+    font-size: 13px;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+table th,
+table td {
+    padding: 10px 10px 9px;
+    line-height: 18px;
+    text-align: left;
+}
+
+table th {
+    padding-top: 9px;
+    font-weight: bold;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+}
+
+table td {
+    vertical-align: top;
+}
+
+table th+th,
+table td+td {
+    border-left: 1px solid #ddd;
+}
+
+table tr+tr td {
+    border-top: 1px solid #ddd;
+}
+
+table tbody tr:first-child td:first-child {
+    -webkit-border-radius: 4px 0 0 0;
+    -moz-border-radius: 4px 0 0 0;
+    border-radius: 4px 0 0 0;
+}
+
+table tbody tr:first-child td:last-child {
+    -webkit-border-radius: 0 4px 0 0;
+    -moz-border-radius: 0 4px 0 0;
+    border-radius: 0 4px 0 0;
+}
+
+table tbody tr:last-child td:first-child {
+    -webkit-border-radius: 0 0 0 4px;
+    -moz-border-radius: 0 0 0 4px;
+    border-radius: 0 0 0 4px;
+}
+
+table tbody tr:last-child td:last-child {
+    -webkit-border-radius: 0 0 4px 0;
+    -moz-border-radius: 0 0 4px 0;
+    border-radius: 0 0 4px 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: #AA2063;
+}
+
+.ts_sidebar h2 {
+    color: black;
+}
+
+</style>
+
+<h1 id="regularexpressionsyntax">Regular Expression Syntax</h1>
+
+<p>TextSoap uses the ICU (International Components for Unicode) Regular Expression syntax with some custom extensions (for case changing).</p>
+
+<p>For your convenience, the regular expression syntax from the ICU documentation is included below. When in doubt, you should refer to the official ICU User Guide - Regular Expressions documentation page.</p>
+
+<h4 id="seealso">See Also</h4>
+
+<p><a href="http://userguide.icu-project.org/strings/regexp">ICU User Guide - Regular Expressions</a><br/>
+<a href="http://www.unicode.org/reports/tr18/">Unicode Technical Standard #18 - Unicode Regular Expressions</a></p>
+
+<h3 id="metacharacters">Metacharacters</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Character</th>
+	<th style="text-align:left;">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">\a</td>
+	<td style="text-align:left;">Match a BELL, \u0007</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\A</td>
+	<td style="text-align:left;">Match at the beginning of the input. Differs from ^ in that \A will not match after a new-line within the input.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\b, outside of a [Set]</td>
+	<td style="text-align:left;">Match if the current position is a word boundary. Boundaries occur at the transitions between word \w and non-word \W characters, with combining marks ignored.<br/><strong>See also:</strong> <a href="http://userguide.icu-project.org/boundaryanalysis">Overview of Text Boundary Analysis</a></td>
+</tr>
+<tr>
+	<td style="text-align:left;">\b, within a [Set]</td>
+	<td style="text-align:left;">Match a BACKSPACE, \u0008.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\B</td>
+	<td style="text-align:left;">Match if the current position is not a word boundary.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\cx</td>
+	<td style="text-align:left;">Match a Control-x character.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\d</td>
+	<td style="text-align:left;">Match any character with the Unicode General Category of Nd (Number, Decimal Digit).</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\D</td>
+	<td style="text-align:left;">Match any character that is not a decimal digit.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\e</td>
+	<td style="text-align:left;">Match an ESCAPE, \u001B.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\E</td>
+	<td style="text-align:left;">Terminates a \Q…\E quoted sequence.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\f</td>
+	<td style="text-align:left;">Match a FORM FEED, \u000C.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\G</td>
+	<td style="text-align:left;">Match if the current position is at the end of the previous match.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\n</td>
+	<td style="text-align:left;">Match a LINE FEED, \u000A.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\N{Unicode Character Name}</td>
+	<td style="text-align:left;">Match the named Unicode Character.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\p{Unicode Property Name}</td>
+	<td style="text-align:left;">Match any character with the specified Unicode Property.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\P{Unicode Property Name}</td>
+	<td style="text-align:left;">Match any character not having the specified Unicode Property.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\Q</td>
+	<td style="text-align:left;">Quotes all following characters until \E.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\r</td>
+	<td style="text-align:left;">Match a CARRIAGE RETURN, \u000D.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\s</td>
+	<td style="text-align:left;">Match a white space character. White space is defined as [\t\n\f\r\p{Z}].</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\S</td>
+	<td style="text-align:left;">Match a non-white space character.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\t</td>
+	<td style="text-align:left;">Match a HORIZONTAL TABULATION, \u0009.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\uhhhh</td>
+	<td style="text-align:left;">Match the character with the hex value hhhh.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\Uhhhhhhhh</td>
+	<td style="text-align:left;">Match the character with the hex value hhhhhhhh. Exactly eight hex digits must be provided, even though the largest Unicode code point is \U0010ffff.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\w</td>
+	<td style="text-align:left;">Match a word character. Word characters are [\p{Ll}\p{Lu}\p{Lt}\p{Lo}\p{Nd}].</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\W</td>
+	<td style="text-align:left;">Match a non-word character.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\x{h…}</td>
+	<td style="text-align:left;">Match the character with hex value hhhh. From one to six hex digits may be supplied.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\xhh</td>
+	<td style="text-align:left;">Match the character with two digit hex value hh.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\X</td>
+	<td style="text-align:left;">Match a <a href="http://www.unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries">Grapheme Cluster</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\Z</td>
+	<td style="text-align:left;">Match if the current position is at the end of input, but before the final line terminator, if one exists.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\z</td>
+	<td style="text-align:left;">Match if the current position is at the end of input.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\n</td>
+	<td style="text-align:left;">Back Reference. Match whatever the nth capturing group matched. n must be a number ≥ 1 and ≤ total number of capture groups in the pattern. <strong>Note:</strong> Octal escapes, such as \012, are not supported.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">[pattern]</td>
+	<td style="text-align:left;">Match any one character from the set. See <a href="#ICUSyntax_ICURegularExpressionCharacterClasses">ICU Regular Expression Character Classes</a> for a full description of what may appear in the pattern.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">.</td>
+	<td style="text-align:left;">Match any character.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">^</td>
+	<td style="text-align:left;">Match at the beginning of a line.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">$</td>
+	<td style="text-align:left;">Match at the end of a line.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\</td>
+	<td style="text-align:left;">Quotes the following character. Characters that must be quoted to be treated as literals are: <strong> * ? + [ ( ) { } ^ $ &#124; \ . / </strong></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="operators">Operators</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Operator</th>
+	<th style="text-align:left;">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">&#124;</td>
+	<td style="text-align:left;">Alternation. A &#124; B matches either A or B.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">*</td>
+	<td style="text-align:left;">Match zero or more times. Match as many times as possible.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">+</td>
+	<td style="text-align:left;">Match one or more times. Match as many times as possible.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">?</td>
+	<td style="text-align:left;">Match zero or one times. Prefer one.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">{n}</td>
+	<td style="text-align:left;">Match exactly n times.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">{n,}</td>
+	<td style="text-align:left;">Match at least n times. Match as many times as possible.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">{n,m}</td>
+	<td style="text-align:left;">Match between n and m times. Match as many times as possible, but not more than m.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">*?</td>
+	<td style="text-align:left;">Match zero or more times. Match as few times as possible.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">+?</td>
+	<td style="text-align:left;">Match one or more times. Match as few times as possible.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">??</td>
+	<td style="text-align:left;">Match zero or one times. Prefer zero.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">{n}?</td>
+	<td style="text-align:left;">Match exactly n times.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">{n,}?</td>
+	<td style="text-align:left;">Match at least n times, but no more than required for an overall pattern match.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">{n,m}?</td>
+	<td style="text-align:left;">Match between n and m times. Match as few times as possible, but not less than n.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">*+</td>
+	<td style="text-align:left;">Match zero or more times. Match as many times as possible when first encountered, do not retry with fewer even if overall match fails. Possessive match.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">++</td>
+	<td style="text-align:left;">Match one or more times. Possessive match.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">?+</td>
+	<td style="text-align:left;">Match zero or one times. Possessive match.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">{n}+</td>
+	<td style="text-align:left;">Match exactly n times. Possessive match.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">{n,}+</td>
+	<td style="text-align:left;">Match at least n times. Possessive match.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">{n,m}+</td>
+	<td style="text-align:left;">Match between n and m times. Possessive match.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">(…)</td>
+	<td style="text-align:left;">Capturing parentheses. Range of input that matched the parenthesized subexpression is available after the match.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">(?:…)</td>
+	<td style="text-align:left;">Non-capturing parentheses. Groups the included pattern, but does not provide capturing of matching text. Somewhat more efficient than capturing parentheses.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">(?&gt;…)</td>
+	<td style="text-align:left;">Atomic-match parentheses. First match of the parenthesized subexpression is the only one tried; if it does not lead to an overall pattern match, back up the search for a match to a position before the (?&gt; .</td>
+</tr>
+<tr>
+	<td style="text-align:left;">(?#…)</td>
+	<td style="text-align:left;">Free-format comment (?#comment).</td>
+</tr>
+<tr>
+	<td style="text-align:left;">(?=…)</td>
+	<td style="text-align:left;">Look-ahead assertion. True if the parenthesized pattern matches at the current input position, but does not advance the input position.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">(?!…)</td>
+	<td style="text-align:left;">Negative look-ahead assertion. True if the parenthesized pattern does not match at the current input position. Does not advance the input position.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">(?&lt;=…)</td>
+	<td style="text-align:left;">Look-behind assertion. True if the parenthesized pattern matches text preceding the current input position, with the last character of the match being the input character just before the current position. Does not alter the input position. The length of possible strings matched by the look-behind pattern must not be unbounded (no * or + operators).</td>
+</tr>
+<tr>
+	<td style="text-align:left;">(?&lt;!…)</td>
+	<td style="text-align:left;">Negative Look-behind assertion. True if the parenthesized pattern does not match text preceding the current input position, with the last character of the match being the input character just before the current position. Does not alter the input position. The length of possible strings matched by the look-behind pattern must not be unbounded (no * or + operators).</td>
+</tr>
+<tr>
+	<td style="text-align:left;">(?ismwx-ismwx:…)</td>
+	<td style="text-align:left;">Flag settings. Evaluate the parenthesized expression with the specified flags enabled or -disabled.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">(?ismwx-ismwx)</td>
+	<td style="text-align:left;">Flag settings. Change the flag settings. Changes apply to the portion of the pattern following the setting. For example, (?i) changes to a case insensitive match. <strong>See also:</strong> <a href="#RegularExpressionOptions">Regular Expression Options</a></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="seealso">See Also</h4>
+
+<p><a href="http://userguide.icu-project.org/strings/regexp">ICU User Guide - Regular Expressions</a>
+<br/>
+<a href="#RegularExpressionOptions">Regular Expression Options</a></p>
+
+<h3 id="icuregularexpressioncharacterclasses">ICU Regular Expression Character Classes</h3>
+
+<p>The following was originally from ICU User Guide - UnicodeSet, but has been adapted to fit the needs of this documentation. Specifically, the ICU UnicodeSet documentation describes an ICU C++ object— UnicodeSet. The term UnicodeSet was effectively replaced with Character Class, which is more appropriate in the context of regular expressions. As always, you should refer to the original, official documentation when in doubt.</p>
+
+<h4 id="seealso">See Also</h4>
+
+<p><a href="http://userguide.icu-project.org/strings/unicodeset">ICU User Guide - UnicodeSet</a>
+<br/>
+<a href="http://www.unicode.org/reports/tr18/#Subtraction_and_Intersection">UTS #18 Unicode Regular Expressions - Subtraction and Intersection</a>
+<br/>
+<a href="http://www.unicode.org/reports/tr18/#Categories">UTS #18 Unicode Regular Expressions - Properties</a></p>
+
+<h3 id="overview">Overview</h3>
+
+<p>A character class is a regular expression pattern that represents a set of Unicode characters or character strings. The following table contains some example character class patterns:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Pattern</th>
+	<th style="text-align:left;">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">[a-z]</td>
+	<td style="text-align:left;">The lower case letters a through z</td>
+</tr>
+<tr>
+	<td style="text-align:left;">[abc123]</td>
+	<td style="text-align:left;">The six characters a, b, c, 1, 2, and 3</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>[\p{Letter}]</code></td>
+	<td style="text-align:left;">All characters with the Unicode General Category of Letter.</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="stringvalues">String Values</h4>
+
+<p>In addition to being a set of Unicode code point characters, a character class may also contain string values. Conceptually, a character class is always a set of strings, not a set of characters. Historically, regular expressions have treated […] character classes as being composed of single characters only, which is equivalent to a string that contains only a single character.</p>
+
+<h4 id="characterclasspatterns">Character Class Patterns</h4>
+
+<p>Patterns are a series of characters bounded by square brackets that contain lists of characters and Unicode property sets. Lists are a sequence of characters that may have ranges indicated by a - between two characters, as in a-z. The sequence specifies the range of all characters from the left to the right, in Unicode order. For example, <code>[a c d-f m]</code> is equivalent to <code>[a c d e f m]</code>. Whitespace can be freely used for clarity as [a c d-f m] means the same as <code>[acd-fm]</code>.</p>
+
+<p>Unicode property sets are specified by a Unicode property, such as [:Letter:]. ICU version 2.0 supports General Category, Script, and Numeric Value properties (ICU will support additional properties in the future). For a list of the property names, see the end of this section. The syntax for specifying the property names is an extension of either POSIX or Perl syntax with the addition of =value. For example, you can match letters by using the POSIX syntax [:Letter:], or by using the Perl syntax \p{Letter}. The type can be omitted for the Category and Script properties, but is required for other properties.</p>
+
+<p>The following table lists the standard and negated forms for specifying Unicode properties in both POSIX or Perl syntax. The negated form specifies a character class that includes everything but the specified property. For example, <code>[:^Letter:]</code> matches all characters that are not <code>[:Letter:]</code>.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Syntax Style</th>
+	<th style="text-align:left;">Standard</th>
+	<th style="text-align:left;">Negated</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">POSIX</td>
+	<td style="text-align:left;">[:type=value:]</td>
+	<td style="text-align:left;">[:&#94;type=value:]</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Perl</td>
+	<td style="text-align:left;">\p{type=value}</td>
+	<td style="text-align:left;">\P{type=value}</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="seealso">See Also</h4>
+
+<p><a href="http://www.unicode.org/reports/tr18/#Categories">UTS #18 Unicode Regular Expressions - Properties</a></p>
+
+<p>Character classes can then be modified using standard set operations— Union, Inverse, Difference, and Intersection.</p>
+
+<ul>
+<li>To union two sets, simply concatenate them. For example, <code>[[:letter:] [:number:]]</code></li>
+<li>To intersect two sets, use the &amp; operator. For example, <code>[[:letter:] &amp; [a-z]]</code></li>
+<li>To take the set-difference of two sets, use the - operator. For example, <code>[[:letter:] - [a-z]]</code></li>
+<li>To invert a set, place a <code>^</code> immediately after the opening <code>[</code>. For example, <code>[^a-z]</code>. In any other location, the <code>^</code> does not have a special meaning.</li>
+</ul>
+
+<p>The binary operators &amp; and - have equal precedence and bind left-to-right. Thus <code>[[:letter:]-[a-z]-[\u0100-\u01FF]]</code> is equivalent to <code>[[[:letter:]-[a-z]]-[\u0100-\u01FF]]</code>. Another example is the set <code>[[ace][bdf] - [abc][def]]</code> is not the empty set, but instead the set [def]. This only really matters for the difference operation, as the intersection operation is commutative.</p>
+
+<p>Another caveat with the <code>&amp;</code> and <code>-</code> operators is that they operate between sets. That is, they must be immediately preceded and immediately followed by a set. For example, the pattern <code>[[:Lu:]-A]</code> is illegal, since it is interpreted as the set <code>[:Lu:]</code> followed by the incomplete range <code>-A</code>. To specify the set of uppercase letters except for <code>A</code>, enclose the <code>A</code> in a set: <code>[[:Lu:]-[A]]</code>.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Pattern</th>
+	<th style="text-align:left;">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">[a]</td>
+	<td style="text-align:left;">The set containing a.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">[a-z]</td>
+	<td style="text-align:left;">The set containing a through z and all letters in between, in Unicode order.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">[&#94;a-z]</td>
+	<td style="text-align:left;">The set containing all characters but a through z, that is, U+0000 through a&#8211;1 and z+1 through U+FFFF.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">[[pat1][pat2]]</td>
+	<td style="text-align:left;">The union of sets specified by pat1 and pat2.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">[[pat1]&amp;[pat2]]</td>
+	<td style="text-align:left;">The intersection of sets specified by pat1 and pat2.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">[[pat1]-[pat2]]</td>
+	<td style="text-align:left;">The asymmetric difference of sets specified by pat1 and pat2.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">[:Lu:]</td>
+	<td style="text-align:left;">The set of characters belonging to the given Unicode category. In this case, Unicode uppercase letters. The long form for this is [:UppercaseLetter:].</td>
+</tr>
+<tr>
+	<td style="text-align:left;">[:L:]</td>
+	<td style="text-align:left;">The set of characters belonging to all Unicode categories starting with L, that is, [[:Lu:][:Ll:][:Lt:][:Lm:][:Lo:]]. The long form for this is [:Letter:].</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="seealso">See Also</h4>
+
+<p><a href="http://www.unicode.org/reports/tr18/#Subtraction_and_Intersection">UTS #18 Unicode Regular Expressions - Subtraction and Intersection</a></p>
+
+<h4 id="stringvaluesincharacterclasses">String Values in Character Classes</h4>
+
+<p>String values are enclosed in {curly brackets}. For example:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Pattern</th>
+	<th style="text-align:left;">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">[abc{def}]</td>
+	<td style="text-align:left;">A set containing four members, the single characters a, b, and c and the string def</td>
+</tr>
+<tr>
+	<td style="text-align:left;">[{abc}{def}]</td>
+	<td style="text-align:left;">A set containing two members, the string abc and the string def.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">[{a}{b}{c}][abc]</td>
+	<td style="text-align:left;">These two sets are equivalent. Each contains three items, the three individual characters a, b, and c. A {string} containing a single character is equivalent to that same character specified in any other way.</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="characterquotingandescapinginicucharacterclasspatterns">Character Quoting and Escaping in ICU Character Class Patterns</h4>
+
+<h5 id="singlequote">Single Quote</h5>
+
+<p>Two single quotes represent a single quote, either inside or outside single quotes. Text within single quotes is not interpreted in any way, except for two adjacent single quotes. It is taken as literal text— special characters become non-special. These quoting conventions for ICU character classes differ from those of Perl or Java. In those environments, single quotes have no special meaning, and are treated like any other literal character.</p>
+
+<h5 id="backslashescapes">Backslash Escapes</h5>
+
+<p>Outside of single quotes, certain backslashed characters have special meaning:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Pattern</th>
+	<th style="text-align:left;">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">\uhhhh</td>
+	<td style="text-align:left;">Exactly 4 hex digits; h in [0&#8211;9A-Fa-f]</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\Uhhhhhhhh</td>
+	<td style="text-align:left;">Exactly 8 hex digits</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\xhh</td>
+	<td style="text-align:left;">1&#8211;2 hex digits</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\ooo</td>
+	<td style="text-align:left;">1&#8211;3 octal digits; o in [0&#8211;7]</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\a</td>
+	<td style="text-align:left;">U+0007 BELL</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\b</td>
+	<td style="text-align:left;">U+0008 BACKSPACE</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\t</td>
+	<td style="text-align:left;">U+0009 HORIZONTAL TAB</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\n</td>
+	<td style="text-align:left;">U+000A LINE FEED</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\v</td>
+	<td style="text-align:left;">U+000B VERTICAL TAB</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\f</td>
+	<td style="text-align:left;">U+000C FORM FEED</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\r</td>
+	<td style="text-align:left;">U+000D CARRIAGE RETURN</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\</td>
+	<td style="text-align:left;">U+005C BACKSLASH</td>
+</tr>
+</tbody>
+</table>
+
+<p>Anything else following a backslash is mapped to itself, except in an environment where it is defined to have some special meaning. For example, \p{Lu} is the set of uppercase letters. Any character formed as the result of a backslash escape loses any special meaning and is treated as a literal. In particular, note that \u and \U escapes create literal characters.</p>
+
+<h4 id="whitespace">Whitespace</h4>
+
+<p>Whitespace, as defined by the ICU API, is ignored unless it is quoted or backslashed.</p>
+
+<h4 id="propertyvalues">Property Values</h4>
+
+<p>The following property value styles are recognized:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Style</th>
+	<th style="text-align:left;">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">Short</td>
+	<td style="text-align:left;">Omits the =type argument. Used to prevent ambiguity and only allowed with the Category and Script properties.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Medium</td>
+	<td style="text-align:left;">Uses an abbreviated type and value.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Long</td>
+	<td style="text-align:left;">Uses a full type and value.</td>
+</tr>
+</tbody>
+</table>
+
+<p>If the type or value is omitted, then the = equals sign is also omitted. The short style is only used for Category and Script properties because these properties are very common and their omission is unambiguous.</p>
+
+<p>In actual practice, you can mix type names and values that are omitted, abbreviated, or full. For example, if Category=Unassigned you could use what is in the table explicitly, \p{gc=Unassigned}, \p{Category=Cn}, or \p{Unassigned}.</p>
+
+<p>When these are processed, case and whitespace are ignored so you may use them for clarity, if desired. For example, \p{Category = Uppercase Letter} or \p{Category = uppercase letter}.</p>
+
+<p>For a list of properties supported by ICU, see <a href="http://userguide.icu-project.org/strings/properties">ICU User Guide - Unicode Properties</a>.</p>
+
+<h4 id="seealso">See Also</h4>
+
+<p><a href="http://userguide.icu-project.org/strings/properties">ICU User Guide - Unicode Properties</a>
+<br/>
+<a href="http://www.unicode.org/reports/tr18/#Categories">UTS #18 Unicode Regular Expressions - Properties</a></p>
+
+<h3 id="unicodeproperties">Unicode Properties</h3>
+
+<p>The following tables list some of the commonly used Unicode Properties, which can be matched in a regular expression with \p{Property}. The tables were created from the Unicode 5.2 Unicode Character Database, which is the version used by ICU that ships with Mac OS X 10.6.</p>
+
+<h4 id="category">Category</h4>
+
+<table>
+    <tbody><tr><th colspan="2">Category</th></tr>
+    <tr><td class="consoleText">L</td><td class="consoleText">Letter</td></tr>
+    <tr><td class="consoleText">LC</td><td class="consoleText">CasedLetter</td></tr>
+    <tr><td class="consoleText">Lu</td><td class="consoleText">UppercaseLetter</td></tr>
+    <tr><td class="consoleText">Ll</td><td class="consoleText">LowercaseLetter</td></tr>
+    <tr><td class="consoleText">Lt</td><td class="consoleText">TitlecaseLetter</td></tr>
+    <tr><td class="consoleText">Lm</td><td class="consoleText">ModifierLetter</td></tr>
+    <tr><td class="consoleText">Lo</td><td class="consoleText">OtherLetter</td></tr>
+    <tr><td class="consoleText" colspan="2">&nbsp;</td></tr>
+    <tr><td class="consoleText">P</td><td class="consoleText">Punctuation</td></tr>
+    <tr><td class="consoleText">Pc</td><td class="consoleText">ConnectorPunctuation</td></tr>
+    <tr><td class="consoleText">Pd</td><td class="consoleText">DashPunctuation</td></tr>
+    <tr><td class="consoleText">Ps</td><td class="consoleText">OpenPunctuation</td></tr>
+    <tr><td class="consoleText">Pe</td><td class="consoleText">ClosePunctuation</td></tr>
+    <tr><td class="consoleText">Pi</td><td class="consoleText">InitialPunctuation</td></tr>
+    <tr><td class="consoleText">Pf</td><td class="consoleText">FinalPunctuation</td></tr>
+    <tr><td class="consoleText">Po</td><td class="consoleText">OtherPunctuation</td></tr>
+    <tr><td class="consoleText" colspan="2">&nbsp;</td></tr>
+    <tr><td class="consoleText">N</td><td class="consoleText">Number</td></tr>
+    <tr><td class="consoleText">Nd</td><td class="consoleText">DecimalNumber</td></tr>
+    <tr><td class="consoleText">Nl</td><td class="consoleText">LetterNumber</td></tr>
+    <tr><td class="consoleText">No</td><td class="consoleText">OtherNumber</td></tr>
+    <tr><td class="consoleText" colspan="2">&nbsp;</td></tr>
+    <tr><td class="consoleText">M</td><td class="consoleText">Mark</td></tr>
+    <tr><td class="consoleText">Mn</td><td class="consoleText">NonspacingMark</td></tr>
+    <tr><td class="consoleText">Mc</td><td class="consoleText">SpacingMark</td></tr>
+    <tr><td class="consoleText">Me</td><td class="consoleText">EnclosingMark</td></tr>
+    <tr><td class="consoleText" colspan="2">&nbsp;</td></tr>
+    <tr><td class="consoleText">S</td><td class="consoleText">Symbol</td></tr>
+    <tr><td class="consoleText">Sm</td><td class="consoleText">MathSymbol</td></tr>
+    <tr><td class="consoleText">Sc</td><td class="consoleText">CurrencySymbol</td></tr>
+    <tr><td class="consoleText">Sk</td><td class="consoleText">ModifierSymbol</td></tr>
+    <tr><td class="consoleText">So</td><td class="consoleText">OtherSymbol</td></tr>
+    <tr><td class="consoleText" colspan="2">&nbsp;</td></tr>
+    <tr><td class="consoleText">Z</td><td class="consoleText">Separator</td></tr>
+    <tr><td class="consoleText">Zs</td><td class="consoleText">SpaceSeparator</td></tr>
+    <tr><td class="consoleText">Zl</td><td class="consoleText">LineSeparator</td></tr>
+    <tr><td class="consoleText">Zp</td><td class="consoleText">ParagraphSeparator</td></tr>
+    <tr><td class="consoleText" colspan="2">&nbsp;</td></tr>
+    <tr><td class="consoleText">C</td><td class="consoleText">Other</td></tr>
+    <tr><td class="consoleText">Cc</td><td class="consoleText">Control</td></tr>
+    <tr><td class="consoleText">Cf</td><td class="consoleText">Format</td></tr>
+    <tr><td class="consoleText">Cs</td><td class="consoleText">Surrogate</td></tr>
+    <tr><td class="consoleText">Co</td><td class="consoleText">PrivateUse</td></tr>
+    <tr><td class="consoleText">Cn</td><td class="consoleText">Unassigned</td></tr>
+      </tbody>
+</table>
+
+<h4 id="script">Script</h4>
+
+<table style="width: 100%;">
+    <tbody>
+    <tr><td class="consoleText" style="width: 33%;">Arabic</td><td class="consoleText" style="width: 33%;">Armenian</td><td class="consoleText" style="width: 33%;">Balinese</td></tr>
+    <tr><td class="consoleText">Bengali</td><td class="consoleText">Bopomofo</td><td class="consoleText">Braille</td></tr>
+    <tr><td class="consoleText">Buginese</td><td class="consoleText">Buhid</td><td class="consoleText">Canadian_Aboriginal</td></tr>
+    <tr><td class="consoleText">Carian</td><td class="consoleText">Cham</td><td class="consoleText">Cherokee</td></tr>
+    <tr><td class="consoleText">Common</td><td class="consoleText">Coptic</td><td class="consoleText">Cuneiform</td></tr>
+    <tr><td class="consoleText">Cypriot</td><td class="consoleText">Cyrillic</td><td class="consoleText">Deseret</td></tr>
+    <tr><td class="consoleText">Devanagari</td><td class="consoleText">Ethiopic</td><td class="consoleText">Georgian</td></tr>
+    <tr><td class="consoleText">Glagolitic</td><td class="consoleText">Gothic</td><td class="consoleText">Greek</td></tr>
+    <tr><td class="consoleText">Gujarati</td><td class="consoleText">Gurmukhi</td><td class="consoleText">Han</td></tr>
+    <tr><td class="consoleText">Hangul</td><td class="consoleText">Hanunoo</td><td class="consoleText">Hebrew</td></tr>
+    <tr><td class="consoleText">Hiragana</td><td class="consoleText">Inherited</td><td class="consoleText">Kannada</td></tr>
+    <tr><td class="consoleText">Katakana</td><td class="consoleText">Kayah_Li</td><td class="consoleText">Kharoshthi</td></tr>
+    <tr><td class="consoleText">Khmer</td><td class="consoleText">Lao</td><td class="consoleText">Latin</td></tr>
+    <tr><td class="consoleText">Lepcha</td><td class="consoleText">Limbu</td><td class="consoleText">Linear_B</td></tr>
+    <tr><td class="consoleText">Lycian</td><td class="consoleText">Lydian</td><td class="consoleText">Malayalam</td></tr>
+    <tr><td class="consoleText">Mongolian</td><td class="consoleText">Myanmar</td><td class="consoleText">New_Tai_Lue</td></tr>
+    <tr><td class="consoleText">Nko</td><td class="consoleText">Ogham</td><td class="consoleText">Ol_Chiki</td></tr>
+    <tr><td class="consoleText">Old_Italic</td><td class="consoleText">Old_Persian</td><td class="consoleText">Oriya</td></tr>
+    <tr><td class="consoleText">Osmanya</td><td class="consoleText">Phags_Pa</td><td class="consoleText">Phoenician</td></tr>
+    <tr><td class="consoleText">Rejang</td><td class="consoleText">Runic</td><td class="consoleText">Saurashtra</td></tr>
+    <tr><td class="consoleText">Shavian</td><td class="consoleText">Sinhala</td><td class="consoleText">Sundanese</td></tr>
+    <tr><td class="consoleText">Syloti_Nagri</td><td class="consoleText">Syriac</td><td class="consoleText">Tagalog</td></tr>
+    <tr><td class="consoleText">Tagbanwa</td><td class="consoleText">Tai_Le</td><td class="consoleText">Tamil</td></tr>
+    <tr><td class="consoleText">Telugu</td><td class="consoleText">Thaana</td><td class="consoleText">Thai</td></tr>
+    <tr><td class="consoleText">Tibetan</td><td class="consoleText">Tifinagh</td><td class="consoleText">Ugaritic</td></tr>
+    <tr><td class="consoleText">Unknown</td><td class="consoleText">Vai</td><td class="consoleText">Yi</td></tr>
+      </tbody>
+</table>
+
+<h4 id="extendedpropertyclass">Extended Property Class</h4>
+
+<table class="regexSyntax unicodeProperties" style="margin-top: 2em; width: 100%;">
+    <tbody>
+    <tr><td class="consoleText">ASCII_Hex_Digit</td><td class="consoleText">Alphabetic</td></tr>
+    <tr><td class="consoleText">Bidi_Control</td><td class="consoleText">Dash</td></tr>
+    <tr><td class="consoleText">Default_​Ignorable_​Code_​Point</td><td class="consoleText">Deprecated</td></tr>
+    <tr><td class="consoleText">Diacritic</td><td class="consoleText">Extender</td></tr>
+    <tr><td class="consoleText">Grapheme_Base</td><td class="consoleText">Grapheme_Extend</td></tr>
+    <tr><td class="consoleText">Grapheme_Link</td><td class="consoleText">Hex_Digit</td></tr>
+    <tr><td class="consoleText">Hyphen</td><td class="consoleText">IDS_​Binary_​Operator</td></tr>
+    <tr><td class="consoleText">IDS_Trinary_Operator</td><td class="consoleText">ID_Continue</td></tr>
+    <tr><td class="consoleText">ID_Start</td><td class="consoleText">Ideographic</td></tr>
+    <tr><td class="consoleText">Join_Control</td><td class="consoleText">​​Logical_Order_Exception</td></tr>
+    <tr><td class="consoleText">Lowercase</td><td class="consoleText">Math</td></tr>
+    <tr><td class="consoleText">Noncharacter_Code_Point</td><td class="consoleText">Other_Alphabetic</td></tr>
+    <tr><td class="consoleText">Other_Default_Ignorable_Code_Point</td><td class="consoleText">Other_Grapheme_Extend</td></tr>
+    <tr><td class="consoleText">Other_ID_Continue</td><td class="consoleText">Other_ID_Start</td></tr>
+    <tr><td class="consoleText">Other_Lowercase</td><td class="consoleText">Other_Math</td></tr>
+    <tr><td class="consoleText">Other_Uppercase</td><td class="consoleText">Pattern_Syntax</td></tr>
+    <tr><td class="consoleText">Pattern_White_Space</td><td class="consoleText">Quotation_Mark</td></tr>
+    <tr><td class="consoleText">Radical</td><td class="consoleText">STerm</td></tr>
+    <tr><td class="consoleText">Soft_Dotted</td><td class="consoleText">Terminal_Punctuation</td></tr>
+    <tr><td class="consoleText">Unified_Ideograph</td><td class="consoleText">Uppercase</td></tr>
+    <tr><td class="consoleText">Variation_Selector</td><td class="consoleText">White_Space</td></tr>
+    <tr><td class="consoleText">XID_Continue</td><td class="consoleText">XID_Start</td></tr>
+      </tbody>
+</table>
+
+<h3 id="unicodecharacterdatabase">Unicode Character Database</h3>
+
+<p>Unicode properties are defined in the <a href="http://www.unicode.org/ucd/">Unicode Character Database</a>, or <strong>UCD</strong>. From time to time the UCD is <a href="http://www.unicode.org/versions/">revised and updated</a>. The properties available, and the definition of the characters they match, depend on the UCD that ICU was built with.</p>
+
+<pre><code>Note: In general, the ICU and UCD versions change with each major operating system release.
+</code></pre>
+
+<h4 id="seealso">See Also</h4>
+
+<p><a href="http://www.unicode.org/reports/tr18/#Categories">UTS #18 Unicode Regular Expressions - Properties</a><br/>
+<a href="http://www.unicode.org/reports/tr18/#Compatibility_Properties">UTS #18 Unicode Regular Expressions - Compatibility Properties</a><br/>
+<a href="http://www.unicode.org/ucd/">Unicode Character Database</a><br/>
+<a href="http://www.unicode.org/versions/Unicode5.2.0/">The Unicode Standard - Unicode 5.2</a><br/>
+<a href="http://www.unicode.org/versions/">Versions of the Unicode Standard</a><br/></p>
+
+<h3 id="icureplacementtextsyntax">ICU Replacement Text Syntax</h3>
+
+<h4 id="replacementtextsyntax">Replacement Text Syntax</h4>
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Character</th>
+	<th style="text-align:left;">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">$n</td>
+	<td style="text-align:left;">The text of capture group n will be substituted for $n. n must be ≥ 0 and not greater than the number of capture groups. A $ not followed by a digit has no special meaning, and will appear in the substitution text as itself, a $.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">\</td>
+	<td style="text-align:left;">Treat the character following the backslash as a literal, suppressing any special meaning. Backslash escaping in substitution text is only required for $ and \, but may proceed any character. The backslash itself will not be copied to the substitution text.</td>
+</tr>
+</tbody>
+</table>
+
+<h5 id="casechangeduringreplacement">Case Change During Replacement</h5>
+
+<p>TextSoap includes some additional processing commands which allow you to dynamically change the case of your replacement. This is similar to PCRE (which are typically preceded with \, ie. \U, \u, \L, \l, \E). In TextSoap, these commands are preceded with a $ (dollar sign).</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Cmd</th>
+	<th style="text-align:left;">Action</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">$U</td>
+	<td style="text-align:left;">All future text is uppercased</td>
+</tr>
+<tr>
+	<td style="text-align:left;">$u</td>
+	<td style="text-align:left;">Next character is uppercased</td>
+</tr>
+<tr>
+	<td style="text-align:left;">$L</td>
+	<td style="text-align:left;">All future text is lowercased</td>
+</tr>
+<tr>
+	<td style="text-align:left;">$l</td>
+	<td style="text-align:left;">Next character is lowercased</td>
+</tr>
+<tr>
+	<td style="text-align:left;">$E</td>
+	<td style="text-align:left;">All future text case is preserved</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h1 id="filesandfolders">Files and Folders</h1>
+
+<p>TextSoap places files in various locations to utilize certain features of macOS.
+The Application Support folder contains a number of files used by TextSoap, including a database that contains MyLibrary.</p>
+
+<p>-</p>
+
+<p>TextSoap Application Support folder:</p>
+
+<pre><code>~/Library/Application Support/TextSoap/
+</code></pre>
+
+<p>Preference file used by TextSoap:</p>
+
+<pre><code>~/Library/Preferences/com.unmarked.textsoap9.plist
+</code></pre>
+
+<p>For Setapp:</p>
+
+<pre><code>~/Library/Preferences/com.unmarked.textsoap-setapp.plist
+</code></pre>
+
+	</div>
+</div>
+
+<!--
+<script>
+includeHTML();
+</script>
+-->
+
+</body>
+</html>

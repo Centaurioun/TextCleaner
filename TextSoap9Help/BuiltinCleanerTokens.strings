@@ -1,0 +1,530 @@
+/* Token Strings to localize cleaner names
+
+	"#TOKEN" = "Cleaner name";
+	"#TOKEN_INFO" = "Cleaner Description";
+
+	add _INFO to token name to get its description
+ */
+
+"#SCRUB" = "Scrub";
+"#SCRUB_INFO" = "This cleaner addresses 90% of text cleaning needs.\n\nLike a multivitamin, it gives you more than one cleaner in a single shot, stripping spaces, forwarding characters, MIME encoded characters (%Hex, =Hex), and paragraphs.\n\nSCRUB calls the cleaners in the proper order to insure the best results.";
+
+"#SCRUB2" = "Scrub (Alt)";
+"#SCRUB2_INFO" = "Applies SCRUB, then removes any > characters found anywhere in the selected text.";
+
+
+"#SPACER" = "Separator";
+"#SPACER_INFO" = "Use this special option to place a gap within your groups.";
+
+
+"#MYSCRUB" = "MyScrub";
+"#MYSCRUB_INFO" = "A shortcut to a user selected custom cleaner. Specify in Preferences > General.";
+
+
+"#REMOVE_EXTRA_SPACES" = "Remove Extra Spaces";
+"#REMOVE_EXTRA_SPACES_INFO" = "This cleaner takes multiple spaces and replaces it with a single space.\n\nLeading spaces at the beginning of a line are also removed.\n\nThis is great for dealing with text that “formats” with spaces.";
+
+"#REMOVE_EXTRA_SPACES_ORIG" = "Remove Extra Spaces (Original)";
+"#REMOVE_EXTRA_SPACES_ORIG_INFO" = "This cleaner takes multiple spaces and replaces it with a single space.\n\nLeading spaces at the beginning of a line are also removed.\n\nThis is great for dealing with text that “formats” with spaces.";
+
+
+"#REMOVE_FORWARDING_CHARS" = "Remove Forwarding (>) Characters";
+"#REMOVE_FORWARDING_CHARS_INFO" = "This cleaner removes the forwarding characters on a line.\n\nIf you’ve ever had email forwarded to you, you’ve seen the forwarding characters (most often the ‘>’ character).\n\nAnd if it’s been forwarded enough - you can get three, four, or more sets of forwarding.\n\nThe rule is simple, it starts at the beginning of a line, and strips all the spaces and ‘>’ characters until it runs into a character that isn’t one of those two.";
+
+
+"#CONVERT_MIME" = "Convert MIME-encoded Characters";
+"#CONVERT_MIME_INFO" = "This cleaner will convert either %Hex or =Hex characters to their appropriate ASCII character. For example, if you have a %20 or a =20, that would be converted to a space (hex 0x20 is a space character).";
+
+
+"#MAKE_PARAGRAPHS" = "Make Paragraphs";
+"#MAKE_PARAGRAPHS_INFO" = "This cleaner will convert multi-line paragraph (with hard carriage returns <CR>) into a single paragraph. The cleaner will add a space to the text if the CR is building two lines to avoid smashing words together. It will also make a new paragraph if there is a CR followed by another CR.";
+
+
+"#REMOVE_ALL_TABS" = "Remove All Tabs";
+"#REMOVE_ALL_TABS_INFO" = "This cleaner deletes all tabs from the selected text.";
+
+"#REMOVE_ALL_SPACES" = "Remove All Spaces";
+"#REMOVE_ALL_SPACES_INFO" = "This cleaner deletes all spaces from the selected text.";
+
+"#REMOVE_ALL_WHITESPACE" = "Remove All Whitespace";
+"#REMOVE_ALL_WHITESPACE_INFO" = "This cleaner deletes all whitespace (spaces,tabs,etc) from the selected text.";
+
+
+"#REMOVE_CONTROL_CHARS" = "Remove Control Characters";
+"#REMOVE_CONTROL_CHARS_INFO" = "This cleaner deletes all control characters (characters with an ASCII value less than 32) from the selected text (except for carriage returns).";
+
+"#REMOVE_EXTRA_RETURNS" = "Remove Extra Returns";
+"#REMOVE_EXTRA_RETURNS_INFO" = "This cleaner converted multiple successive carriage returns into a single carriage return. It is the same as “Multiple Returns to 2 Returns”";
+
+"#UPPERCASE" = "Uppercase";
+"#UPPERCASE_INFO" = "This cleaner will convert text to “UPPERCASE”.";
+
+
+"#LOWERCASE" = "Lowercase";
+"#LOWERCASE_INFO" = "This cleaner will convert text to “lowercase”.";
+
+"#MACOS_NAME_FIX" = "Fixup macOS Name";
+"#MACOS_NAME_FIX_INFO" = "Converts 'Mac OS X', 'OS X', 'MacOS' to 'macOS'.";
+
+"#APPLE_NAME_FIX" = "Capitalize Apple Names";
+"#APPLE_NAME_FIX_INFO" = "Capitalizes Apple-related names.";
+
+"#CAPITALIZE_LINES" = "Capitalize Lines";
+"#CAPITALIZE_LINES_INFO" = "This cleaner will capitalize the first character of each line, but does not change existing case of the text.";
+
+"#CAPITALIZE_LINES_ALT" = "Capitalize Lines with Lowercasing";
+"#CAPITALIZE_LINES_INFO" = "This cleaner converts text to lowercase, then capitalizes the first character of each line.";
+
+"#CAPITALIZE_SENTENCES" = "Capitalize Sentences";
+"#CAPITALIZE_SENTENCES_INFO" = "This cleaner capitalizes first character of each sentence, but does not change existing case of the text.";
+
+"#CAPITALIZE_SENTENCES_ALT" = "Capitalize Sentences with Lowercasing";
+"#CAPITALIZE_SENTENCES_ALT_INFO" = "This cleaner converts text to lowercase, then capitalizes the first character of each sentence.";
+
+"#TITLE_CASE1" = "Capitalize with Title Case";
+"#TITLE_CASE1_INFO" = "Capitalizes words using basic Title Case rules.";
+
+"#CAPITALIZE_WORDS" = "Capitalize Words";
+"#CAPITALIZE_WORDS_INFO" = "This cleaner will capitalize each Word.";
+
+
+"#CONVERT_BULLETS" = "Convert Bullets to ASCII";
+"#CONVERT_BULLETS_INFO" = "This cleaner will convert bullets to standard dashes ASCII.";
+
+
+"#STRAIGHTEN_QUOTES" = "Straighten Quotes";
+"#STRAIGHTEN_QUOTES_INFO" = "This cleaner will convert single and double smart (or curly) quotes to straight quotes.";
+
+
+"#SMARTEN_QUOTES" = "Smarten Quotes";
+"#SMARTEN_QUOTES_INFO" = "This cleaner will convert single and double straight quotes to smart (or curly) quotes.";
+
+
+"#EXPAND_TABS" = "Expand Tabs";
+"#EXPAND_TABS_INFO" = "This cleaner will convert tabs (hex 0x09) into four (4) spaces.";
+
+
+"#EXTRACT_TEXT_FROM_HTML" = "Extract Text from HTML Source";
+"#EXTRACT_TEXT_FROM_HTML_INFO" = "This cleaner will clean up HTML raw text. It strips out anything between ‘<’ and ‘>’. This is useful if you have the HTML source and just want the contents. It also handles Ampersand escape codes (&nbsp; or &#140;). It will remove tab characters and remove multiple carriage returns.";
+
+"#HTML_TEXT_TO_RTF" = "Convert HTML Source to Rich Text";
+"#HTML_TEXT_TO_RTF_INFO" = "This cleaner will convert HTML source to Rich Text. Links are converted to Hyperlinks and additional formatting may also be maintained.";
+
+
+"#REWRAP_TEXT" = "Rewrap Text";
+"#REWRAP_TEXT_INFO" = "This cleaner will first fix any paragraphs and then rewrap the text at 70 characters per line. Same as “Wrap At 70”.";
+
+
+"#QUOTE_TEXT" = "Quote Text";
+"#QUOTE_TEXT_INFO" = "This cleaner will rewrap the text and re-insert forwarding marks (i.e.. ‘>’) at the beginning of each line. It also puts hard returns at the end of each line to ensure proper wrapping.";
+
+
+"#WRAP_AT_50" = "Wrap At 50";
+"#WRAP_AT_50_INFO" = "This cleaner will first fix any paragraphs and then rewrap the text at 50 characters per line.";
+
+
+"#WRAP_AT_60" = "Wrap At 60";
+"#WRAP_AT_60_INFO" = "This cleaner will first fix any paragraphs and then rewrap the text at 60 characters per line.";
+
+
+"#WRAP_AT_70" = "Wrap At 70";
+"#WRAP_AT_70_INFO" = "This cleaner will first fix any paragraphs and then rewrap the text at 70 characters per line.";
+
+
+"#NETTEXT" = "Internet Friendly Text";
+"#NETTEXT_INFO" = "Convert to Internet Friendly Text";
+
+
+"#REMOVE_HIASCII" = "Remove All High Ascii Characters";
+"#REMOVE_HIASCII_INFO" = "Remove All High Ascii Characters";
+
+
+"#SCRUB2" = "SCRUB2";
+"#SCRUB2_INFO" = "This cleaner is a special version of SCRUB that will remove all embedded forwarding marks (>) in text as well as performing a SCRUB.";
+
+
+"#1CR_TO_2CR" = "1 Return to 2 Returns";
+"#1CR_TO_2CR_INFO" = "This cleaner converts each carriage return to 2 carriage returns.";
+
+
+"#1CR_TO_SPACE" = "1 Return to Space";
+"#1CR_TO_SPACE_INFO" = "This cleaner converts each carriage return to a space.";
+
+
+"#STRIP_GT_1CR" = "Strip 2 or more Returns";
+"#STRIP_GT_1CR_INFO" = "This cleaner strips any 2 or more consecutive returns to a single return.";
+
+
+"#STRIP_GT_1SPACE" = "Strip 2 or more Spaces";
+"#STRIP_GT_1SPACE_INFO" = "This cleaner strips any 2 or more consecutive spaces to a single space.";
+
+
+"#STRIP_GT_1TAB" = "Strip 2 or more Tabs";
+"#STRIP_GT_1TAB_INFO" = "This cleaner strips any 2 or more consecutive tabs to a single tab.";
+
+
+"#STRIP_GT_2CR" = "Strip 3 or more Returns";
+"#STRIP_GT_2CR_INFO" = "This cleaner strips any 3 or more consecutive returns to a single return.";
+
+
+"#STRIP_GT_2SPACE" = "Strip 3 or more Spaces";
+"#STRIP_GT_2SPACE_INFO" = "This cleaner strips any 3 or more consecutive spaces to a single space.";
+
+
+"#STRIP_GT_2TAB" = "Strip 3 or more Tabs";
+"#STRIP_GT_2TAB_INFO" = "This cleaner strips any 3 or more consecutive tabs to a single tab.";
+
+
+"#STRIP_GT_3CR" = "Strip 4 or more Returns";
+"#STRIP_GT_3CR_INFO" = "This cleaner strips any 4 or more consecutive returns to a single return.";
+
+
+"#STRIP_GT_3SPACE" = "Strip 4 or more Spaces";
+"#STRIP_GT_3SPACE_INFO" = "This cleaner strips any 4 or more consecutive spaces to a single space.";
+
+
+"#STRIP_GT_3TAB" = "Strip 4 or more Tabs";
+"#STRIP_GT_3TAB_INFO" = "This cleaner strips any 4 or more consecutive tabs to a single tab.";
+
+
+"#STRIP_QUOTING_CHARS" = "Strip Quoting (>) Characters";
+"#STRIP_QUOTING_CHARS_INFO" = "This cleaner removes the forwarding characters on a line.\n\nIf you’ve ever had email forwarded to you, you’ve seen the forwarding characters (most often the ‘>’ character).\n\nAnd if it’s been forwarded enough - you can get three, four, or more sets of forwarding.\n\nThe rule is simple, it starts at the beginning of a line, and strips all the spaces and ‘>’ characters until it runs into a character that isn’t one of those two.";
+
+"#MULTIPLE_CR_TO_1CR" = "Multiple Returns to 1 Return";
+"#MULTIPLE_CR_TO_1CR_INFO" = "This cleaner converts multiple carriage returns to a single return.";
+
+
+"#MULTIPLE_CR_TO_2CR" = "Multiple Returns to 2 Returns";
+"#MULTIPLE_CR_TO_2CR_INFO" = "This cleaner converts multiple carriage returns to 2 returns.";
+
+
+"#STRIP_NULL" = "Strip NULL";
+"#STRIP_NULL_INFO" = "This cleaner strips any NULL characters in the selected text.";
+
+
+"#ELLIPSIS_TO_3PERIODS" = "Ellipsis to Three periods";
+"#ELLIPSIS_TO_3PERIODS_INFO" = "This cleaner converts ellipsis characters to three periods.";
+
+
+"#EM_DASH_TO_2HYPHENS" = "Em Dash to 2 Hyphens";
+"#EM_DASH_TO_2HYPHENS_INFO" = "This cleaner converts Em Dash charactesr to two hyphens.";
+
+
+"#EN_DASH_TO_SPACE_DASH_SPACE" = "En Dash to Space-Space";
+"#EN_DASH_TO_SPACE_DASH_SPACE_INFO" = "This cleaner converts En Dash character to a space dash space sequence “ - ”.";
+
+
+"#3PERIODS_TO_ELLIPSIS" = "Three periods to Ellipsis";
+"#3PERIODS_TO_ELLIPSIS_INFO" = "This cleaner converts three periods to an ellipsis character.";
+
+
+"#2HYPHENS_TO_EM_DASH" = "2 Hyphens to Em Dash";
+"#2HYPHENS_TO_EM_DASH_INFO" = "This cleaner converts two hyphens to an Em Dash character.";
+
+
+"#SPACE_DASH_SPACE_TO_EN_DASH" = "Space-Space to En Dash";
+"#SPACE_DASH_SPACE_TO_EN_DASH_INFO" = "This cleaner converts a space-dash-space sequence to an En Dash character.";
+
+"#ENABLE_LIGATURES" = "Enable Ligatures";
+"#ENABLE_LIGATURES_INFO" = "Enable Ligatures";
+
+"#DISABLE_LIGATURES" = "Disable Ligatures";
+"#DISABLE_LIGATURES_INFO" = "Disable Ligatures";
+
+"#REMOVE_FORWARDED_TEXT" = "Remove Forwarded Text";
+"#REMOVE_FORWARDED_TEXT_INFO" = "This cleaner will delete any quote text. Any lines of text preceded by a forwarding mark (>) are removed.";
+
+
+"#ENCRYPT_WITH_ROT13" = "ROT 13 Encryption";
+"#ENCRYPT_WITH_ROT13_INFO" = "This cleaner applies a very rudimentary encryption. The text formatting remains.";
+
+
+"#HTML_ENTITY_TO_TEXT" = "HTML Entity to Text";
+"#HTML_ENTITY_TO_TEXT_INFO" = "This cleaner will convert known HTML entities to their text equivalent. Supports all the standard HTML entities and most of the Unicode-based entities.";
+
+"#HTML_SMARTEN_QUOTES" = "Smarten Quotes in HTML Text";
+"#HTML_SMARTEN_QUOTES_INFO" = "This cleaner will apply smarten quotes cleaner to the text of raw HTML, but not inside the tags.";
+
+"#TEXT_TO_NAMED_HTML_ENTITY" = "Text to Named HTML Entity";
+"#TEXT_TO_NAMED_HTML_ENTITY_INFO" = "This cleaner will convert non-ASCII text to HTML Entities. It will try to use a named entity of the character if one exists. If a named entity cannot be found, it will revert to using a numeric HTML entity. It will not convert '<', '>', '&' characters.";
+
+"#TEXT_TO_NAMED_HTML_ENTITY_ALT" = "Text to Named HTML Entity (Alt)";
+"#TEXT_TO_NAMED_HTML_ENTITY_ALT_INFO" = "This cleaner will convert non-ASCII text to HTML Entities. It will try to use a named entity of the character if one exists. If a named entity cannot be found, it will revert to using a numeric HTML entity. It will convert '<', '>', '&' characters to entities as well.";
+
+
+"#TEXT_TO_NUMERIC_HTML_ENTITY" = "Text to Numeric HTML Entity";
+"#TEXT_TO_NUMERIC_HTML_ENTITY_INFO" = "This cleaner will convert non-ASCII text to HTML Entities. Unlike the previous cleaner, this cleaner will simply use the numeric HMTL entity.";
+
+"#ALL_TEXT_TO_NUMERIC_HTML_ENTITIES" = "All Text to Numeric HTML Entities";
+"#ALL_TEXT_TO_NUMERIC_HTML_ENTITIES_INFO" = "This cleaner will converts all standard ASCII, as well as non-ASCII, characters to HTML Entities.";
+
+
+"#INCREASE_QUOTE_LEVEL" = "Increase Quote Level";
+"#INCREASE_QUOTE_LEVEL_INFO" = "This cleaner will increase the quote level of a selection by one, adding a forwarding mark (>) to the beginning of each line.";
+
+
+"#LINE_ENDING_LF" = "Unix (LF) Line Endings";
+"#LINE_ENDING_LF_INFO" = "This cleaner converts the selected text to use Unix (LF) Line Endings.\n\nObsolete: use the new line-ending popup for best results.";
+
+
+"#LINE_ENDING_CR" = "Mac (CR) Line Endings";
+"#LINE_ENDING_CR_INFO" = "This cleaner converts the selected text to use old-style Mac (CR) Line Endings.\n\nObsolete: use the new line-ending popup for best results.";
+
+
+"#LINE_ENDING_CRLF" = "DOS (CR+LF) Line Endings";
+"#LINE_ENDING_CRLF_INFO" = "This cleaner converts the selected text to use DOS (CR+LF) Line Endings.\n\nObsolete: use the new line-ending popup for best results.";
+
+
+"#TRIM_BEGINNING_OF_LINES" = "Trim Beginning of Lines";
+"#TRIM_BEGINNING_OF_LINES_INFO" = "This cleaner removes any extra spaces from the beginning of the selected text lines.";
+
+
+"#TRIM_END_OF_LINES" = "Trim End of Lines";
+"#TRIM_END_OF_LINES_INFO" = "This cleaner removes any extra spaces from the end of the selected text lines.";
+
+"#TRIM_LINES" = "Trim Lines";
+"#TRIM_LINES_INFO" = "This cleaner removes any extra spaces from both the beginning and the end of the selected text lines.";
+
+
+"#CONVERT_NON_BREAKING_SPACES" = "Convert Non-Breaking Spaces";
+"#CONVERT_NON_BREAKING_SPACES_INFO" = "This cleaner converts Non-Breaking Spaces to standard spaces.";
+
+"#REMOVE_STYLE_FROM_TEXT" = "Remove Style from Text";
+"#REMOVE_STYLE_FROM_TEXT_INFO" = "This cleaner removes all style information from the selected text.";
+
+"#MAKE_PLAIN_TEXT" = "Convert to Plain Text";
+"#MAKE_PLAIN_TEXT_INFO" = "This cleaner converts any rich text to plain text.";
+
+"#REMOVE_FORECOLOR_FROM_TEXT" = "Remove Foreground Color from Text";
+"#REMOVE_FORECOLOR_FROM_TEXT_INFO" = "This cleaner removes the foreground color from the selected text.";
+
+"#REMOVE_BACKCOLOR_FROM_TEXT" = "Remove Background Color from Text";
+"#REMOVE_BACKCOLOR_FROM_TEXT_INFO" = "This cleaner removes the background color from the selected text.";
+
+"#REMOVE_HYPERLINKING_FROM_TEXT" = "Remove Hyperlinks from Text";
+"#REMOVE_HYPERLINKING_FROM_TEXT_INFO" = "This cleaner remove the hyperlink attribute on URLs found in the selected text.";
+
+
+"#QUOTE_BASED_FIRST_LINE" = "Quote Based on First Line";
+"#QUOTE_BASED_FIRST_LINE_INFO" = "This cleaner will quote the selected text based on first line. If no forward marks are found, the text is simply rewrapped. If forward marks are found at the beginning of the text, the number found determine the level of quoting that is applied.";
+
+
+"#HTML_CREATE_OL" = "HTML: Create Ordered List";
+"#HTML_CREATE_OL_INFO" = "This cleaner will convert a series of lines into an HTML-based ordered list.";
+
+
+"#HTML_CREATE_UL" = "HTML: Create Unordered List";
+"#HTML_CREATE_UL_INFO" = "This cleaner will convert a series of lines into an HTML-based unordered list.";
+
+
+"#HTML_TAG_BOLD" = "HTML Tag: Bold";
+"#HTML_TAG_BOLD_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“Sample Text” becomes “<b>Sample Text</b>”.";
+
+
+"#HTML_TAG_ITALIC" = "HTML Tag: Italic";
+"#HTML_TAG_ITALIC_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“Sample Text” becomes “<i>Sample Text</i>”.";
+
+"#HTML_TAG_STRONG" = "HTML Tag: Strong";
+"#HTML_TAG_STRONG_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“Sample Text” becomes “<strong>Sample Text</strong>”.";
+
+"#HTML_TAG_UNDERLINE" = "HTML Tag: Underline";
+"#HTML_TAG_UNDERLINE_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“Sample Text” becomes “<u>Sample Text</u>”.";
+
+
+"#HTML_TAG_EMPHASIZED" = "HTML Tag: Emphasized";
+"#HTML_TAG_EMPHASIZED_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“Sample Text” becomes “<em>Sample Text</em>”.";
+
+
+"#HTML_TAG_HORIZONTAL_RULE" = "HTML Tag: Horizontal Rule";
+"#HTML_TAG_HORIZONTAL_RULE_INFO" = "Special Tag cleaner inserts the \"<hr/>\" tag.";
+
+
+"#HTML_TAG_PREFORMATTED" = "HTML Tag: Preformatted";
+"#HTML_TAG_PREFORMATTED_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“Sample Text” becomes “<pre>Sample Text</pre>”.";
+
+
+"#HTML_TAG_BREAK" = "HTML Tag: Break";
+"#HTML_TAG_BREAK_INFO" = "Special Tag cleaner inserts the \"<br/>\" tag.";
+
+
+"#HTML_TAG_DIV" = "HTML Tag: Div";
+"#HTML_TAG_DIV_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“Sample Text” becomes “<div>Sample Text</div>”.";
+
+
+"#HTML_TAG_PARAGRAPH" = "HTML Tag: Paragraph";
+"#HTML_TAG_PARAGRAPH_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“Sample Text” becomes “<p>Sample Text</p>”.";
+
+
+"#HTML_TAG_SPAN" = "HTML Tag: Span";
+"#HTML_TAG_SPAN_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“Sample Text” becomes “<span>Sample Text</span>”.";
+
+
+"#HTML_TAG_BLOCKQUOTE" = "HTML Tag: Blockquote";
+"#HTML_TAG_BLOCKQUOTE_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“Sample Text” becomes “<blockquote>Sample Text</blockquote>”.";
+
+
+"#HTML_TAG_CITE" = "HTML Tag: Cite";
+"#HTML_TAG_CITE_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“Sample Text” becomes “<cite>Sample Text</cite>”.";
+
+
+"#HTML_TAG_H1" = "HTML Tag: h1";
+"#HTML_TAG_H1_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“Sample Text” becomes “<h1>Sample Text</h1>”.";
+
+
+"#HTML_TAG_H2" = "HTML Tag: h2";
+"#HTML_TAG_H2_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“Sample Text” becomes “<h2>Sample Text</h2>”.";
+
+
+"#HTML_TAG_H3" = "HTML Tag: h3";
+"#HTML_TAG_H3_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“Sample Text” becomes “<h3>Sample Text</h3>”.";
+
+
+"#HTML_TAG_H4" = "HTML Tag: h4";
+"#HTML_TAG_H4_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“Sample Text” becomes “<h4>Sample Text</h4>”.";
+
+
+"#HTML_TAG_H5" = "HTML Tag: h5";
+"#HTML_TAG_H5_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“Sample Text” becomes “<h5>Sample Text</h5>”.";
+
+
+"#HTML_TAG_H6" = "HTML Tag: h6";
+"#HTML_TAG_H6_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“Sample Text” becomes “<h6>Sample Text</h6>”.";
+
+
+"#HTML_TAG_UL" = "HTML Tag: Unordered List";
+"#HTML_TAG_UL_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“Sample Text” becomes “<ul>Sample Text</ul>”.";
+
+
+"#HTML_TAG_OL" = "HTML Tag: Ordered List";
+"#HTML_TAG_OL_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“Sample Text” becomes “<ol>Sample Text</ol>”.";
+
+
+"#HTML_TAG_LI" = "HTML Tag: List Item";
+"#HTML_TAG_LI_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“Sample Text” becomes “<li>Sample Text</li>”.";
+
+
+"#HTML_TAG_TABLE" = "HTML Tag: Table";
+"#HTML_TAG_TABLE_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“Sample Text” becomes “<table>Sample Text</table>”.";
+
+
+"#HTML_TAG_TABLEROW" = "HTML Tag: Table Row";
+"#HTML_TAG_TABLEROW_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“Sample Text” becomes “<tr>Sample Text</tr>”.";
+
+
+"#HTML_TAG_TABLECELL" = "HTML Tag: Table Cell";
+"#HTML_TAG_TABLECELL_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“Sample Text” becomes “<td>Sample Text</td>”.";
+
+
+"#HTML_TAG_LINK" = "HTML Tag: Link";
+"#HTML_TAG_LINK_INFO" = "Tag cleaners wrap the selected text in a given tag.\n\n“http://www.unmarked.com” becomes “<a href=\"http://www.unmarked.com\">Sample Text</a>”.";
+
+
+"#LINE_REVERSE" = "Reverse Line Order";
+"#LINE_REVERSE_INFO" = "Reverses the order of the selected lines. Lines are marked by paragraph markers.";
+
+"#LINE_SORT_ASCENDING" = "Sort Lines in Ascending Order";
+"#LINE_SORT_ASCENDING_INFO" = "This cleaner sorts lines in increasing order. Lines are marked by paragraph markers.";
+
+"#LINE_SORT_DESCENDING" = "Sort Lines in Descending Order";
+"#LINE_SORT_DESCENDING_INFO" = "This cleaner sorts lines in decreasing order. Lines are marked by paragraph markers.";
+
+"#LINE_RANDOMIZE" = "Randomize Lines (Unsort)";
+"#LINE_RANDOMIZE_INFO" = "This cleaner randomizes the given lines. Lines are marked by paragraph markers.";
+
+"#LINE_NUMBER_ALL" = "Number Lines (All)";
+"#LINE_NUMBER_ALL_INFO" = "Numbers all given lines.";
+
+"#LINE_NUMBER_NONEMPTY" = "Number Lines (Non-Empty)";
+"#LINE_NUMBER_NONEMPTY_INFO" = "Numbers all non-empty lines.";
+
+
+"#REMOVE_DUPLICATE_LINES" = "Remove Duplicate Lines";
+"#REMOVE_DUPLICATE_LINES_INFO" = "This cleaner removes any duplicate lines. Lines are marked by paragraph markers.";
+
+"#REMOVE_LINENUMBERS" = "Remove Line Numbers";
+"#REMOVE_LINENUMBERS_INFO" = "This cleaner will remove line numbers at the beginning of each line.";
+
+"#URL_MAKECLICKABLE" = "Convert URLs to Hyperlinks";
+"#URL_MAKECLICKABLE_INFO" = "This cleaner scans the text and converts found URLs into clickable hyperlinks.";
+
+"#URL_EXTRACT_BY_REPLACING" = "Extract URLs by Replacing";
+"#URL_EXTRACT_BY_REPLACING_INFO" = "This cleaner scans the text and extracts any URLs found, replacing the original text.";
+
+"#URL_EXTRACT_BY_APPENDING" = "Extract URLs by Appending";
+"#URL_EXTRACT_BY_APPENDING_INFO" = "This cleaner scans the text and extracts any URLs found, appending it to the original text.";
+
+"#CORE_DELETE" = "-a:Delete Text";
+"#CORE_DELETE_INFO" = "Core action to delete text. Use with Find and Apply action.";
+
+"#PARAGRAPH_SINGLESPACE" = "Ruler: Default Spacing";
+"#PARAGRAPH_SINGLESPACE_INFO" = "Applies a single-space paragraph style to text.";
+
+"#PARAGRAPH_ALIGN_LEFT" = "Ruler: Left Aligned Text";
+"#PARAGRAPH_ALIGN_LEFT_INFO" = "Left align text in paragraph.";
+
+"#PARAGRAPH_ALIGN_RIGHT" = "Ruler: Right Aligned Text";
+"#PARAGRAPH_ALIGN_RIGHT_INFO" = "Right align text in paragraph.";
+
+"#PARAGRAPH_ALIGN_CENTER" = "Ruler: Centered Text";
+"#PARAGRAPH_ALIGN_CENTER_INFO" = "Center text in paragraph.";
+
+"#PARAGRAPH_ALIGN_FULL" = "Ruler: Justified Text";
+"#PARAGRAPH_ALIGN_FULL_INFO" = "Justify text in paragraph.";
+
+"#PARAGRAPH_CLEARTABSTOPS" = "Ruler: Clear All Tab Stops";
+"#PARAGRAPH_CLEARTABSTOPS_INFO" = "Clear all tab stops for the selected paragraph rulers.";
+
+"#PARAGRAPH_RESETTABSTOPS" = "Ruler: Reset Tab Stops";
+"#PARAGRAPH_RESETTABSTOPS_INFO" = "Reset tab stops to the default tabs for the selected paragraph rulers.";
+
+"#MARKDOWN_TEXT" = "Markdown to HTML";
+"#MARKDOWN_TEXT_INFO" = "Transforms text to HTML using Markdown format.";
+
+"#MARKDOWN_TEXT_RTF" = "Markdown to RTF";
+"#MARKDOWN_TEXT_RTF_INFO" = "Transforms text to RTF using CSS.";
+
+"#MARKDOWN_TEXT_APPEND" = "Append Markdown to HTML";
+"#MARKDOWN_TEXT_APPEND_INFO" = "Transforms text to HTML using Markdown format and appends it to the original text.";
+
+"#MARKDOWN_TEXT_PREVIEW" = "Markdown Preview";
+"#MARKDOWN_TEXT_PREVIEW_INFO" = "Transforms text to HTML using Markdown format and previews it in browser.";
+
+"#MARKDOWN_TEXT_MARKED2" = "Preview in Marked2";
+"#MARKDOWN_TEXT_MARKED2_INFO" = "Send text to Marked2's Streaming Preview.";
+
+"#MIXED_MARKDOWN" = "Mixed-in Markdown";
+"#MIXED_MARKDOWN_INFO" = "Only processes text between lines <markdown> and </markdown>";
+
+"#HTML_TO_MARKDOWN_TEXT" = "HTML Source to Markdown";
+"#HTML_TO_MARKDOWN_TEXT_INFO" = "Transforms HTML Source to text that uses the Markdown format.";
+
+"#SMARTYPANTS_TEXT" = "SmartyPants Text";
+"#SMARTYPANTS_TEXT_INFO" = "Transforms text to HTML using SmartyPants.";
+
+"#SMARTYPANTS_TEXT_APPEND" = "Append SmartyPants Text";
+"#SMARTYPANTS_TEXT_APPEND_INFO" = "Transforms text to HTML using SmartyPants and appends it to the original text.";
+
+"#SMARTYPANTS_TEXT_PREVIEW" = "SmartyPants Text and Preview";
+"#SMARTYPANTS_TEXT_PREVIEW_INFO" = "Transforms text to HTML using SmartyPants and previews it in browser.";
+
+"#NOTIFY_STATS" = "Word Count - Notification";
+"#NOTIFY_STATS_INFO" = "Calculates word count of the given text and uses Notification Center to display them.";
+
+"#NOTIFY_STATS_REMOVE" = "Word Count - Remove All Notifications";
+"#NOTIFY_STATS_REMOVE_INFO" = "Remove all word count notifications from Notification Center.";
+
+"#LINESPACE_10" = "Set Line Spacing: Single";
+"#LINESPACE_10_INFO" = "Set text paragraphs to use single spacing.";
+
+"#LINESPACE_15" = "Set Line Spacing: 1.5";
+"#LINESPACE_15_INFO" = "Set text paragraphs to use 1.5 line spacing.";
+
+"#LINESPACE_20" = "Set Line Spacing: Double";
+"#LINESPACE_20_INFO" = "Set text paragraphs to use double spacing.";
+
+"##TESTER" = "Special Tester";
+"##TESTER_INFO" = "Special Tester";
+
+"#STRIP_DIACRITICS" = "Strip Diacritic Marks";
+"#STRIP_DIACRITICS_INFO" = "Strip diacritic marks from text.";
+

@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta name="AppleTitle" content="TextSoap 9 Help">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>Clipboard Workspace</title>
+	<link href="../style/style.css" rel="stylesheet" type="text/css" />
+	<link href="../style/xcode.css" rel="stylesheet" type="text/css" />
+
+	<script src="../scripts/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!-- <script src="../scripts/htmlplus.js"></script> -->
+</head>
+
+<body>
+
+<!--
+<div class="header">
+    <a href="../index.html">Home</a><span class="headertxt">&nbsp;&#187; Clipboard Workspace</span>
+    <span style="float: right;"><a href="http://www.unmarked.com/textsoap/">TextSoap</a></span>
+</div>
+-->
+
+<div class="main" valign="top">
+	<div class="ts_sidebar">
+	<!-- <div w3-include-html="toc.html"></div> -->
+	<ul>
+<h2>Overview</h2>
+<li><a href="welcome.html">Welcome</a></li><li><a href="clipboard_workspace.html">Clipboard Workspace</a></li><li><a href="tour.html">A Quick Tour</a></li><li><a href="groups.html">Cleaner Groups Summary</a></li><li><a href="whats_new.html">What’s New in TextSoap 9</a></li></ul>
+<ul>
+<h2>MyLibrary</h2>
+<li><a href="my_cleaners.html">Cleaner Editor</a></li><li><a href="my_cleaner_actions.html">My Cleaner Actions</a></li><li><a href="my_groups.html">Custom Group Editor</a></li></ul>
+<ul>
+<h2>Tutorials</h2>
+<li><a href="custom_cleaner_tutorial_1.html">Your First Cleaner</a></li><li><a href="custom_cleaner_tutorial_2.html">Removing parameters from a URL</a></li><li><a href="custom_cleaner_tutorial_3.html">Using Lists in Your Cleaners</a></li><li><a href="custom_cleaner_tutorial_4.html">Matching Typefaces, Attributes</a></li></ul>
+<ul>
+<h2>Cleaner Descriptions</h2>
+<li><a href="date_actions.html">Date-related Cleaners</a></li><li><a href="html_actions.html">HTML Cleaners</a></li><li><a href="plist_actions.html">Plist Cleaners</a></li><li><a href="cleaner_descriptions.html">Other Cleaner Descriptions</a></li></ul>
+<ul>
+<h2>Extras</h2>
+<li><a href="preferences.html">Preferences</a></li><li><a href="batch_cleaning.html">Batch File Cleaning</a></li></ul>
+<ul>
+<h2>Reference</h2>
+<li><a href="glossary.html">Glossary</a></li><li><a href="regex_syntax.html">Regular Expression Syntax</a></li><li><a href="files_and_folders.html">Files and Folders</a></li></ul>
+
+	</div>
+	<div class="ts_main">
+			<h1 id="clipboardworkspace">Clipboard Workspace</h1>
+
+<h3 id="whatisit">What is it?</h3>
+
+<p>The clipboard workspace is a special editing window that makes it easy to edit and clean up the contents of the clipboard in virtually automatic fashion. Skip the manual pasting in text after a launch and copying it to the clipboard before you quit the app. Clipboard workspace does this automatically.</p>
+
+<p>You can disable the clipboard workspace via Preferences &gt; General. When disabled, TextSoap will open an untitled document on launch, like most document-based apps.</p>
+
+<h3 id="howdoesitwork">How does it work?</h3>
+
+<p>When TextSoap launches, the app creates a window and pastes in the current contents of the clipboard into that window for you.</p>
+
+<p>You can then edit the text, clean it with any of the existing cleaners, manually find and replace text, and so forth until the text is satisfactory for your needs. While working with your text, you may use the clipboard as normal.</p>
+
+<p>When you quit TextSoap, the app (automatically) copies the contents of the workspace window on the clipboard for you.</p>
+
+<hr />
+
+<h3 id="clipboardworkspaceworkflowexample">Clipboard Workspace Workflow Example</h3>
+
+<p>Here is one workflow available to clean text with TextSoap:</p>
+
+<figure>
+<img src="images/clip_workspace1.jpg" alt="Starting text, copy to clipboard" />
+<figcaption>Starting text, copy to clipboard</figcaption>
+</figure>
+
+<ol>
+<li><p>Open TextSoap app (contents of clipboard is pasted into Clipboard Workspace).</p>
+
+<p>If you have no selection, cleaners apply to the entire text. If you optionally select text, only the selected text is cleaned.</p></li>
+</ol>
+
+<figure>
+<img src="images/clip_workspace2.jpg" alt="After TextSoap Launch" />
+<figcaption>After TextSoap Launch</figcaption>
+</figure>
+
+<ol>
+<li>Find and click the &#8220;Uppercase&#8221; cleaner in cleaner list to apply it.</li>
+</ol>
+
+<figure>
+<img src="images/clip_workspace3.jpg" alt="Cleaned Text" />
+<figcaption>Cleaned Text</figcaption>
+</figure>
+
+<ol>
+<li>Quit TextSoap (text from Clipboard Workspace is copied back to clipboard).</li>
+<li>Paste clipboard contents back into app.</li>
+</ol>
+
+<figure>
+<img src="images/clip_workspace4.jpg" alt="Pasted Back into App" />
+<figcaption>Pasted Back into App</figcaption>
+</figure>
+
+<hr />
+
+<h3 id="otherintegrationoptions">Other integration options</h3>
+
+<p>The clipboard workspace is great option when you may need to do more than just apply a cleaner and need to possibly change the text manually.</p>
+
+<p>If you just need to apply a cleaner to text, there are some additional integration options available to simplify the workflow further using the companion textsoapAgent app:</p>
+
+<ul>
+<li>TextSoap Menu</li>
+<li>AppleScript commands</li>
+<li>Global Hot Key</li>
+</ul>
+	</div>
+</div>
+    
+<!-- 
+<script>
+includeHTML();
+</script> 
+-->
+
+</body>
+</html>

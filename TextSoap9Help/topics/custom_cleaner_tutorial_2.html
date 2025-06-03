@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta name="AppleTitle" content="TextSoap 9 Help">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>Removing parameters from a URL</title>
+	<link href="../style/style.css" rel="stylesheet" type="text/css" />
+	<link href="../style/xcode.css" rel="stylesheet" type="text/css" />
+
+	<script src="../scripts/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!-- <script src="../scripts/htmlplus.js"></script> -->
+</head>
+
+<body>
+
+<!--
+<div class="header">
+    <a href="../index.html">Home</a><span class="headertxt">&nbsp;&#187; Removing parameters from a URL</span>
+    <span style="float: right;"><a href="http://www.unmarked.com/textsoap/">TextSoap</a></span>
+</div>
+-->
+
+<div class="main" valign="top">
+	<div class="ts_sidebar">
+	<!-- <div w3-include-html="toc.html"></div> -->
+	<ul>
+<h2>Overview</h2>
+<li><a href="welcome.html">Welcome</a></li><li><a href="clipboard_workspace.html">Clipboard Workspace</a></li><li><a href="tour.html">A Quick Tour</a></li><li><a href="groups.html">Cleaner Groups Summary</a></li><li><a href="whats_new.html">What’s New in TextSoap 9</a></li></ul>
+<ul>
+<h2>MyLibrary</h2>
+<li><a href="my_cleaners.html">Cleaner Editor</a></li><li><a href="my_cleaner_actions.html">My Cleaner Actions</a></li><li><a href="my_groups.html">Custom Group Editor</a></li></ul>
+<ul>
+<h2>Tutorials</h2>
+<li><a href="custom_cleaner_tutorial_1.html">Your First Cleaner</a></li><li><a href="custom_cleaner_tutorial_2.html">Removing parameters from a URL</a></li><li><a href="custom_cleaner_tutorial_3.html">Using Lists in Your Cleaners</a></li><li><a href="custom_cleaner_tutorial_4.html">Matching Typefaces, Attributes</a></li></ul>
+<ul>
+<h2>Cleaner Descriptions</h2>
+<li><a href="date_actions.html">Date-related Cleaners</a></li><li><a href="html_actions.html">HTML Cleaners</a></li><li><a href="plist_actions.html">Plist Cleaners</a></li><li><a href="cleaner_descriptions.html">Other Cleaner Descriptions</a></li></ul>
+<ul>
+<h2>Extras</h2>
+<li><a href="preferences.html">Preferences</a></li><li><a href="batch_cleaning.html">Batch File Cleaning</a></li></ul>
+<ul>
+<h2>Reference</h2>
+<li><a href="glossary.html">Glossary</a></li><li><a href="regex_syntax.html">Regular Expression Syntax</a></li><li><a href="files_and_folders.html">Files and Folders</a></li></ul>
+
+	</div>
+	<div class="ts_main">
+			<h1 id="removingparametersfromaurl">Removing parameters from a URL</h1>
+
+<h2 id="tutorial">Tutorial</h2>
+
+<p>We&#8217;re going to create a cleaner that takes a given URL and removes the extraneous parameters attached to it, leaving the main URL intact.</p>
+
+<p>Original:
+http://test.com/directory/123?utm_source=google&amp;utm_medium=email&amp;utm_campaign=newsletter</p>
+
+<p>Desired Result:
+http://test.com/directory/123</p>
+
+<p>We accomplish this with a custom cleaner, using a <strong>Regex Find and Replace</strong> action.</p>
+
+<p>Create a new cleaner and give it a useful name.</p>
+
+<figure>
+<img src="images/cleaner_tutorial_2a.jpg" alt="" />
+</figure>
+
+<p>Add a Regex Find and Replace action.</p>
+
+<figure>
+<img src="images/cleaner_tutorial_2b.jpg" alt="" />
+</figure>
+
+<p>Now for your regular expression. We&#8217;ll break this down in a minute. Regular expressions provide a powerful way to match text based on characteristics of text.</p>
+
+<figure>
+<img src="images/cleaner_tutorial_2c.jpg" alt="" />
+</figure>
+
+<p>Here is the expression we&#8217;re trying to use to match the text.</p>
+
+<pre><code>(http://.*?)\?.*?\s
+</code></pre>
+
+<p>Let&#8217;s break it down:</p>
+
+<pre><code>(http://.*?)
+</code></pre>
+
+<p>find and capture URL starting with http:// and any characters (non-greedy)</p>
+
+<pre><code>\?
+</code></pre>
+
+<p>literal ? in expression </p>
+
+<pre><code>.*?
+</code></pre>
+
+<p>all the text that follows the literal ? . This is also non-greedy so we can match the first whitespace we hit with the next part.</p>
+
+<pre><code>\s
+</code></pre>
+
+<p>whitespace character. Any tab, space, return that indicates the end of the URL.</p>
+
+<p>&#8211;</p>
+
+<p>The (non-greedy) match any character sequence &#8216;.*?&#8217; allows you to find http:// up through the &#8216;?&#8217; It acts as a simple wildcard character. Non-greedy means it will find the shortest match possible.</p>
+
+<p>The parentheses allow you to capture part of the matched text. In this case we want to capture everything from the http:// until we get to the &#8216;?&#8217; (which is the delimiter for parameters in a URL). We can later use that captured string.</p>
+
+<p>When replacing a regular expression match, you can use the some special values to indicate parts of the matched text.</p>
+
+<p>$0 is used to indicate the entire match (for example, if you wanted to augment your text)
+$1 specifies the first captured group. In our case, it is the base URL.</p>
+
+<p>So we enter in $1 as the replacement for the match.</p>
+
+<p>We can now test the cleaner. We&#8217;ll place the previous text into the clipboard workspace (or an text document in TextSoap). </p>
+
+<figure>
+<img src="images/cleaner_tutorial_2d.jpg" alt="" />
+</figure>
+
+<p>Select the preview button at the top of the custom cleaner editor to test the cleaner.</p>
+
+<figure>
+<img src="images/cleaner_tutorial_2e.jpg" alt="" />
+</figure>
+
+<p>In our test, we see that we also lost a blank line. That&#8217;s because we matched a whitespace character, but didn&#8217;t keep it. This would also cause URLs to smash up against any words that followed it.</p>
+
+<p>Let&#8217;s fix this. We&#8217;ll capture the whitespace (which could be a space, a tab, a return) and make sure it&#8217;s included.</p>
+
+<figure>
+<img src="images/cleaner_tutorial_2f.jpg" alt="" />
+</figure>
+
+<p>We placed parens <strong>( )</strong> around the \s to capture the whitespace that follows the parameters.
+And then we add that captured group to our replacement string.</p>
+
+<p>And now our test looks correct:</p>
+
+<figure>
+<img src="images/cleaner_tutorial_2g.jpg" alt="" />
+</figure>
+	</div>
+</div>
+    
+<!-- 
+<script>
+includeHTML();
+</script> 
+-->
+
+</body>
+</html>

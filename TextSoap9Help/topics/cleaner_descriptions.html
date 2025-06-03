@@ -1,0 +1,368 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta name="AppleTitle" content="TextSoap 9 Help">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>Other Cleaner Descriptions</title>
+	<link href="../style/style.css" rel="stylesheet" type="text/css" />
+	<link href="../style/xcode.css" rel="stylesheet" type="text/css" />
+
+	<script src="../scripts/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!-- <script src="../scripts/htmlplus.js"></script> -->
+</head>
+
+<body>
+
+<!--
+<div class="header">
+    <a href="../index.html">Home</a><span class="headertxt">&nbsp;&#187; Other Cleaner Descriptions</span>
+    <span style="float: right;"><a href="http://www.unmarked.com/textsoap/">TextSoap</a></span>
+</div>
+-->
+
+<div class="main" valign="top">
+	<div class="ts_sidebar">
+	<!-- <div w3-include-html="toc.html"></div> -->
+	<ul>
+<h2>Overview</h2>
+<li><a href="welcome.html">Welcome</a></li><li><a href="clipboard_workspace.html">Clipboard Workspace</a></li><li><a href="tour.html">A Quick Tour</a></li><li><a href="groups.html">Cleaner Groups Summary</a></li><li><a href="whats_new.html">What’s New in TextSoap 9</a></li></ul>
+<ul>
+<h2>MyLibrary</h2>
+<li><a href="my_cleaners.html">Cleaner Editor</a></li><li><a href="my_cleaner_actions.html">My Cleaner Actions</a></li><li><a href="my_groups.html">Custom Group Editor</a></li></ul>
+<ul>
+<h2>Tutorials</h2>
+<li><a href="custom_cleaner_tutorial_1.html">Your First Cleaner</a></li><li><a href="custom_cleaner_tutorial_2.html">Removing parameters from a URL</a></li><li><a href="custom_cleaner_tutorial_3.html">Using Lists in Your Cleaners</a></li><li><a href="custom_cleaner_tutorial_4.html">Matching Typefaces, Attributes</a></li></ul>
+<ul>
+<h2>Cleaner Descriptions</h2>
+<li><a href="date_actions.html">Date-related Cleaners</a></li><li><a href="html_actions.html">HTML Cleaners</a></li><li><a href="plist_actions.html">Plist Cleaners</a></li><li><a href="cleaner_descriptions.html">Other Cleaner Descriptions</a></li></ul>
+<ul>
+<h2>Extras</h2>
+<li><a href="preferences.html">Preferences</a></li><li><a href="batch_cleaning.html">Batch File Cleaning</a></li></ul>
+<ul>
+<h2>Reference</h2>
+<li><a href="glossary.html">Glossary</a></li><li><a href="regex_syntax.html">Regular Expression Syntax</a></li><li><a href="files_and_folders.html">Files and Folders</a></li></ul>
+
+	</div>
+	<div class="ts_main">
+			<h1 id="othercleanerdescriptions">Other Cleaner Descriptions</h1>
+
+<p><strong>SCRUB</strong></p>
+
+<p>Multi-step cleaner addresses most common cases of extra spaces, forwarding characters, MIME encoding issues and broken paragraphs. SCRUB calls the cleaners in order to insure the best results.</p>
+
+<p><strong>MyScrub</strong></p>
+
+<p>A customizable version of the SCRUB version. Defined using the customize window, it allows augmenting or replacing cleaners used in SCRUB. Any available cleaner may be added to this list.</p>
+
+<p>If no cleaners are specified, MyScrub defaults to SCRUB.</p>
+
+<p><strong>Remove Extra Spaces</strong></p>
+
+<p>Converts non-breaking spaces to standard spaces, then removes two or more spaces with a single space. Leading spaces at the beginning of a line are also removed, as are trailing spaces.</p>
+
+<p><strong>Remove Forwarding (&gt;) Characters</strong></p>
+
+<p>Removes one or more sets of forwarding characters (&gt;) on a line, commonly found in forwarded email.</p>
+
+<p>Note:Does not yet support HTML archives, like those used in Apple Mail.</p>
+
+<p><strong>Convert MIME-encoded Characters</strong></p>
+
+<p>Converts %Hex or =Hex characters to their appropriate ASCII character. For example, a %20 or a =20 is converted to a space (hex 0x20 is the ASCII value of a space character).</p>
+
+<p><strong>Make Paragraphs</strong></p>
+
+<p>Converts multi-line paragraphs (with hard carriage returns CR) into a single paragraph. Also adds a space to the text when removing CRs to avoid smashing words together. Two or more CRs in a row indicate a new paragraph.</p>
+
+<p><strong>Remove All Tabs</strong></p>
+
+<p>Deletes all tabs from the selected text.</p>
+
+<p><strong>Remove Control Characters</strong></p>
+
+<p>Deletes any control characters (characters with an ASCII value less than 32) from the selected text (except for line feeds or carriage returns).</p>
+
+<p><strong>Remove Extra Returns</strong></p>
+
+<p>Converts multiple carriage returns into a single carriage return. Behaves the same as Multiple Return to 1 Return</p>
+
+<p><strong>Uppercase</strong></p>
+
+<p>Converts text to &#8220;UPPERCASE&#8221;.</p>
+
+<p><strong>Lowercase</strong></p>
+
+<p>Converts text to &#8220;lowercase&#8221;.</p>
+
+<p><strong>Capitalize Sentences</strong></p>
+
+<p>Converts text to lowercase, capitalizing the first character of each sentence.</p>
+
+<p><strong>Capitalize Words</strong></p>
+
+<p>Converts text to lowercase, then capitalizes each individual word.</p>
+
+<p><strong>Title Case</strong></p>
+
+<p>Converts text to &#8220;Title Case&#8221;. Words with non-standard case (iTunes, iPhone, TextSoap) remain unchanged, small words (a, an, and, as, at, but, by, en, for, if, in, of, on, or, the, to, via,) are converted to lowercase unless the word appears at the beginning or end of the line. All other words are capitalized. Create a custom cleaner with the &#8220;Title Case with Options&#8221; action to customize these options.</p>
+
+<p><strong>Convert Bullets to ASCII</strong></p>
+
+<p>Converts bullets to standard ASCII dashes.</p>
+
+<p><strong>Straighten Quotes</strong></p>
+
+<p>Converts single and double smart (or curly) quotes to straight quotes.</p>
+
+<p><strong>Smarten Quotes</strong></p>
+
+<p>Convert single and double straight quotes to smart (or curly) quotes.</p>
+
+<p><strong>Expand Tabs</strong></p>
+
+<p>Converts tabs (hex 0x09) to four (4) spaces.</p>
+
+<p><strong>Rewrap Text</strong></p>
+
+<p>Fixes any paragraphs (using Make Paragraphs), then rewraps the text at 70 characters per line. Behaves the same as the Wrap At 70 cleaner.</p>
+
+<p><strong>Quote Text</strong></p>
+
+<p>Rewraps the text and re-inserts forwarding marks (i.e.. &#8216;&gt;&#8217;) at the beginning of each line. It also places hard returns at the end of each line to ensure proper wrapping in email applications.</p>
+
+<p><strong>Wrap At 50</strong></p>
+
+<p>Fixes any paragraphs (using Make Paragraphs), then rewraps the text at 50 characters per line.</p>
+
+<p><strong>Wrap At 60</strong></p>
+
+<p>Fixes any paragraphs (using Make Paragraphs), then rewraps the text at 60 characters per line.</p>
+
+<p><strong>Wrap At 70</strong></p>
+
+<p>Fixes any paragraphs (using Make Paragraphs), then rewraps the text at 70 characters per line.</p>
+
+<p><strong>Quote Text L1</strong></p>
+
+<p>Rewraps the text and places a single forwarding mark in front of the text.</p>
+
+<p>&#8220;Sample Text&#8221; becomes &#8220;&gt; Sample Text&#8221;.</p>
+
+<p><strong>Quote Text L2</strong></p>
+
+<p>Rewraps the text and places two (2) forwarding marks in front of the text.</p>
+
+<p>&#8220;Sample Text&#8221; becomes &#8220;&gt;&gt; Sample Text&#8221;.</p>
+
+<p><strong>Quote Text L3</strong></p>
+
+<p>Rewraps the text and places three (3) forwarding marks in front of the text.</p>
+
+<p>&#8220;Sample Text&#8221; becomes &#8220;&gt;&gt;&gt; Sample Text&#8221;.</p>
+
+<p><strong>Quote Text L4</strong></p>
+
+<p>Rewraps the text and places four (4) forwarding marks in front of the text.</p>
+
+<p>&#8220;Sample Text&#8221; becomes &#8220;&gt;&gt;&gt;&gt; Sample Text&#8221;.</p>
+
+<p><strong>Convert to Internet Friendly Text</strong></p>
+
+<p>Converts text to Internet Friendly Text. Diacritical values are stripped, quotes straightened, and additional characters (copyright, trademark, registered, ellipse, em-dash, en-dash) are converted to ASCII equivalents.</p>
+
+<p><strong>Remove All High Ascii Characters</strong></p>
+
+<p>Removes All High Ascii Characters. Strips off any ASCII values 128&#8211;256 from the text.</p>
+
+<p><strong>1 Return to 2 Returns</strong></p>
+
+<p>Converts each carriage return to 2 carriage returns.</p>
+
+<p><strong>1 Return to Space</strong></p>
+
+<p>Converts each carriage return to a space.</p>
+
+<p><strong>Strip 2 or more Returns</strong></p>
+
+<p>Strips any 2 or more consecutive returns to a single return.</p>
+
+<p><strong>Strip 2 or more Spaces</strong></p>
+
+<p>Strips any 2 or more consecutive spaces to a single space.</p>
+
+<p><strong>Strip 2 or more Tabs</strong></p>
+
+<p>Strips any 2 or more consecutive tabs to a single tab.</p>
+
+<p><strong>Strip 3 or more Returns</strong></p>
+
+<p>Strips any 3 or more consecutive returns to a single return.</p>
+
+<p><strong>Strip 3 or more Spaces</strong></p>
+
+<p>Strips any 3 or more consecutive spaces to a single space.</p>
+
+<p><strong>Strip 3 or more Tabs</strong></p>
+
+<p>Strips any 3 or more consecutive tabs to a single tab.</p>
+
+<p><strong>Strip 4 or more Returns</strong></p>
+
+<p>Strips any 4 or more consecutive returns to a single return.</p>
+
+<p><strong>Strip 4 or more Spaces</strong></p>
+
+<p>Strips any 4 or more consecutive spaces to a single space.</p>
+
+<p><strong>Strip 4 or more Tabs</strong></p>
+
+<p>Strips any 4 or more consecutive tabs to a single tab.</p>
+
+<p><strong>Strip Quoting (&gt;) Characters</strong></p>
+
+<p>Removes the forwarding characters on a line. Same as Remove Forwarding (&gt;) Characters.</p>
+
+<p><strong>Multiple Return to 1 Return</strong></p>
+
+<p>Converts multiple carriage returns to a single return.</p>
+
+<p><strong>Multiple Return to 2 Returns</strong></p>
+
+<p>Converts multiple carriage returns to 2 returns.</p>
+
+<p><strong>Strip NULL</strong></p>
+
+<p>Strips any NULL characters in the selected text.</p>
+
+<p>Note: This is a remnant cleaner from 1998. Most null values are stripped out before the text is ever processed</p>
+
+<p><strong>Ellipsis to Three periods</strong></p>
+
+<p>Converts ellipsis characters to three periods.</p>
+
+<p><strong>Em Dash to 2 Hyphens</strong></p>
+
+<p>Converts Em Dash characters to two hyphens.</p>
+
+<p><strong>En Dash to Space-Space</strong></p>
+
+<p>Converts En Dash character to a space dash space sequence &#8220; - &#8221;.</p>
+
+<p><strong>Three periods to Ellipsis</strong></p>
+
+<p>Converts three periods to an ellipsis character.</p>
+
+<p><strong>2 Hyphens to Em Dash</strong></p>
+
+<p>Converts two hyphens to an Em Dash character.</p>
+
+<p><strong>Space-Space to En Dash</strong></p>
+
+<p>Converts a space-dash-space sequence to an En Dash character.</p>
+
+<p><strong>Remove Forwarded Text</strong></p>
+
+<p>Delete any quoted text. Any lines of text preceded by a forwarding mark (&gt;) are removed.</p>
+
+<p><strong>ROT 13 Encryption</strong></p>
+
+<p>Applies a very rudimentary encryption. Apply the encryption again to restore the text.</p>
+
+<p><strong>String to Hexadecimal</strong></p>
+
+<p>Converts a string of characters to a hexadecimal sequence. Use Hexadecimal to String to restore.</p>
+
+<p><strong>Hexadecimal to String</strong></p>
+
+<p>Converts a hexadecimal sequence to a string of characters. Use with String to Hexadecimal.</p>
+
+<p><strong>Replace @ with (AT)</strong></p>
+
+<p>Replaces &#8220;@&#8221; with &#8220;(AT)&#8221;.</p>
+
+<p><strong>Increase Quote Level</strong></p>
+
+<p>Increases the quote level of a selection by one, adding a forwarding mark (&gt;) to the beginning of each line. Rewraps the paragraph as necessary.</p>
+
+<p><strong>Get Version String</strong></p>
+
+<p>Returns the current version of TextSoap.</p>
+
+<p><strong>Unix (LF) Line Endings</strong></p>
+
+<p>Converts the selected text to use Unix (LF) Line Endings.</p>
+
+<p>Obsolete: use the new line-ending popup for best results.</p>
+
+<p><strong>Mac (CR) Line Endings</strong></p>
+
+<p>Converts the selected text to use old-style Mac (CR) Line Endings.</p>
+
+<p>Obsolete: use the new line-ending popup for best results.</p>
+
+<p><strong>DOS (CR+LF) Line Endings</strong></p>
+
+<p>Converts the selected text to use DOS (CR+LF) Line Endings.</p>
+
+<p>Obsolete: use the new line-ending popup for best results.</p>
+
+<p><strong>Trim Beginning of Lines</strong></p>
+
+<p>Removes any extra spaces from the beginning of the selected text lines.</p>
+
+<p><strong>Trim End of Lines</strong></p>
+
+<p>Removes any extra spaces from the end of the selected text lines.</p>
+
+<p><strong>Trim Lines</strong></p>
+
+<p>Removes any extra spaces from both the beginning and the end of the selected text lines.</p>
+
+<p><strong>Convert Non-Breaking Spaces</strong></p>
+
+<p>Converts Non-Breaking Spaces to standard spaces.</p>
+
+<p><strong>Remove Style from Text</strong></p>
+
+<p>Removes formatting style from the selected text, leaving text in a single font and style.</p>
+
+<p><strong>Quote Based on First Line</strong></p>
+
+<p>Quotes the selected text based on first line. The text is rewrapped. If forward marks are found at the very beginning of the text, the number found determines the level of quoting applied to that paragraph.</p>
+
+<p><strong>Remove Hyperlinks from Text</strong></p>
+
+<p>Removes clickable hyperlinks from the text, leaving only the text.</p>
+
+<p><strong>Make URLs Clickable</strong></p>
+
+<p>Finds any recognizable URLs and turns them into clickable hyperlinks.</p>
+
+<p><strong>Extract URLs by Replacing</strong></p>
+
+<p>Finds any recognizable URLs and extracts them, replacing the original text.</p>
+
+<p><strong>Extract URLs by Appending</strong></p>
+
+<p>Finds any recognizable URLs and extracts them, appending the result to the original text.</p>
+
+<p><strong>Sort Lines in Ascending Order</strong></p>
+
+<p>Sorts lines in increasing order. Lines are marked by paragraph markers.</p>
+
+<p><strong>Sort Lines in Descending Order</strong></p>
+
+<p>Sorts lines in decreasing order. Lines are marked by paragraph markers.</p>
+	</div>
+</div>
+    
+<!-- 
+<script>
+includeHTML();
+</script> 
+-->
+
+</body>
+</html>

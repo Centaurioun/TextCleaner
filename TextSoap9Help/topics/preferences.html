@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta name="AppleTitle" content="TextSoap 9 Help">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>Preferences</title>
+	<link href="../style/style.css" rel="stylesheet" type="text/css" />
+	<link href="../style/xcode.css" rel="stylesheet" type="text/css" />
+
+	<script src="../scripts/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!-- <script src="../scripts/htmlplus.js"></script> -->
+</head>
+
+<body>
+
+<!--
+<div class="header">
+    <a href="../index.html">Home</a><span class="headertxt">&nbsp;&#187; Preferences</span>
+    <span style="float: right;"><a href="http://www.unmarked.com/textsoap/">TextSoap</a></span>
+</div>
+-->
+
+<div class="main" valign="top">
+	<div class="ts_sidebar">
+	<!-- <div w3-include-html="toc.html"></div> -->
+	<ul>
+<h2>Overview</h2>
+<li><a href="welcome.html">Welcome</a></li><li><a href="clipboard_workspace.html">Clipboard Workspace</a></li><li><a href="tour.html">A Quick Tour</a></li><li><a href="groups.html">Cleaner Groups Summary</a></li><li><a href="whats_new.html">What’s New in TextSoap 9</a></li></ul>
+<ul>
+<h2>MyLibrary</h2>
+<li><a href="my_cleaners.html">Cleaner Editor</a></li><li><a href="my_cleaner_actions.html">My Cleaner Actions</a></li><li><a href="my_groups.html">Custom Group Editor</a></li></ul>
+<ul>
+<h2>Tutorials</h2>
+<li><a href="custom_cleaner_tutorial_1.html">Your First Cleaner</a></li><li><a href="custom_cleaner_tutorial_2.html">Removing parameters from a URL</a></li><li><a href="custom_cleaner_tutorial_3.html">Using Lists in Your Cleaners</a></li><li><a href="custom_cleaner_tutorial_4.html">Matching Typefaces, Attributes</a></li></ul>
+<ul>
+<h2>Cleaner Descriptions</h2>
+<li><a href="date_actions.html">Date-related Cleaners</a></li><li><a href="html_actions.html">HTML Cleaners</a></li><li><a href="plist_actions.html">Plist Cleaners</a></li><li><a href="cleaner_descriptions.html">Other Cleaner Descriptions</a></li></ul>
+<ul>
+<h2>Extras</h2>
+<li><a href="preferences.html">Preferences</a></li><li><a href="batch_cleaning.html">Batch File Cleaning</a></li></ul>
+<ul>
+<h2>Reference</h2>
+<li><a href="glossary.html">Glossary</a></li><li><a href="regex_syntax.html">Regular Expression Syntax</a></li><li><a href="files_and_folders.html">Files and Folders</a></li></ul>
+
+	</div>
+	<div class="ts_main">
+			<h1 id="preferences">Preferences</h1>
+
+<p><em>Note: Preference options may differ based on edition.</em></p>
+
+<h2 id="general">General</h2>
+
+<figure>
+<img src="images/prefs_general.jpg" alt="" />
+</figure>
+
+<h3 id="appearance">Appearance</h3>
+
+<p>Specifies whether app&#8217;s appearance follows System, is always light mode or always dark mode.</p>
+
+<ul>
+<li>System</li>
+<li>Light</li>
+<li>Dark</li>
+</ul>
+
+<h3 id="application">Application</h3>
+
+<h4 id="quitapplicationwhenlastwindowisclosed">Quit application when last window is closed</h4>
+
+<p>Enable to automatically quit the application when the last text document is closed. This can be useful when the Clipboard Workspace (see below) is disabled.</p>
+
+<h4 id="applycleanertoentirecontentswhennoselection">Apply cleaner to entire contents when no selection</h4>
+
+<p>Enable to automatically apply selected cleaner to the entire document (or text contents) when no selection is found. If option is disabled, cleaners will only be applied if there is a selection.</p>
+
+<h4 id="myscrubaction">MyScrub action</h4>
+
+<p>Specify cleaner to use when MyScrub is called. This may be Scrub (default) or any custom cleaner you create in MyLibrary.</p>
+
+<h4 id="defaultgroup">Default group</h4>
+
+<p>Specify the default group to display when a new text window is created, whether it is the clipboard workspace, a new document or a document from file. Once the window is created, you can change the group displayed.</p>
+
+<p><strong>Groups:</strong> Specify which groups to display</p>
+
+<ul>
+<li>Built-in : Custom &#8211; List built-in groups, then custom groups.</li>
+<li>Custom : Built-in &#8211; List custom groups, then built-in groups.</li>
+<li>Custom &#8211; Show only custom groups.</li>
+</ul>
+
+<p><strong>Compact display:</strong> Enable to display cleaner group using a more compact layout.</p>
+
+<h4 id="clipboardworkspace">Clipboard Workspace</h4>
+
+<p>Specifies whether to use Clipboard Workspace and what format the text should be:</p>
+
+<ul>
+<li>Plain Text Format</li>
+<li>Rich Text Format</li>
+<li>Disabled</li>
+</ul>
+
+<h4 id="newdocuments">New Documents</h4>
+
+<p>Specify the type of document to create by default (cmd-N).</p>
+
+<ul>
+<li>Plain Text Document</li>
+<li>Rich Text Document</li>
+</ul>
+
+<p><em>Note: You can also directly create either a rich text document (ctrl-cmd-N) or a plain text document (opt-cmd-N), bypassing this preference.</em></p>
+
+<hr />
+
+<h2 id="textediting">Text Editing</h2>
+
+<figure>
+<img src="images/prefs_editor1.jpg" alt="" />
+</figure>
+
+<p>Many of these options are default values for text editor. You can later change many of these options via the Edit or View menu.</p>
+
+<h3 id="display">Display</h3>
+
+<h4 id="editor">Editor</h4>
+
+<ul>
+<li><p>Show ruler (rich text) : Display the paragraph ruler when editing rich text. Allows changing of tab stops, as well as left, right and indent margins on a per-paragraph basis.</p></li>
+<li><p>Show invisibles : Display spaces, tabs, end of line (returns) found in the text.</p></li>
+<li><p>Show line numbers : Show the line numbers. Paragraphs are considered lines.</p></li>
+<li><p>Show word count : Display count of paragraphs (lines), words and characters. Character count without spaces is displayed in parentheses.</p></li>
+<li><p>Highlight current line : Toggles whether to highlight where cursor is.</p></li>
+<li><p>Use Inspector Bar : Use newer inspector bar and ruler interface (vs. classic)</p></li>
+<li><p>Use Dark Background : Determines if text background is dark in dark mode. Otherwise, text is displayed as black text on a white background.</p></li>
+</ul>
+
+<h4 id="search">Search</h4>
+
+<ul>
+<li><p>Regex : Enable initial use of Regex in interactive find.</p></li>
+<li><p>Match Case : Enable match case by default (if unselected: ignore case by default).</p></li>
+<li><p>Match Lines : When using Regex interactive find, indicates whether Match Lines option is initially set, causing ^ and $ to act as anchors for lines instead of entire text.</p></li>
+</ul>
+
+<h4 id="zoom">Zoom</h4>
+
+<p>Default zoom to use when displaying new or opened documents.</p>
+
+<h4 id="invisibles">Invisibles</h4>
+
+<p>Color used to display invisible characters, such as spaces, tabs, returns, etc. Select &#8220;Default&#8221; to reset.</p>
+
+<h4 id="currentlinecolor">Current Line Color</h4>
+
+<p>Line color to use to highlight the current line. The color selected is blended together (to insure text remains readable), the result is shown next to the color selection. Select &#8220;Default&#8221; to reset.</p>
+
+<h3 id="editing">Editing</h3>
+
+<figure>
+<img src="images/prefs_editor2.jpg" alt="" />
+</figure>
+
+<h4 id="options">Options</h4>
+
+<ul>
+<li><p>Check spelling as you type : Enable the automatic spell checker to mark potentially misspelled words as they are entered into the document.</p></li>
+<li><p>Check grammar with spelling : Use the system&#8217;s grammar checker when spell checking.</p></li>
+<li><p>Correct spelling automatically : Allow for automatic correction of words with the spell checker.</p></li>
+<li><p>Text replacement : Automatic substitution of a variety of static text items based on user preferences. You can specify replacements in System Preferences &gt; Keyboard &gt; Text.</p></li>
+<li><p>Smart copy/paste : Controls whether the receiver inserts or deletes space around selected words so as to preserve proper spacing and punctuation.</p></li>
+<li><p>Smart quotes : Automatic quote substitution causes ASCII quotation marks and apostrophes to be automatically replaced, on a context-dependent basis, with more typographically accurate symbols.</p></li>
+<li><p>Smart dashes : Enables automatic conversion of a two ASCII hyphen (-) characters into an em-dash.</p></li>
+<li><p>Smart links : Causes text representing URLs typed in to be automatically made into hyperlinks.</p></li>
+<li><p>Data detectors : Automatic data detection enables detection of dates, addresses, and phone numbers.</p></li>
+</ul>
+
+<h4 id="richtextfont">Rich Text Font</h4>
+
+<p>Specify the default font when creating new Rich text editor. If the editor (for either Clipboard Workspace or Text documents) is a plain text editor, it will use Plain Text Font.</p>
+
+<h4 id="plaintextfont">Plain Text Font</h4>
+
+<p>Specify the default font when creating or opening plain text documents.</p>
+
+<hr />
+
+<h2 id="textsoapagent">TextSoap Agent</h2>
+
+<figure>
+<img src="images/prefs_agent.jpg" alt="" />
+</figure>
+
+<p>Provides access to learn about and download the textsoapAgent helper app.</p>
+
+<p>The helper app works with all editions of the main TextSoap app, providing integration universal set of integration options, including:</p>
+
+<ul>
+<li><p>Global TextSoap Menu : Providing access to cleaners within other applications or to clean the clipboard</p></li>
+<li><p>Global Shortcuts : Providing hot key access to cleaners within other applications.</p></li>
+<li><p>AppleScripting : Providing a centralized scripting endpoint. By targeting application &#8220;textsoapAgent&#8221; &#8211; your scripts can work with all editions of TextSoap.</p></li>
+<li><p>Services : All Services are handled by textsoapAgent, including the standard Service item, which will present a dialog to choose which cleaner to apply.</p></li>
+<li><p>Custom macOS Services : Additionally, textsoapAgent supports providing a customized set of actions to apply specific cleaners to the selected text via Services. This new mechanism is more robust than previous efforts.</p></li>
+<li><p>PopClip : The latest extension for PopClip now supports the new textsoapAgent.</p></li>
+<li><p>Alfred : Another popular option is to use Alfred&#8217;s scripting to direct cleaning actions with the textsoapAgent.</p></li>
+</ul>
+
+<p>Select the &#8220;Learn More&#8230;&#8221; button to direct you to the website with information and access to download the new agent. Whether you are working with the Direct edition, Setapp edition or some other edition, the TextSoap Agent provides a single access point to integrate TextSoap&#8217;s features with other apps.</p>
+
+<p><strong><a href="http://textsoap.com/agent/" target="_blank">Learn More…</a></strong></p>
+
+<hr />
+
+<h2 id="updates">Updates</h2>
+
+<figure>
+<img src="images/prefs_updates.jpg" alt="" />
+</figure>
+
+<p><strong>Note: Only applies to Direct edition. Updates in other editions use their specific mechanism. Beta releases are not available in other editions.</strong></p>
+
+<h4 id="automaticallycheckforupdates">Automatically check for updates</h4>
+
+<p>Recommended to remain on. When selected, this option will regularly check for any software updates.</p>
+
+<h4 id="checknow">Check Now</h4>
+
+<p>Immediately check for any updates available.</p>
+
+<h4 id="showbetareleases">Show Beta Releases</h4>
+
+<p>When selected, this option will include beta updates as well as official updates. Recommended only for advanced users.</p>
+
+<hr />
+
+<h2 id="advanced">Advanced</h2>
+
+<figure>
+<img src="images/prefs_advanced.jpg" alt="" />
+</figure>
+
+<p>Some more advanced functionality provided. Made available in the case they are needed. Some of the options may require a relaunching of the application to take full effect.</p>
+
+<h3 id="general">General</h3>
+
+<h4 id="disablecustomappicons">Disable Custom App Icons</h4>
+
+<p>Turns off special day icons and seasonal icons.</p>
+
+<h4 id="flipseasoniconsforsouthernhemisphere">Flip Season Icons for Southern Hemisphere</h4>
+
+<p>Some of our customers live south of the equator where the seasons are reversed. So when we enjoy Spring, they are enjoying Fall. This flips the icons to match those seasonal dates better.</p>
+
+<h3 id="texteditor">Text Editor</h3>
+
+<h4 id="dontwarnwhenswitchingfromrichtoplaintext">Don&#8217;t warn when switching from rich to plain text</h4>
+
+<p>Switching converting a document from rich text to plain text will throw away any style information with the text. Normally a warning is put up every time the conversion is selected. Enable this option to perform the conversion without a warning.</p>
+
+<h4 id="append.txtextensiontoplaintextfiles">Append &#8220;.txt&#8221; extension to plain text files</h4>
+
+<p>Mimics TextEdit&#8217;s save option for plain text. Enable to automatically append the &#8220;.txt&#8221; extension when no extension is given. A plain text document saved as &#8220;MyDocument&#8221; becomes &#8220;MyDocument.txt&#8221;. If you specify an extension, TextSoap will use it instead. A plain text document named &#8220;MyDocument.html&#8221; stays unchanged.</p>
+
+<h3 id="customcleanereditor">Custom Cleaner Editor</h3>
+
+<h4 id="newfindactionbasedontextsearchpreferences">New find action based on text search preferences</h4>
+
+<p>When adding a new Find action within a custom cleaner, this option determines whether to use the search preferences set in Text Editing panel. Useful to override the &#8220;Match Lines&#8221; and &#8220;Match Case&#8221; options for Regex (if you are so inclined).</p>
+	</div>
+</div>
+    
+<!-- 
+<script>
+includeHTML();
+</script> 
+-->
+
+</body>
+</html>

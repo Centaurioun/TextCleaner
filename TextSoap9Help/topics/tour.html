@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta name="AppleTitle" content="TextSoap 9 Help">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>A Quick Tour</title>
+	<link href="../style/style.css" rel="stylesheet" type="text/css" />
+	<link href="../style/xcode.css" rel="stylesheet" type="text/css" />
+
+	<script src="../scripts/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!-- <script src="../scripts/htmlplus.js"></script> -->
+</head>
+
+<body>
+
+<!--
+<div class="header">
+    <a href="../index.html">Home</a><span class="headertxt">&nbsp;&#187; A Quick Tour</span>
+    <span style="float: right;"><a href="http://www.unmarked.com/textsoap/">TextSoap</a></span>
+</div>
+-->
+
+<div class="main" valign="top">
+	<div class="ts_sidebar">
+	<!-- <div w3-include-html="toc.html"></div> -->
+	<ul>
+<h2>Overview</h2>
+<li><a href="welcome.html">Welcome</a></li><li><a href="clipboard_workspace.html">Clipboard Workspace</a></li><li><a href="tour.html">A Quick Tour</a></li><li><a href="groups.html">Cleaner Groups Summary</a></li><li><a href="whats_new.html">What’s New in TextSoap 9</a></li></ul>
+<ul>
+<h2>MyLibrary</h2>
+<li><a href="my_cleaners.html">Cleaner Editor</a></li><li><a href="my_cleaner_actions.html">My Cleaner Actions</a></li><li><a href="my_groups.html">Custom Group Editor</a></li></ul>
+<ul>
+<h2>Tutorials</h2>
+<li><a href="custom_cleaner_tutorial_1.html">Your First Cleaner</a></li><li><a href="custom_cleaner_tutorial_2.html">Removing parameters from a URL</a></li><li><a href="custom_cleaner_tutorial_3.html">Using Lists in Your Cleaners</a></li><li><a href="custom_cleaner_tutorial_4.html">Matching Typefaces, Attributes</a></li></ul>
+<ul>
+<h2>Cleaner Descriptions</h2>
+<li><a href="date_actions.html">Date-related Cleaners</a></li><li><a href="html_actions.html">HTML Cleaners</a></li><li><a href="plist_actions.html">Plist Cleaners</a></li><li><a href="cleaner_descriptions.html">Other Cleaner Descriptions</a></li></ul>
+<ul>
+<h2>Extras</h2>
+<li><a href="preferences.html">Preferences</a></li><li><a href="batch_cleaning.html">Batch File Cleaning</a></li></ul>
+<ul>
+<h2>Reference</h2>
+<li><a href="glossary.html">Glossary</a></li><li><a href="regex_syntax.html">Regular Expression Syntax</a></li><li><a href="files_and_folders.html">Files and Folders</a></li></ul>
+
+	</div>
+	<div class="ts_main">
+			<h1 id="aquicktour">A Quick Tour</h1>
+
+<h2 id="overview">Overview</h2>
+
+<p>TextSoap 9 focuses on content. The editor window used by the Clipboard Workspace and any documents you open provides minimal chrome. You can edit both plain and rich text. </p>
+
+<h3 id="toolbarinspectorbar">Toolbar &amp; Inspector Bar</h3>
+
+<figure>
+<img src="images/editor_1.jpg" alt="" />
+</figure>
+
+<p>The toolbar actions:</p>
+
+<ul>
+<li>MyScrub : Apply cleaner specified by Preferences &gt; General. Default is Scrub</li>
+<li>Copy : Copy text to the clipboard</li>
+<li>Paste : Paste text from the clipboard</li>
+<li>Copy All : Select all the text and copy it to clipboard</li>
+<li>Paste Over : Replace the existing text with the contents of the clipboard</li>
+<li>MyLibrary : Bring up MyLibrary editor to create or edit custom cleaners, or groups</li>
+</ul>
+
+<p>Inspector Bar</p>
+
+<ul>
+<li>Changing font attributes of text. This applies for both plain text (where the changes apply to all the text) or rich text (where changes apply to selection).</li>
+</ul>
+
+<h3 id="editoroptions">Editor Options</h3>
+
+<figure>
+<img src="images/editor_4.jpg" alt="" />
+</figure>
+
+<p>The actual editor can show you paragraph rulers for rich text. It also includes a number of options useful when editing various text. The options can be toggled on and off with either the View Menu or using the icon bar below the text.</p>
+
+<ul>
+<li>Zoom : Use Zoom to increase the size of your working text without actually changing the underlying size of the text.</li>
+<li>Line Numbers : Shows lines numbers representing each line (or paragraph) in the text.</li>
+<li>Text Wrap : Control whether the text wraps to the window or only to lines.</li>
+<li>Invisibles : Enable to show invisible characters such as tabs, spaces and returns in your text.</li>
+<li>Statistics : Quick access to the number of Paragraphs, Words, Characters and Characters minus spaces of your text.</li>
+</ul>
+
+<h3 id="sidebar">Sidebar</h3>
+
+<p>The sidebar is separated into sections providing interactive text processing. The sidebar maybe resized if you need more space to work with. If you just want to treat TextSoap as an editor, you may toggle the sidebar by clicking on the selected icon.</p>
+
+<h3 id="cleanerlist">Cleaner List</h3>
+
+<figure>
+<img src="images/editor_2.jpg" alt="Cleaner List" />
+<figcaption>Cleaner List</figcaption>
+</figure>
+
+<p>The cleaner list provides access to all the cleaners within TextSoap. Select your text, then select the cleaner to apply to the text. Preferences allow you to specify whether the entire document is automatically cleaned when there is no selection.</p>
+
+<p><strong>Groups</strong>: There are several pre-defined collections of cleaners (groups). You can also create your own custom groups of cleaners to suit your needs by using MyLibrary.</p>
+
+<p><strong>Search</strong>: The search can be be used to find cleaners. In addition to showing you matches within the current group, search will also search the contents of entire library for additional matches.</p>
+
+<h3 id="findpanel">Find Panel</h3>
+
+<figure>
+<img src="images/editor_3.jpg" alt="" />
+</figure>
+
+<p>The find panel provides for interactive find and replace:</p>
+
+<p><strong>Expression</strong>: Enable to use regular expressions.</p>
+
+<p><strong>Match Case</strong>: Enable to require exact case match.</p>
+
+<p><strong>Live</strong>: Enable to the interactive match as you type.</p>
+
+<p><strong>Options</strong>: Find options.</p>
+
+<p><strong>Insert</strong>: Insert special characters or expression segments.</p>
+
+<p><strong>Search</strong>: History of searches.</p>
+
+<p><strong>Find</strong>: Find text field. Syntax highlighting is used when using regular expressions.</p>
+
+<p><strong>Replace</strong>: Replacement template field.</p>
+
+<p><strong>Matches</strong>: Each found match is listed here. Select the match to highlight it in your text.</p>
+
+<p><strong>Capture Groups</strong>: Shows a list of each capture group of the selected match.</p>
+
+<p><strong>Replacement result</strong>: Will show the replacement result of each match using the template.</p>
+
+<p><strong>Find</strong>: Find all the matches using the find field &amp; options.</p>
+
+<p><strong>Clear</strong>: Clear find matches.</p>
+
+<p><strong>Previous</strong>: Select the previous match in the list.</p>
+
+<p><strong>Next</strong>: Select the next match in the list.</p>
+
+<p><strong>Replace</strong>: Perform a single replace on the selected match. Then select next match.</p>
+
+<p><strong>All</strong>: Perform a &#8220;Replace All&#8221; using the find &amp; replace fields with current options.</p>
+	</div>
+</div>
+    
+<!-- 
+<script>
+includeHTML();
+</script> 
+-->
+
+</body>
+</html>

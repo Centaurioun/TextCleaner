@@ -1,0 +1,206 @@
+.header {
+	background-color: #2a5baa;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top:  0px;
+	font-weight:  bold;
+	color: #fff;
+	xposition: absolute;
+	top: 0;
+	left: 0;
+}
+
+.headertxt,
+.header a,
+.header a:link,
+.header a:visited,
+.header a:active {
+font-size: 13px;
+font-family: -apple-system, "Helvetica Neue", helvetica, sans-serif;
+	color: #fff;
+	text-decoration: none;
+}
+
+.header a:hover         {
+	text-decoration: underline;
+}
+
+.main {
+/*	margin-top:     10px;
+	margin-left:    20px;
+	margin-right:   0px;
+	padding-right:  20px;
+	*/
+}
+
+.main a,
+.main a:link,
+.main a:visited,
+.main a:active {
+  color:           black;
+}
+
+.main a:hover {
+	color:              blue;
+}
+
+* {
+	-webkit-text-size-adjust:	auto;
+	-webkit-font-smoothing: 	antialiased;
+	text-rendering: 			optimizelegibility !important;
+}
+
+body {
+	font-size: 12pt;
+	color:black;
+	background:#fff;
+	font-family:-apple-system, "Helvetica Neue", Arial, Helvetica, sans-serif;
+	/*font-family: "Times New Roman", serif;*/
+	line-height: 1.4;
+	margin: 5%;
+	}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight:normal;
+	color:#111;
+	}
+
+h1 {font-size:1.5em;font-weight:bold; line-height:1;margin-bottom:0.5em;margin-top:.5em;}
+
+h2 {font-size:1.3em;margin-bottom:0.75em;margin-top:.5em;}
+
+h3 {font-size:1.2em; font-weight:500;line-height:1.75;margin-top:.5em;}
+
+h4 {font-size:1.1em;line-height:1.25;margin-bottom:1.25em;}
+
+h5 {font-size:1em;font-weight:bold;margin-bottom:1.5em;}
+
+h6 {font-size:1em;font-weight:bold;}
+
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {margin:0;}
+
+img {max-width: 100%;}
+
+p {margin:0 0 1.5em;}
+a:focus, a:hover {color:#09f;}
+a {color:#06c;text-decoration:underline;}
+blockquote {margin:1.5em;color:#666;}
+strong, dfn {font-weight:bold;}
+em, dfn {font-style:italic;}
+
+del {color:#666;}
+pre {margin:1.5em 0;white-space:pre;}
+pre, code, tt {font:1em 'andale mono', 'lucida console', monospace;line-height:1.5;}
+
+li ul, li ol {margin:0;}
+ul, ol {margin:0 3em 1.5em 1.5em;padding-left:1.5em;}
+ul {list-style-type:square;}
+ol {list-style-type:decimal;}
+
+figure {margin: 1.5em 0; width: 100%; text-align: center; }
+figcaption {font-size: 0.75em;padding:0.5em 2em;margin-bottom: 2em;}
+figure img {margin-bottom: 0px;}
+
+code {font-family: Menlo, monospace; font-size:90%;}
+p > code {padding:0.2em 0.4em; background:#e1e9ed;}
+pre {text-align:left; overflow-x: scroll; color: #d3bd7e; border: 1px solid #aaa; padding: 10pt 15pt; border-radius: 3px;}
+
+hr {border: 0px; border-top: 1px solid #ddd; border-bottom: 1px solid #fff;margin-top: 1em;margin-bottom: 1.5em;}
+
+h1 + hr {margin-top: 2em;}
+
+ol#footnotes {font-size: 0.75em;padding-top: 1.5em;margin-top: 3em;margin-left: 0;}
+ol#footnotes:before {content: "———"; letter-spacing: -4px;margin-left: -1.5em;}
+
+ol p, ul p {margin-bottom: 0px;}
+li {margin-bottom: 0.25em;margin-top: 0.25em;}
+
+#toc ul { list-style-type:none; margin-left: .5em; margin: .4em;}
+#toc a { text-decoration:none; }
+#toc li { margin: .3em; padding: 0;}
+#toc h3 { font-size:1.4em; font-weight: 500; color:#000; }
+
+#toc li  { font-size: 1.2em;color:#222;background:#fff;font-family:-apple-system, "Helvetica Neue", Arial, Helvetica, sans-serif;line-height: 1.4;}
+
+#footer { margin-left: 1em;}
+#footer p { text-align: left; }
+
+
+/* docs */
+
+.ts_sidebar {
+  width: 270px;
+  margin-top: 7px;
+  padding: 15px 10px;
+  float: left;
+  background: #f6f6f7;
+}
+.ts_sidebar h2 {
+  font-weight: 600;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 14px;
+  padding-bottom: 5px;
+  margin-bottom: 0;
+  margin-top: 0.5em;
+  padding-top: 15px;
+}
+.ts_sidebar h2,
+.ts_sidebar ul li {
+  /*border-bottom: 1px solid #dde0e1; */
+}
+.ts_sidebar ul {
+  list-style-type: none;
+
+	margin:0 0.5em;
+	padding-left:0;
+}
+.ts_sidebar li {
+	margin-bottom: 0.1em;
+	margin-top: 0.1em;
+}
+
+
+.ts_sidebar ul li {
+}
+.ts_sidebar ul li a {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 15px;
+  color: blue;
+  text-decoration: none;
+}
+.ts_sidebar ul li a:hover {
+  color: #035b8a;
+  font-weight: 600;
+}
+.ts_sidebar ul:first-child li:first-child {
+  border: none;
+}
+.ts_main {
+  margin-top: 7px;
+  margin-left: 300px;
+  padding: 25px 25px;
+  max-width: 844px;
+}
+
+/* Sidebar styling for index page */
+#toc {
+  width: 270px;
+  float: left;
+  margin-top: 7px;
+  padding: 15px 10px;
+  background: #f6f6f7;
+}
+
+/* Shift main content on index page to the right of sidebar */
+.main > h1,
+.main > hr,
+#footer {
+  margin-left: 300px;
+}
+
+#content {
+  margin-left: 300px;
+}

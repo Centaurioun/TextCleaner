@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta name="AppleTitle" content="TextSoap 9 Help">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>Cleaner Editor</title>
+	<link href="../style/style.css" rel="stylesheet" type="text/css" />
+	<link href="../style/xcode.css" rel="stylesheet" type="text/css" />
+
+	<script src="../scripts/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!-- <script src="../scripts/htmlplus.js"></script> -->
+</head>
+
+<body>
+
+<!--
+<div class="header">
+    <a href="../index.html">Home</a><span class="headertxt">&nbsp;&#187; Cleaner Editor</span>
+    <span style="float: right;"><a href="http://www.unmarked.com/textsoap/">TextSoap</a></span>
+</div>
+-->
+
+<div class="main" valign="top">
+	<div class="ts_sidebar">
+	<!-- <div w3-include-html="toc.html"></div> -->
+	<ul>
+<h2>Overview</h2>
+<li><a href="welcome.html">Welcome</a></li><li><a href="clipboard_workspace.html">Clipboard Workspace</a></li><li><a href="tour.html">A Quick Tour</a></li><li><a href="groups.html">Cleaner Groups Summary</a></li><li><a href="whats_new.html">What’s New in TextSoap 9</a></li></ul>
+<ul>
+<h2>MyLibrary</h2>
+<li><a href="my_cleaners.html">Cleaner Editor</a></li><li><a href="my_cleaner_actions.html">My Cleaner Actions</a></li><li><a href="my_groups.html">Custom Group Editor</a></li></ul>
+<ul>
+<h2>Tutorials</h2>
+<li><a href="custom_cleaner_tutorial_1.html">Your First Cleaner</a></li><li><a href="custom_cleaner_tutorial_2.html">Removing parameters from a URL</a></li><li><a href="custom_cleaner_tutorial_3.html">Using Lists in Your Cleaners</a></li><li><a href="custom_cleaner_tutorial_4.html">Matching Typefaces, Attributes</a></li></ul>
+<ul>
+<h2>Cleaner Descriptions</h2>
+<li><a href="date_actions.html">Date-related Cleaners</a></li><li><a href="html_actions.html">HTML Cleaners</a></li><li><a href="plist_actions.html">Plist Cleaners</a></li><li><a href="cleaner_descriptions.html">Other Cleaner Descriptions</a></li></ul>
+<ul>
+<h2>Extras</h2>
+<li><a href="preferences.html">Preferences</a></li><li><a href="batch_cleaning.html">Batch File Cleaning</a></li></ul>
+<ul>
+<h2>Reference</h2>
+<li><a href="glossary.html">Glossary</a></li><li><a href="regex_syntax.html">Regular Expression Syntax</a></li><li><a href="files_and_folders.html">Files and Folders</a></li></ul>
+
+	</div>
+	<div class="ts_main">
+			<h1 id="cleanereditor">Cleaner Editor</h1>
+
+<p>A custom cleaner is one or more user-defined actions that can be applied to text. For example, you can use a &#8220;Find and Replace&#8221; text action to set up an automated find and replace on given text. This action can include regular expressions, a powerful text matching syntax. Another example might be to apply another cleaner (either built-in or custom), and then add additional actions, allowing you to build on existing cleaners.</p>
+
+<h3 id="textvs.style">Text vs. Style</h3>
+
+<p>TextSoap supports working with both plain text and rich text. When working with rich text, the text formatting (style) of the text plays an additional role.</p>
+
+<p>You can make text change actions on rich text and TextSoap will attempt to maintain the existing character styles from the original text. This means that bold words stay bold, italic words remain italic, and underlining, fonts and text color stays intact, even as the text is updated.</p>
+
+<p>TextSoap also enables changing the underlying (character-level) format of your text. This is useful if you need to strip out existing styling like bold or italic, adjust the font, or size. TextSoap can perform the style changes selectively based on the underlying text.</p>
+
+<p>Important Note: Microsoft Word text may also use Stylesheets for formatting. Unfortunately, macOS support for RTF does not extend to using document-based stylesheets. TextSoap is unable to support maintaining these styles.</p>
+
+<h3 id="overview">Overview</h3>
+
+<p>The MyLibrary editor provides you with a single window interface for all your cleaners. A list of cleaners is displayed on the left along with some additional options: Import, Export, Remove.</p>
+
+<ul>
+<li>Import : Enables you to add cleaners from libraries or cleaner files. You select the files to import using the system dialog or drag the files into the window.
+
+<ul>
+<li>You can add multiple files</li>
+<li>You can selectively import the individual cleaners from within a file.</li>
+</ul></li>
+<li>Export : Enables you to save one or more cleaners. Cleaners can be saved as individual files or combined into a single library file. Used these files as backups or to share your cleaners with others.</li>
+<li>Remove : Allows you to delete multiple items (both cleaners and groups) in one action. TextSoap will prompt you one more time before deletion.</li>
+</ul>
+
+<p>Buttons:</p>
+
+<ul>
+<li>Add : Add a new cleaner or group.</li>
+<li>Duplicate : Duplicate the selected item.</li>
+<li>Export : Export the selected item.</li>
+<li>Delete : Delete the selected item.</li>
+</ul>
+
+<figure>
+<img src="images/custom_cleaner_editor1.jpg" alt="Custom Cleaner Editor" />
+<figcaption>Custom Cleaner Editor</figcaption>
+</figure>
+
+<h3 id="actionworkspace">Action Workspace</h3>
+
+<p>The action workspace defines the currently selected cleaner.</p>
+
+<ul>
+<li>Cleaner Name : Change name or other properties (author or description) of a cleaner. Click on the name at the top to display and edit its properties.</li>
+<li>Preview : Quickly test the current cleaner using the text in the clipboard workspace (or other specified open document).</li>
+<li>Action Toolbox : Categorized actions that you can add to a cleaner.
+
+<ul>
+<li>All : combination of Actions &amp; Cleaner actions.</li>
+<li>Actions : core actions within a cleaner you can add.</li>
+<li>Cleaners : Existing cleaners can be called as actions.</li>
+</ul></li>
+</ul>
+
+<p>Actions have common attributes:</p>
+
+<ul>
+<li>Show Details : toggle details of an action</li>
+<li>Name : type of action</li>
+<li>Additional properties : Disable (or enable) and edit comment for specific action</li>
+</ul>
+
+<figure>
+<img src="images/custom_cleaner_editor2.jpg" alt="Action Header" />
+<figcaption>Action Header</figcaption>
+</figure>
+
+<p>If action is disabled, the title is struck, details are hidden (and are no longer editable).</p>
+
+<figure>
+<img src="images/custom_cleaner_editor2a.jpg" alt="Action Header" />
+<figcaption>Action Header</figcaption>
+</figure>
+
+<p>Any comments are displayed as a tooltip when you hover your cursor over the title of the action.</p>
+
+<p>Container Actions</p>
+
+<p>This class of action can contain other actions, much like a folder holds files. They can be used as an organization tool (a simple Group action) or used to limit the text you wish to further work on (a Conditional). Containers have a visible notch to redirect your eye in the workflow, making the hierarchy easier to see.</p>
+
+<p>When a container action is disabled, the contained actions will NOT be executed.</p>
+
+<p>Additionally, containers have:</p>
+
+<ul>
+<li>Disclosure Button : Toggles whether items are displayed. Works similar to Finder&#8217;s folders.</li>
+<li>Contained Count : Indicates how many direct items are contained.</li>
+</ul>
+
+<figure>
+<img src="images/custom_cleaner_editor3.jpg" alt="Action List" />
+<figcaption>Action List</figcaption>
+</figure>
+
+<p>See <a href="my_cleaner_actions.html">My Cleaner Actions</a> for descriptions of the various core actions.</p>
+	</div>
+</div>
+    
+<!-- 
+<script>
+includeHTML();
+</script> 
+-->
+
+</body>
+</html>

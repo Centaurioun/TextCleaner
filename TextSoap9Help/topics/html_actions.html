@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta name="AppleTitle" content="TextSoap 9 Help">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>HTML Cleaners</title>
+	<link href="../style/style.css" rel="stylesheet" type="text/css" />
+	<link href="../style/xcode.css" rel="stylesheet" type="text/css" />
+
+	<script src="../scripts/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!-- <script src="../scripts/htmlplus.js"></script> -->
+</head>
+
+<body>
+
+<!--
+<div class="header">
+    <a href="../index.html">Home</a><span class="headertxt">&nbsp;&#187; HTML Cleaners</span>
+    <span style="float: right;"><a href="http://www.unmarked.com/textsoap/">TextSoap</a></span>
+</div>
+-->
+
+<div class="main" valign="top">
+	<div class="ts_sidebar">
+	<!-- <div w3-include-html="toc.html"></div> -->
+	<ul>
+<h2>Overview</h2>
+<li><a href="welcome.html">Welcome</a></li><li><a href="clipboard_workspace.html">Clipboard Workspace</a></li><li><a href="tour.html">A Quick Tour</a></li><li><a href="groups.html">Cleaner Groups Summary</a></li><li><a href="whats_new.html">What’s New in TextSoap 9</a></li></ul>
+<ul>
+<h2>MyLibrary</h2>
+<li><a href="my_cleaners.html">Cleaner Editor</a></li><li><a href="my_cleaner_actions.html">My Cleaner Actions</a></li><li><a href="my_groups.html">Custom Group Editor</a></li></ul>
+<ul>
+<h2>Tutorials</h2>
+<li><a href="custom_cleaner_tutorial_1.html">Your First Cleaner</a></li><li><a href="custom_cleaner_tutorial_2.html">Removing parameters from a URL</a></li><li><a href="custom_cleaner_tutorial_3.html">Using Lists in Your Cleaners</a></li><li><a href="custom_cleaner_tutorial_4.html">Matching Typefaces, Attributes</a></li></ul>
+<ul>
+<h2>Cleaner Descriptions</h2>
+<li><a href="date_actions.html">Date-related Cleaners</a></li><li><a href="html_actions.html">HTML Cleaners</a></li><li><a href="plist_actions.html">Plist Cleaners</a></li><li><a href="cleaner_descriptions.html">Other Cleaner Descriptions</a></li></ul>
+<ul>
+<h2>Extras</h2>
+<li><a href="preferences.html">Preferences</a></li><li><a href="batch_cleaning.html">Batch File Cleaning</a></li></ul>
+<ul>
+<h2>Reference</h2>
+<li><a href="glossary.html">Glossary</a></li><li><a href="regex_syntax.html">Regular Expression Syntax</a></li><li><a href="files_and_folders.html">Files and Folders</a></li></ul>
+
+	</div>
+	<div class="ts_main">
+			<h1 id="htmlcleaners">HTML Cleaners</h1>
+
+<p><strong>Extract Text from HTML Source</strong></p>
+
+<p>Cleans up HTML raw text. It strips out anything between &#8216;&lt;&#8217; and &#8216;&gt;&#8217;. Extract the text contents from HTML source with this cleaner. It also handles Ampersand escape codes (  or Œ) and removes tab characters and multiple carriage returns.</p>
+
+<hr />
+
+<p><strong>HTML Entity to Text</strong></p>
+
+<p>Convert known HTML entities to their text equivalent. Supports all the standard HTML entities and most of the Unicode-based entities.</p>
+
+<p><strong>Text to Named HTML Entity</strong></p>
+
+<p>Convert non-ASCII text to HTML Entities. It converts character to a named entity. If a named entity cannot be found for the character, it reverts to a numeric HTML entity.</p>
+
+<p><strong>Text to Numeric HTML Entity</strong></p>
+
+<p>Convert non-ASCII text to HTML Entities, without attempting to find a matching named entity. The results are always numeric entities.</p>
+
+<p><strong>All Text to Numeric HTML Entities</strong></p>
+
+<p>Converts all standard ASCII, as well as non-ASCII, characters to numeric HTML Entities.</p>
+
+<hr />
+
+<p><strong>HTML: Create Ordered List</strong></p>
+
+<p>Converts a series of lines into an HTML-based ordered list.</p>
+
+<p><strong>HTML: Create Unordered List</strong></p>
+
+<p>Converts a series of lines into an HTML-based unordered list.</p>
+
+<p><strong>HTML Tag: Bold</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;b&gt;Sample Text&lt;/b&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Italic</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;i&gt;Sample Text&lt;/i&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Preformatted</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;pre&gt;Sample Text&lt;/pre&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Break</strong></p>
+
+<p>Inserts the break tag.</p>
+
+<pre><code>&lt;br/&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Div</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;div&gt;Sample Text&lt;/div&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Paragraph</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;p&gt;Sample Text&lt;/p&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Span</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;span&gt;Sample Text&lt;/span&gt;
+</code></pre>
+
+<p><strong>HTML Tag: BlockQuote</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;blockquote&gt;Sample Text&lt;/blockquote&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Cite</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;cite&gt;Sample Text&lt;/cite&gt;
+</code></pre>
+
+<p><strong>HTML Tag: h1 - h6</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;h1&gt;Sample Text&lt;/h1&gt;
+..
+&lt;h6&gt;Sample Text&lt;/h6&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Unordered List</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;ul&gt;Sample Text&lt;/ul&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Ordered List</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;ol&gt;Sample Text&lt;/ol&gt;
+</code></pre>
+
+<p><strong>HTML Tag: List Item</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;li&gt;Sample Text&lt;/li&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Table</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;table&gt;Sample Text&lt;/table&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Table Row</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;tr&gt;Sample Text&lt;/tr&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Table Cell</strong></p>
+
+<p>Wraps the selected text in a given tag.</p>
+
+<p>Sample Text:</p>
+
+<pre><code>&lt;td&gt;Sample Text&lt;/td&gt;
+</code></pre>
+
+<p><strong>HTML Tag: Link</strong></p>
+
+<p>Creates an href tag with the selected text as the URL.</p>
+
+<p>http://www.unmarked.com:</p>
+
+<pre><code>&lt;a href=&quot;http://www.unmarked.com&quot;&gt; Sample Text&lt;/a&gt;
+</code></pre>
+	</div>
+</div>
+    
+<!-- 
+<script>
+includeHTML();
+</script> 
+-->
+
+</body>
+</html>

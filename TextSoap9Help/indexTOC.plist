@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>link</key>
+		<string>#</string>
+		<key>name</key>
+		<string>Overview</string>
+		<key>type</key>
+		<string>header</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>topics/welcome.html</string>
+		<key>name</key>
+		<string>Welcome</string>
+		<key>type</key>
+		<string>entry</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>topics/clipboard_workspace.html</string>
+		<key>name</key>
+		<string>Clipboard Workspace</string>
+		<key>type</key>
+		<string>entry</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>topics/tour.html</string>
+		<key>name</key>
+		<string>A Quick Tour</string>
+		<key>type</key>
+		<string>entry</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>topics/groups.html</string>
+		<key>name</key>
+		<string>Cleaner Groups Summary</string>
+		<key>type</key>
+		<string>entry</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>topics/whats_new.html</string>
+		<key>name</key>
+		<string>What’s New in TextSoap 9</string>
+		<key>type</key>
+		<string>entry</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>#</string>
+		<key>name</key>
+		<string>MyLibrary</string>
+		<key>type</key>
+		<string>header</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>topics/my_cleaners.html</string>
+		<key>name</key>
+		<string>Cleaner Editor</string>
+		<key>type</key>
+		<string>entry</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>topics/my_cleaner_actions.html</string>
+		<key>name</key>
+		<string>My Cleaner Actions</string>
+		<key>type</key>
+		<string>entry</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>topics/my_groups.html</string>
+		<key>name</key>
+		<string>Custom Group Editor</string>
+		<key>type</key>
+		<string>entry</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>#</string>
+		<key>name</key>
+		<string>Tutorials</string>
+		<key>type</key>
+		<string>header</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>topics/custom_cleaner_tutorial_1.html</string>
+		<key>name</key>
+		<string>Your First Cleaner</string>
+		<key>type</key>
+		<string>entry</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>topics/custom_cleaner_tutorial_2.html</string>
+		<key>name</key>
+		<string>Removing parameters from a URL</string>
+		<key>type</key>
+		<string>entry</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>topics/custom_cleaner_tutorial_3.html</string>
+		<key>name</key>
+		<string>Using Lists in Your Cleaners</string>
+		<key>type</key>
+		<string>entry</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>topics/custom_cleaner_tutorial_4.html</string>
+		<key>name</key>
+		<string>Matching Typefaces, Attributes</string>
+		<key>type</key>
+		<string>entry</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>#</string>
+		<key>name</key>
+		<string>Cleaner Descriptions</string>
+		<key>type</key>
+		<string>header</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>topics/date_actions.html</string>
+		<key>name</key>
+		<string>Date-related Cleaners</string>
+		<key>type</key>
+		<string>entry</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>topics/html_actions.html</string>
+		<key>name</key>
+		<string>HTML Cleaners</string>
+		<key>type</key>
+		<string>entry</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>topics/plist_actions.html</string>
+		<key>name</key>
+		<string>Plist Cleaners</string>
+		<key>type</key>
+		<string>entry</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>topics/cleaner_descriptions.html</string>
+		<key>name</key>
+		<string>Other Cleaner Descriptions</string>
+		<key>type</key>
+		<string>entry</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>#</string>
+		<key>name</key>
+		<string>Extras</string>
+		<key>type</key>
+		<string>header</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>topics/preferences.html</string>
+		<key>name</key>
+		<string>Preferences</string>
+		<key>type</key>
+		<string>entry</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>topics/batch_cleaning.html</string>
+		<key>name</key>
+		<string>Batch File Cleaning</string>
+		<key>type</key>
+		<string>entry</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>#</string>
+		<key>name</key>
+		<string>Reference</string>
+		<key>type</key>
+		<string>header</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>topics/glossary.html</string>
+		<key>name</key>
+		<string>Glossary</string>
+		<key>type</key>
+		<string>entry</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>topics/regex_syntax.html</string>
+		<key>name</key>
+		<string>Regular Expression Syntax</string>
+		<key>type</key>
+		<string>entry</string>
+	</dict>
+	<dict>
+		<key>link</key>
+		<string>topics/files_and_folders.html</string>
+		<key>name</key>
+		<string>Files and Folders</string>
+		<key>type</key>
+		<string>entry</string>
+	</dict>
+</array>
+</plist>

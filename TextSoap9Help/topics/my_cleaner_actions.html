@@ -1,0 +1,509 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta name="AppleTitle" content="TextSoap 9 Help">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>My Cleaner Actions</title>
+	<link href="../style/style.css" rel="stylesheet" type="text/css" />
+	<link href="../style/xcode.css" rel="stylesheet" type="text/css" />
+
+	<script src="../scripts/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!-- <script src="../scripts/htmlplus.js"></script> -->
+</head>
+
+<body>
+
+<!--
+<div class="header">
+    <a href="../index.html">Home</a><span class="headertxt">&nbsp;&#187; My Cleaner Actions</span>
+    <span style="float: right;"><a href="http://www.unmarked.com/textsoap/">TextSoap</a></span>
+</div>
+-->
+
+<div class="main" valign="top">
+	<div class="ts_sidebar">
+	<!-- <div w3-include-html="toc.html"></div> -->
+	<ul>
+<h2>Overview</h2>
+<li><a href="welcome.html">Welcome</a></li><li><a href="clipboard_workspace.html">Clipboard Workspace</a></li><li><a href="tour.html">A Quick Tour</a></li><li><a href="groups.html">Cleaner Groups Summary</a></li><li><a href="whats_new.html">What’s New in TextSoap 9</a></li></ul>
+<ul>
+<h2>MyLibrary</h2>
+<li><a href="my_cleaners.html">Cleaner Editor</a></li><li><a href="my_cleaner_actions.html">My Cleaner Actions</a></li><li><a href="my_groups.html">Custom Group Editor</a></li></ul>
+<ul>
+<h2>Tutorials</h2>
+<li><a href="custom_cleaner_tutorial_1.html">Your First Cleaner</a></li><li><a href="custom_cleaner_tutorial_2.html">Removing parameters from a URL</a></li><li><a href="custom_cleaner_tutorial_3.html">Using Lists in Your Cleaners</a></li><li><a href="custom_cleaner_tutorial_4.html">Matching Typefaces, Attributes</a></li></ul>
+<ul>
+<h2>Cleaner Descriptions</h2>
+<li><a href="date_actions.html">Date-related Cleaners</a></li><li><a href="html_actions.html">HTML Cleaners</a></li><li><a href="plist_actions.html">Plist Cleaners</a></li><li><a href="cleaner_descriptions.html">Other Cleaner Descriptions</a></li></ul>
+<ul>
+<h2>Extras</h2>
+<li><a href="preferences.html">Preferences</a></li><li><a href="batch_cleaning.html">Batch File Cleaning</a></li></ul>
+<ul>
+<h2>Reference</h2>
+<li><a href="glossary.html">Glossary</a></li><li><a href="regex_syntax.html">Regular Expression Syntax</a></li><li><a href="files_and_folders.html">Files and Folders</a></li></ul>
+
+	</div>
+	<div class="ts_main">
+			<h1 id="mycleaneractions">My Cleaner Actions</h1>
+
+<h3 id="findandreplaceactions">Find and Replace Actions</h3>
+
+<p>Common options. These options are common to the collection of Find and Replace actions. Specific changes for each action will be noted below.</p>
+
+<p><strong>Regex</strong> - Indicates whether this is a regular expression</p>
+
+<p><strong>Match Case</strong> - Require case matching, otherwise ignores text case (Uppercase A = Lowercase a)</p>
+
+<p><strong>Options</strong></p>
+
+<p><em>Textual matches</em></p>
+
+<ul>
+<li>Contains : match text anywhere</li>
+<li>Starts with : Start of match must be start of word</li>
+<li>Whole Words : Do not match partial words</li>
+<li>Ends with : End of match must be at end of word</li>
+</ul>
+
+<p><em>Regex matches</em></p>
+
+<ul>
+<li><p>Matches Lines (m) : Control the behavior of &#8220;^&#8221; and &#8220;$&#8221; in a pattern. By default these will only match at the start and end, respectively, of the input text. If this flag is set, &#8220;^&#8221; and &#8220;$&#8221; will also match at the start and end of each line within the input text.</p>
+
+<p>Sometimes called &#8220;Multiline&#8221;.</p></li>
+<li><p>Dot Matches Returns (s) : If set, a &#8220;.&#8221; in a pattern will match a line terminator in the input text. By default, it will not. </p>
+
+<p>Note that a carriage-return / line-feed pair in text behave as a single line terminator, and will match a single &#8220;.&#8221; in a RE pattern. Line terminators are \u000a, \u000b, \u000c, \u000d, \u0085, \u2028, \u2029 and the sequence \u000d \u000a.</p></li>
+<li><p>Use Unicode Words (w) : Controls the behavior of \b in a pattern. If set, word boundaries are found according to the definitions of word found in Unicode UAX 29, Text Boundaries. </p>
+
+<p>By default, word boundaries are identified by means of a simple classification of characters as either “word” or “non-word”, which approximates traditional regular expression behavior. The results obtained with the two options can be quite different in runs of spaces and other non-word characters.</p></li>
+<li><p>Allow comments (x) : If set, allow use of white space and (#comments) within patterns</p></li>
+</ul>
+
+<p><strong>Find</strong> - Text to find
+<br/>
+<strong>Replace</strong> - Text to replace</p>
+
+<h4 id="changingtextcasewhenreplacingusingregularexpressions">Changing text case when replacing using regular expressions</h4>
+
+<p>TextSoap supports additional commands to change the case of the replacement text.</p>
+
+<pre><code>    Cmd - Action
+    $U  - All future text is uppercased
+    $u  - Next character is uppercased
+    $L  - All future text is lowercased
+    $l  - Next character is lowercased
+    $E  - All future text case is preserved
+</code></pre>
+
+<p>You can use $u and $l with the capture groups. For example, on the following text:</p>
+
+<p>The big brown fox jumped over the blue cow</p>
+
+<p><strong>Find:</strong> (b\w+)
+<br/>
+<strong>Replace:</strong> $u$1</p>
+
+<p>Will capitalize the first letter of first capture group, the result is:</p>
+
+<p>The Big Brown fox jumped over the Blue cow</p>
+
+<p>Where all the matchees (words that start with b) are capitalized.</p>
+
+<h4 id="findandreplacewithlist">Find and Replace with List</h4>
+
+<p><strong>List</strong> - When you specify a list, the action will repeat for each row in the list, replacing references to $v{A}, $v{B}, $v{C}, $v{D} with the value in the specified column for the row.</p>
+
+<p>If you need to specify $v{..} w/o the preprocessing, use . For example: $v{A} would find &#8220;$v{A}&#8221; and not be replaced in the list processing.</p>
+
+<p><em>Note: For more advanced functionality, you can use the <strong>Process List</strong> action. However, do not use <strong>Find and Replace with List</strong> within a Process List group.</em></p>
+
+<hr />
+
+<h3 id="findandreplacetext">Find and Replace Text</h3>
+
+<p>Regular text fields may use the following special characters</p>
+
+<pre><code>\\ = backslash (\)
+\t = tab
+\n = end of line (return)
+\s = space
+\x{hhhh} = hex character value, ie. tab = \x{09}, space = \x{20}
+</code></pre>
+
+<h3 id="regexfindandreplacetext">Regex Find and Replace Text</h3>
+
+<p>When Regex option is selected, find text is a regular expression and is highlighted as such. See Reference on Regular Expressions for more details.</p>
+
+<p>Replace text supports both the characters supported in regular text fields (\t, \n, etc) as well as replacement template ($0 for entire match, $1 for first captured group, etc).</p>
+
+<h3 id="createhyperlinkurls">Create Hyperlink URLs</h3>
+
+<p>This is a special variant of Batch Find and Replace Text action.</p>
+
+<p>Use the find field to match the text (most common is simple text match, but you can use an expression as needed). Use $v{col:A} to specify the column A value. See above on &#8220;Using Lists&#8221; for more details on specifying the columns within the list.</p>
+
+<p>The &#8220;replace&#8221; value is somewhat unique. The replace field specifies the text used in the hyperlink. If column B specifies a complete URL, you can simply use $v{col:B}.</p>
+
+<h2 id="generalactions">General Actions</h2>
+
+<h3 id="titlecaseextended">Title Case (Extended)</h3>
+
+<p>TextSoap has a built-in cleaner called &#8220;Capitalize with Title Case&#8221;. However, if you need a more customized behavior, you can use this action, which provides for extending or replacing both the small words list, and the special words list used.</p>
+
+<p>Small words specify words that are to not be capitalized.
+Special Words specify words that are keep the case as specified in the list.</p>
+
+<p>You can often use this in combination with the &#8220;Capitalize Common Tech Names&#8221; cleaner, which will fix up special-cased words like MacBook, iPhone, TextSoap, etc.</p>
+
+<h3 id="customtextwrap">Custom Text Wrap</h3>
+
+<p>TextSoap has built-in cleaners to hard wrap text at 50, 60, and 70 character boundaries. You can use this action to specify a custom value. The custom wrap will word wrap the text, attempting to keep lines &lt;= the specified character length.</p>
+
+<h3 id="quotetext">Quote Text</h3>
+
+<p>Quoting references an old style quoting where a common mark such as &#8216;&gt;&#8217; is used before text to quote some previous text.</p>
+
+<p>The options include:</p>
+
+<p>Quote level (0&#8211;10) : specifies how many of the &#8220;Mark&#8221; characters to use.</p>
+
+<p>Wrap text : allows for re-wrapping the text at a fix character length</p>
+
+<p>Quote Chars:</p>
+
+<p>Prefix: typically a space to provide padding</p>
+
+<p>Mark: The character used to quote. Commonly &#8216;&gt;&#8217;, but can be any character.</p>
+
+<p>Suffix: padding after the mark.</p>
+
+<h3 id="inserttext">Insert Text</h3>
+
+<p>Allows for inserting a piece of text either before, after or replacing the text.</p>
+
+<h3 id="tagtext">Tag Text</h3>
+
+<p>Allows for simple tagging of text. Often used as part of a conditional (see below).
+While HTML tags are most common, you can specify any tag and it will surround the given text with the open tag and close tag.</p>
+
+<h3 id="extracttext">Extract Text</h3>
+
+<p>Expression : Regular expression to match the text to extract.</p>
+
+<p>Capture Group : Result group to use. $0 indicates entire match, but you can specify a sub group.</p>
+
+<p>Match Case : Indicates whether to require case matching. If not selected, text case is ignored.</p>
+
+<p>Append Result: If selected, will return original text along with extracted text appended. Otherwise, will replace the text with the extracted text.</p>
+
+<h3 id="extractcharacters">Extract Characters</h3>
+
+<p>This action will extract the specified character count from the given text.</p>
+
+<ul>
+<li>From Beginning : Specify number of characters from the beginning of text.</li>
+<li>From End : Specify number of characters from the end of text.
+result, where n is number of characters.</li>
+<li>Starting At : Specify the starting position and length of the text.</li>
+</ul>
+
+<h3 id="performnamedservice">Perform Named Service</h3>
+
+<p>This action will tap into the macOS Services. Enter in the name of the Service and it will perform that Service on the given text.</p>
+
+<p>This can be useful if you have an app that provides a Service menu item that gives you a specific transformation that you cannot duplicate within TextSoap itself.</p>
+
+<p>Services handling in macOS is tricky on the best of days. In general, it is not recommended, but is available if it is the only way to tap into specific functionality.</p>
+
+<p><em>A big caveat: The name needs to match exactly, and with some apps, may exist in a subfolder even though it never appears as such. BBEdit is an example of this. All its Service items need to be prefixed with a &#8220;BBEdit/&#8221; in order to be correctly accessed.</em></p>
+
+<h3 id="hyperlinkstotext">Hyperlinks to Text</h3>
+
+<p>This action will find rich text with a link attribute and extract the link out as specified.</p>
+
+<p>Result Pattern: text template used to extract the link. Default demonstrates how to convert to the HTML &#8220;&lt;a&gt;&#8221; tag.</p>
+
+<pre><code>&lt;a href=&quot;{link}&quot;&gt;{text}&lt;/a&gt;
+</code></pre>
+
+<p>Note: Special tokens will substitute the original text &#8220;{text}&#8221; and the link, &#8220;{link}&#8221;.</p>
+
+<p>Keep hyperlinks active : optionally keep the link specified as clickable.</p>
+
+<h3 id="dateformatter">Date Formatter</h3>
+
+<p>This action will format dates in the preferred order. It can replicate all of the built-in Normalize Dates cleaners. In addition, it supports DateNow expansion as well.</p>
+
+<p><strong>Date</strong> - Determines whether you are working with existing dates found in text or expanding ${DATENOW}</p>
+
+<p><strong>Date Format</strong> </p>
+
+<figure>
+<img src="images/my_cleaner_actions1.jpg" alt="Date Format Options" />
+<figcaption>Date Format Options</figcaption>
+</figure>
+
+<p>If choosing None, Short, Medium, Long, Full, can also specify the <strong>time format</strong>.</p>
+
+<figure>
+<img src="images/my_cleaner_actions2.jpg" alt="Time Format Options" />
+<figcaption>Time Format Options</figcaption>
+</figure>
+
+<p><strong>Template</strong></p>
+
+<p>When specifying Template format, full customization is available. The following chart gives all the various template keys when formatting dates and times:</p>
+
+<figure>
+<img src="images/my_cleaner_actions3.jpg" alt="Template Format Options" />
+<figcaption>Template Format Options</figcaption>
+</figure>
+
+<h2 id="lineactions">Line Actions</h2>
+
+<h3 id="sortlines">Sort Lines</h3>
+
+<p>This action lets you sort the lines of the given text.</p>
+
+<ul>
+<li>Reverse sort : Sorts in descending order</li>
+<li>Match case : When comparing, match based on the case of text.</li>
+<li>Numbers match by value : Mimic Finder&#8217;s numeric sorting of numbers.</li>
+<li>Ignore whitespace : Any whitespace at the beginning of the line is ignored.</li>
+<li>Ignore diacritic marks : Any diacritics are ignored. Example: ä = a</li>
+<li>Use expression : Use the regular expression &amp; result template to transform the line before comparing.</li>
+</ul>
+
+<h3 id="addtexttolines">Add Text to Lines</h3>
+
+<p>Add text to the beginning or end of each line of text.</p>
+
+<h3 id="removetextfromlines">Remove Text from Lines</h3>
+
+<p>Remove given text from the beginning or end of each line of text. Ignored if the given text is not found.</p>
+
+<h3 id="foreachline">For Each Line</h3>
+
+<p>Convenient approach to operating on each line individually. Text is divided up into lines (using return markers), and then actions contained in the For Each Line group are applied.</p>
+
+<h3 id="numberlines">Number Lines</h3>
+
+<p><strong>Lines</strong> : All, Non-Empty. If Non-Empty is selected, will skip over lines that are just returns.</p>
+
+<p><strong>Start</strong> : Starting number</p>
+
+<p><strong>Increment</strong> : Increment for each number.</p>
+
+<p><strong>Format</strong> : A simple formatting string that provides for padding, tabs and spaces</p>
+
+<pre><code>0  - minimum padding. 0 = No padding (1), 000 = 3 digits min (001)
+\t - tab character, Useful for using tab to separate line number and text.
+\s - space character. optional. More obvious than a just a &quot; &quot; character (which also works)
+</code></pre>
+
+<h2 id="styleactions">Style Actions</h2>
+
+<p>When working with rich text (vs. plain text), you can change various attributes of the text. These actions can be used globally (for example, to change a font) or selectively on text using conditionals.</p>
+
+<h3 id="setfont">Set Font</h3>
+
+<p>An option is applied only if selected. To change only one aspect of a font, leave the remaining options unselected. For example, to set the font, but keep existing sizes, along with bold and italics, only select the &#8220;Font family&#8221; option and specify the new font family to use.</p>
+
+<p>Font family: The font name to use. For example &#8220;Helvetica Neue&#8221;.</p>
+
+<p>Typeface: When selected, specify plain (to remove any bold &amp; italic), bold and/or italic. Plain option overrides bold and italic.</p>
+
+<p>Size: The size of the font to use.</p>
+
+<h3 id="setexactfont">Set Exact Font</h3>
+
+<p>*Note: Use more sparingly to specify the exact font name. This allows for additional choices outside of more standard &#8220;bold&#8221; and &#8220;italic&#8221;.</p>
+
+<p>Exact font: The exact font to use. For example &#8220;HelveticalNeue-MediumItalic&#8221;</p>
+
+<p>Size: The size of the font to use.</p>
+
+<h3 id="setstyle">Set Style</h3>
+
+<p>A subset feature from Set Font, which changes the typeface style. Useful if wanting to simply bold or italicize text.</p>
+
+<p><em>If using <strong>Set Font</strong>, specify the style there. <strong>Set Style</strong> is not necessary and will just cause additional processing of the text.</em></p>
+
+<figure>
+<img src="images/my_cleaner_actions4.jpg" alt="Style Options" />
+<figcaption>Style Options</figcaption>
+</figure>
+
+<h3 id="adjustfontsize">Adjust Font Size</h3>
+
+<p>Relative changes to the font sizes. To make everything 5 points larger, set to +5. 12pt becomes 17pt, 20pt becomes 25pt. To reduce everything by 10 pts, set to &#8211;10 pts. 24pt becomes 14pt, 48pt becomes 38pt.</p>
+
+<h3 id="setunderlineattributes">Set Underline Attributes</h3>
+
+<p>Style: Single, Thick, Double to specify line style. None = remove this attribute (if it exists).</p>
+
+<p>Pattern: Line patters defined in Apple&#8217;s Rich Text. </p>
+
+<p>Color: Color of the line.</p>
+
+<h3 id="setstrikethroughattributes">Set Strikethrough Attributes</h3>
+
+<p>Style: Single, Thick, Double to specify line style. None = remove this attribute (if it exists).</p>
+
+<p>Pattern: Line patters defined in Apple&#8217;s Rich Text. </p>
+
+<p>Color: Color of the line.</p>
+
+<h3 id="setsupersubscriptattribute">Set Super/Subscript Attribute</h3>
+
+<p>Script attribute:</p>
+
+<ul>
+<li>Superscript : make text superscript</li>
+<li>None : remove any superscript/subscript attribute</li>
+<li>Subscript: make text subscript</li>
+</ul>
+
+<h3 id="settextcolor">Set Text Color</h3>
+
+<p>Set color of text.</p>
+
+<h3 id="setbackgroundcolor">Set Background Color</h3>
+
+<p>Set color of background.</p>
+
+<h3 id="removecharacterattribute">Remove Character Attribute</h3>
+
+<p>Remove the specified attribute of text.</p>
+
+<h2 id="conditionals">Conditionals</h2>
+
+<p>Conditional blocks are a way to apply specific actions only to text that matches given criteria. The actions inside the block can be virtually anything. Conditionals can even be nested to allow you to match more and more specific criteria. Using nest conditionals, it is possible to find words that are both bold and all uppercase. This example finds all capitalize bold words and changes the text color to red.</p>
+
+<figure>
+<img src="images/custom_cleaner_actions1.jpg" alt="Example 1" />
+<figcaption>Example 1</figcaption>
+</figure>
+
+<h4 id="modifyresults">Modify Results</h4>
+
+<p>This option enables you to adjust the results of a match.</p>
+
+<ul>
+<li>Invert Matches : This will flip the match results. For example, if you used a conditional to find bold words and then used invert matches, the match would be on all non-bolded words.
+In some cases, it is easier to specify the text you don&#8217;t want and then invert the results.</li>
+<li>Limit Matches : If multiple matches are found, this will limit the matches used.</li>
+<li>Skip Matches : If multiple matches are found, this will skip the first N matches.</li>
+</ul>
+
+<h3 id="iftextmatches">If Text Matches</h3>
+
+<p>Find the provided text and applies related actions to it. </p>
+
+<p>When using a regular expression, you can also specify which capture group to use. $0 is the default for entire matched string. However, you could specify a find as <tag>(.*?)</tag> and use $1 to only specify the text within the given tag.</p>
+
+<h3 id="foreachline">For Each Line</h3>
+
+<p>Process each non-blank line of the text. This action does not support modifier options.</p>
+
+<h3 id="iffontmatches">If Font Matches</h3>
+
+<p>Finds text that matches the font family, size(s), or face attributes (italic or bold). All the attributes can be found independently of each other. For example, you can specify Typeface: Italic to only find italic text, no matter its font family or size.</p>
+
+<h3 id="iftexthasattribute">If Text Has Attribute</h3>
+
+<p>Finds text that matches the specified attribute.</p>
+
+<hr />
+
+<h2 id="misc">Misc</h2>
+
+<h3 id="group">Group</h3>
+
+<p>Group containers encapsulate a hierarchy of actions. They represent the foundation for conditional actions and macros.</p>
+
+<p>Additionally, they allow for encapsulated organization of actions. A group container controls whether the actions within are applied. If the container is disabled, all the contained actions are ignored. This is much easier than individually disabling actions.</p>
+
+<p>If you move the group, all its contained actions move with it. And if you delete a group, all the actions within are deleted.</p>
+
+<h3 id="definelist">Define List</h3>
+
+<p>You can define a table of data which can be used with other actions.</p>
+
+<p>The table consists of rows with up to 4 columns of text. You can copy or paste tab-delimited text and use drag-n-drop to re-arrange rows.</p>
+
+<p>Click Edit to display the table editor.</p>
+
+<ul>
+<li>Bonus: Hold down the option key when you click Edit to edit it as tab-delimited text. Each line of text represents a row. Any columns defined past 4 are ignored.</li>
+</ul>
+
+<h3 id="runautomatorworkflow">Run Automator Workflow</h3>
+
+<p>This action runs an Automator Workflow. Workflows are located at:</p>
+
+<pre><code>~/Library/Application Support/TextSoap/Workflows/
+</code></pre>
+
+<p><em>Note: The result of this action will be plain text</em></p>
+
+<h3 id="note">Note</h3>
+
+<p>This is a basic action that allows you to store notes within your cleaner. This is useful if you need to add a note to remind yourself of some detail in your cleaner. It does nothing to the text (it is ignored) when the cleaner is applied.</p>
+
+<p>Additionally, if you want to make notes for a particular action, you can use the comment button on the individual action to store a short note with it.</p>
+
+<h3 id="deletetext">Delete Text</h3>
+
+<p>Simply deletes the provided text. This is most commonly used as part of a conditional.</p>
+
+<!--
+
+### Copy Text to Clipboard
+
+Will copy the current text to the clipboard. You might use this at the end of a cleaner to always place the results on the clipboard.
+
+-->
+
+<h2 id="macros">Macros</h2>
+
+<p>Macros are way to specify a group of actions that you can use multiple times within a custom cleaner. Rather than duplicating the actions, you can create a macro with the actions and apply it instead.</p>
+
+<h3 id="definemacro">Define Macro</h3>
+
+<p>This action defines a Macro. It is also a group container. You specify the name of the Macro (which will be used later with the &#8220;Apply Macro&#8221; action). Add your actions to this group container.</p>
+
+<p>Note: The contained actions within will only be applied using Apply Macro action. </p>
+
+<h3 id="applymacro">Apply Macro</h3>
+
+<p>To apply the actions defined within a Macro, use this action. It provides a popup list of names defined macros within the cleaner. The contained actions of the Define Macro group will be applied to the given text.</p>
+
+<hr />
+
+<p>Here is a slightly altered version of our cleaner example:</p>
+
+<figure>
+<img src="images/custom_cleaner_actions2.jpg" alt="Example 2" />
+<figcaption>Example 2</figcaption>
+</figure>
+
+<p>Explanation: In this example, you create a macro the changes the text to red.</p>
+
+<p>Instead of nesting the two conditional actions, they are separated, which means any text that is bold, or any words that are all uppercase will have the macro applied, changing the text to red.</p>
+
+<p>If you wanted to change the text color to green, it now requires only one change. You can add additional actions to the macro definition and they will use used everywhere the macro is applied.</p>
+	</div>
+</div>
+    
+<!-- 
+<script>
+includeHTML();
+</script> 
+-->
+
+</body>
+</html>

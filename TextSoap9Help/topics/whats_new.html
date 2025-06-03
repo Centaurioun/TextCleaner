@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta name="AppleTitle" content="TextSoap 9 Help">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>What’s New in TextSoap 9</title>
+	<link href="../style/style.css" rel="stylesheet" type="text/css" />
+	<link href="../style/xcode.css" rel="stylesheet" type="text/css" />
+
+	<script src="../scripts/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!-- <script src="../scripts/htmlplus.js"></script> -->
+</head>
+
+<body>
+
+<!--
+<div class="header">
+    <a href="../index.html">Home</a><span class="headertxt">&nbsp;&#187; What’s New in TextSoap 9</span>
+    <span style="float: right;"><a href="http://www.unmarked.com/textsoap/">TextSoap</a></span>
+</div>
+-->
+
+<div class="main" valign="top">
+	<div class="ts_sidebar">
+	<!-- <div w3-include-html="toc.html"></div> -->
+	<ul>
+<h2>Overview</h2>
+<li><a href="welcome.html">Welcome</a></li><li><a href="clipboard_workspace.html">Clipboard Workspace</a></li><li><a href="tour.html">A Quick Tour</a></li><li><a href="groups.html">Cleaner Groups Summary</a></li><li><a href="whats_new.html">What’s New in TextSoap 9</a></li></ul>
+<ul>
+<h2>MyLibrary</h2>
+<li><a href="my_cleaners.html">Cleaner Editor</a></li><li><a href="my_cleaner_actions.html">My Cleaner Actions</a></li><li><a href="my_groups.html">Custom Group Editor</a></li></ul>
+<ul>
+<h2>Tutorials</h2>
+<li><a href="custom_cleaner_tutorial_1.html">Your First Cleaner</a></li><li><a href="custom_cleaner_tutorial_2.html">Removing parameters from a URL</a></li><li><a href="custom_cleaner_tutorial_3.html">Using Lists in Your Cleaners</a></li><li><a href="custom_cleaner_tutorial_4.html">Matching Typefaces, Attributes</a></li></ul>
+<ul>
+<h2>Cleaner Descriptions</h2>
+<li><a href="date_actions.html">Date-related Cleaners</a></li><li><a href="html_actions.html">HTML Cleaners</a></li><li><a href="plist_actions.html">Plist Cleaners</a></li><li><a href="cleaner_descriptions.html">Other Cleaner Descriptions</a></li></ul>
+<ul>
+<h2>Extras</h2>
+<li><a href="preferences.html">Preferences</a></li><li><a href="batch_cleaning.html">Batch File Cleaning</a></li></ul>
+<ul>
+<h2>Reference</h2>
+<li><a href="glossary.html">Glossary</a></li><li><a href="regex_syntax.html">Regular Expression Syntax</a></li><li><a href="files_and_folders.html">Files and Folders</a></li></ul>
+
+	</div>
+	<div class="ts_main">
+			<h1 id="whatsnewintextsoap9">What&#8217;s New in TextSoap 9</h1>
+
+<p><em>TextSoap 9 built for macOS 13 (Ventura). Supports macOS 11 or later.</em></p>
+
+<h2 id="ifyouarecomingfromapreviousversionoftextsoaphereisaquickrundownofsomeofthechangesfromthepreviousmajorrelease.werealwaysworkingtoimprovetheexperience.">If you are coming from a previous version of TextSoap, here is a quick rundown of some of the changes from the previous major release. We&#8217;re always working to improve the experience.</h2>
+
+<ul>
+<li>General
+
+<ul>
+<li>Apple Silicon support</li>
+<li>Dark Mode support</li>
+<li>New interface</li>
+</ul></li>
+<li>New Custom Cleaner Actions
+
+<ul>
+<li>Define List action
+
+<ul>
+<li>Self contained lists items can be copied/pasted between cleaners</li>
+<li>Lists can be defined anywhere within a cleaner.</li>
+<li>Resizable List/Table editor</li>
+<li>Define each list with 1 to 4 columns</li>
+<li>Optional text-based editor allows editing list as tab-delimited text lines.
+
+<ul>
+<li>To edit as text, hold down option key when clicking edit button.</li>
+</ul></li>
+</ul></li>
+<li>For Each Line action
+
+<ul>
+<li>Simplifies processing all non-blank lines</li>
+</ul></li>
+<li>Perform Service action
+
+<ul>
+<li>Perform a macOS Service by name.</li>
+<li>Several common services are provided in a popup menu.</li>
+</ul></li>
+<li>Repeat Action
+
+<ul>
+<li>Repeat contained actions a specified number of times.</li>
+</ul></li>
+<li>Process List action
+
+<ul>
+<li>Define variables for each row in selected list with your actions</li>
+<li>Use special variables with Find/Replace, If Text Matches to quickly process mulitple find/replace</li>
+</ul></li>
+</ul></li>
+<li>Updated Custom Cleaner Actions
+
+<ul>
+<li>Find &amp; Replace actions
+
+<ul>
+<li>List support added (replaces Batch Find &amp; Replace)</li>
+<li>More prominately displays option values (m,s,w,x) for Regex</li>
+<li>Defaults to most common regex option: m - match lines, enabled.</li>
+<li>More prominately displays granularity for plain text finds</li>
+</ul></li>
+<li>If Text Matches action
+
+<ul>
+<li>Search history option added</li>
+<li>Insert special characters option added</li>
+<li>Now only displays valid capture groups, based on given regular expression.</li>
+</ul></li>
+<li>Sort Lines action
+
+<ul>
+<li>New options added:
+
+<ul>
+<li>Match case</li>
+<li>Ignore diacritic marks</li>
+<li>Skip leading whitespace for comparison</li>
+<li>Sort numbers as values</li>
+<li>Use a regular expression for comparison</li>
+</ul></li>
+</ul></li>
+<li>If-Match (aka Conditional) actions
+
+<ul>
+<li>Integrated option to modify results (invert, skip, limit results of match)</li>
+</ul></li>
+<li>Set Underline/Strikethrough action
+
+<ul>
+<li>New &#8220;By Word&#8221; option</li>
+</ul></li>
+<li>Extract Characters action
+
+<ul>
+<li>Replaces Extract Beginning Characters, Extract End Characters, and Extract Middle Characters</li>
+</ul></li>
+</ul></li>
+<li>New Cleaners
+
+<ul>
+<li>Ruler: Clear All Tab Stops - clear all tab stops from selected paragraph rulers.</li>
+<li>New BBCode-related tag cleaners</li>
+<li>Enable Ligatures, Disable Ligatures</li>
+<li>Remove Line Numbers - removes line numbers at the beginning of each line.</li>
+</ul></li>
+<li>Text Editor
+
+<ul>
+<li>Support for text editing with dark background in Dark Mode. (#1360)</li>
+<li>Explicit option to use Inspector Bar or old-style Ruler.</li>
+<li>Cleaner groups now more prominent</li>
+<li>Sidebar is now resizable</li>
+<li>Improved handling of line numbers</li>
+<li>When using regex, each match selection also displays its
+
+<ul>
+<li>capture group list</li>
+<li>replacement text result</li>
+</ul></li>
+</ul></li>
+<li>My Groups Editor
+
+<ul>
+<li>New editor in a single window interface.</li>
+<li>Dark mode support</li>
+<li>You can use an existing group as a template for creating a new group.</li>
+<li>Item tags replace colors, dynamically adjusting for Light / Dark Mode.</li>
+</ul></li>
+<li>My Cleaners Editor
+
+<ul>
+<li>New editor in a single window interface.</li>
+<li>Dark mode support</li>
+<li>Actions display options inline for a more compact display, where appropriate</li>
+<li>Container actions are more visually distinctive</li>
+<li>Container actions show number of contained actions</li>
+<li>New color scheme for action categories</li>
+<li>Disabled actions strikeout title</li>
+<li>Disabled actions no longer allow editing</li>
+<li>Action comments can contain returns &amp; tabs</li>
+<li>More robust auto-resize handling for actions with text fields</li>
+<li>Preview window shows invisibiles in cleaned text preview</li>
+<li>Improved performance when cleaner contains a lot of actions</li>
+<li>New find actions are now based on text search preferences</li>
+</ul></li>
+<li>New Preferences
+
+<ul>
+<li>Presentation
+
+<ul>
+<li>Appearance : use Light or Dark Mode or System theme</li>
+</ul></li>
+<li>Text Editing Interactive Search Defaults:
+
+<ul>
+<li>Search type</li>
+<li>Match Case option</li>
+<li>Match Lines option (for Regex)</li>
+</ul></li>
+</ul></li>
+<li>General Improvements
+
+<ul>
+<li>Pick cleaner window (used by Services, AppleScript) moves to active space as well</li>
+<li>Showing horizontal ruler (when toggling between plain/rich text) no longer hides first few lines of text.</li>
+<li>Action colorization provides dynamic color support between Dark/Light mode.</li>
+<li>Regex syntax coloring supports Dark/Light mode.</li>
+</ul></li>
+<li>TextSoap Agent Companion App
+
+<ul>
+<li>single app integrates with all editions of main TextSoap app</li>
+<li>provides more efficient interaction between agent/main app for better cleaning performance</li>
+<li>Global Cleaner Access (use within many of your favorite apps)</li>
+<li>Global Hot Keys (hot key to activate a cleaner within an app)</li>
+<li>AppleScripting</li>
+<li>Mac OS Services support</li>
+<li>Customized Services (bring specific cleaners into Service menu)</li>
+</ul></li>
+</ul>
+	</div>
+</div>
+    
+<!-- 
+<script>
+includeHTML();
+</script> 
+-->
+
+</body>
+</html>
