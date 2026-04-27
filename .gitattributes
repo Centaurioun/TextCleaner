@@ -1,0 +1,11 @@
+# Auto-detect text files and normalize line endings
+* text=auto
+
+# Ensure shell scripts use LF
+*.sh eol=lf
+
+# Powershell scripts keep CRLF on Windows
+*.ps1 eol=crlf
+
+# Lockfiles are text
+package-lock.json text

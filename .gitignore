@@ -1,0 +1,66 @@
+# TeamsFx files
+env/.env.*.user
+env/.env.local
+appPackage/build
+
+# TeamsFx files
+env/.env.*.user
+env/.env.local
+appPackage/build
+
+# Dependency directories
+node_modules/
+
+# Build outputs
+/dist/
+/build/
+appPackage/build
+
+# Azure Functions artifacts
+bin/
+obj/
+appsettings.json
+
+# Local settings (may contain secrets)
+# ignore local.settings.json if it contains your own credentials
+local.settings.json
+
+# dotenv files (keep .env out of repo; provide .env.example instead)
+.env
+.env.local
+.env.*.local
+env/*.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.deployment
+.vscode/
+.idea/
+
+# Local/dev tools
+.cache
+.parcel-cache
+.localConfigs
+.notification.localstore.json
+
+# Test coverage
+coverage/
+*.lcov
+
+# Typescript
+*.tsbuildinfo
+
+# Misc
+_storage_emulator
+
+# Certificates and keys
+*.pem
+*.pfx
+*.key
