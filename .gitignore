@@ -59,6 +59,7 @@ coverage/
 
 # Misc
 _storage_emulator
+vb-to-c/
 
 # Certificates and keys
 *.pem
